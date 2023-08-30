@@ -1,0 +1,9 @@
+---
+tag: topology
+mathLink: coarser
+---
+```ad-def
+Suppose that $T$ and $T'$ are two [[Topology]]s on a given [[Set]] X. We say that $T'$ is *coarser* than $T$ [[iff]] $T'$ [[Notation/subset|subset]]$T$
+```
+
+Notation: [[notation for coarser]]

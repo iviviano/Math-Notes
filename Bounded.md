@@ -1,0 +1,9 @@
+---
+tag: set theory
+mathLink: bounded
+---
+```ad-def
+Let $X$ be a [[Metric Space]] with [[Metric]] $d$. A [[Set Theory/Subset|Subset]] $A$ of $X$ is said to be [[Bounded]] if there is some real number $M$ such that 
+$$d(a_1,a_2)\le M$$
+for every pair of points $a_1, a_2\in A$.
+```

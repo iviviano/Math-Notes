@@ -1,0 +1,15 @@
+---
+tag: topology
+mathLink: interior
+---
+```ad-def
+Given a [[Set Theory/Subset|Subset]] $A$ of a [[Topology/Topological Space|Topological Space]] [[Notation/topological space|topological space]], the *interior* of $A$ is defined as the [[Set Theory/Union|Union]] of all [[Open Set]]s contained in $A$.
+```
+
+Notation: [[notation for interior]] $A$
+
+```ad-prop
+If $A$ is [[Open Set]], $A$ = [[interior]] $A$.
+```
+
+Note: for category theory, equivalent to [[and]], [[Intersection|Intersection]], [[infinum]], and the smallest [[Topology]] contained in every element of a collection of [[Topology]]s

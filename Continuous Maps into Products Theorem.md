@@ -1,0 +1,10 @@
+---
+tag: topology
+mathLink: continuous maps into products theorem
+---
+```ad-thm
+Let $f:A\rightarrow\prod X_\alpha$ be given by the [[Rule of Assignment]]
+$$f(a) = (f_\alpha(a))_{\alpha\in J}$$
+where $f_\alpha:A\rightarrow X_\alpha$ for each $\alpha$. Let $\prod X_\alpha$ have the [[Product Topoplogy]]. Then, the [[Function]] $f$ is [[Continuous]] [[iff]] each function $f_\alpha$ is [[Continuous]].
+```
+

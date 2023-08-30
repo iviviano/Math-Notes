@@ -1,0 +1,11 @@
+---
+tag: topology
+mathLink: metric spaces are Hausdorff
+---
+```ad-thm
+Let $X$ be a [[Metric Space]]. Then $X$ is a [[Hausdorff Space]] and the [[Metric Topology]] on $X$ satisfies the [[Hausdorff Axiom]]. 
+```
+
+```ad-proof
+Let $d$ be a [[Metric]] on $X$. Let $x, y\in X$. Take $\epsilon<d(x,y)$ Then, $B_d(x,\epsilon)$ and $B_d(y,\epsilon)$ are [[Disjoint]], so $X$ is a [[Hausdorff Space]]. 
+```

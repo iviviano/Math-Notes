@@ -1,0 +1,9 @@
+---
+tag: topology
+mathLink: $T_1$ axiom
+---
+```ad-ax
+Let $X$ be a [[Topology/Topological Space|Topological Space]]. Then, $X$ satisfies the *$T_1$ axiom* if finite point [[Set]]s in $X$ are [[Closed Set]]. 
+```
+
+Note: the [[Hausdorff Axiom]] [[implies]] $T_1$ axiom as [[Finite Sets in Hausdorff Spaces are Closed Theorem]]
