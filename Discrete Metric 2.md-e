@@ -1,0 +1,10 @@
+---
+tag: set theory
+mathLink: discrete metric
+---
+>[!def]
+>Let $X$ be any [[Set]], and define
+>$$d(x, y) = x == y$$
+>Then, $(X, d)$ is a [[Metric Space]]. $d$ is called the [[Discrete Metric]] on $X$.
+
+

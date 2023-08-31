@@ -1,0 +1,13 @@
+---
+tag: set theory
+mathLink: inner product
+---
+>[!def]
+>Let $\mathbf{x}, \mathbf{y}\in \mathbb{R}^n$ be two vectors. Then, the *inner product* of $\mathbf{x}$ and $\mathbf{y}$ is defined to be 
+>$$\langle \mathbf{x, y}\rangle =\sum_{i=1}^{n}x_{i}y_{i}$$
+
+Note: $\forall \mathbf{x,y,z}\in \mathbb{R}^{n}$ and $t\in \mathbb{R}$,
+1. $\langle \mathbf{x, x}\rangle\ge 0$
+2. $\langle \mathbf{x,y}\rangle=\langle \mathbf{y,x}\rangle$
+3. $\langle t\mathbf{x+z,y}\rangle=t\langle \mathbf{x,y}\rangle+\langle \mathbf{z,y}\rangle$ (linearity)
+4. $\langle \mathbf{x,y}+ t \mathbf{z}\rangle=\langle \mathbf{x,y}\rangle+t\langle \mathbf{x,z}\rangle$ (linearity)
