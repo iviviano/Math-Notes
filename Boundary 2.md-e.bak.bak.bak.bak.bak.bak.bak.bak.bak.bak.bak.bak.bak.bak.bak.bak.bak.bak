@@ -1,0 +1,8 @@
+---
+tag: topology
+mathLink: boundary
+---
+>[!def]
+>Let [[notation for topological space]] be a [[Topological Space|Topological Space]]. Let $A$ [[notation for subset]] $X$. Then, the *boundary* of $A$ is defined to be 
+>$$\partial A=\bar{A}\cap\overline{X-A}$$
+

@@ -1,0 +1,9 @@
+---
+tag: topology
+mathLink: reverse triangle inequality
+---
+>[!prop]
+>Let $X$ be a [[Set]] and let $d$ be a [[Metric]] on $X$. Then, 
+>$$|d(x, y)-d(y,z)|\le d(x,z)$$
+>for $x,y,z\in X$
+
