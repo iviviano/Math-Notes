@@ -28,7 +28,7 @@ Note: as the [[Box Topology]] is the same as the [[Product Topoplogy]] on $\math
 > Product of metrics is metric of product:
 > By the [[Basis for the Product Topology Theorem]], a [[Basis]] for the [[Product Topoplogy]] on $\mathbb{R}^n$ is the collection $\mathcal{B}$ of sets $\prod B_\rho(x_{i},\epsilon_{i})$ where $x_{i}\in \mathbb{R}$. A [[Basis]] for the [[Metric Topology]] on $\mathbb{R}^n$ is the collection $\mathcal{B}'$ of [[Ball]]s $B_{\rho}(\mathbf{x},\epsilon)$, where $\mathbf{x}\in \mathbb{R}^n$. Let $\mathbf{x}\in \mathbb{R}^n$ be given. Let $B\in \mathcal{B}$ be given with $\mathbf{x}\in B$. Pick $\epsilon>0$ such that $\forall i : B_{\rho}(x_{i},\epsilon)\subseteq B_i$. Then, 
 > $B_{\rho}(\mathbf{x},\epsilon)\subseteq B$
-> As $B_{\rho}(\mathbf{x},\epsilon)\in \mathcal{B}'$, the [[Metric Topology]] on $\mathbb{R}^n$ is [[Finer]] than the [[[Product Topoplogy]] on $\mathbb{R}^n$ by the [[Finer Bases Lemma]].
+> As $B_{\rho}(\mathbf{x},\epsilon)\in \mathcal{B}'$, the [[Metric Topology]] on $\mathbb{R}^n$ is [[Finer]] than the [[Product Topoplogy]] on $\mathbb{R}^n$ by the [[Finer Bases Lemma]].
 > Let $B'\in \mathcal{B}'$ be given with $\mathbf{x}\in B'$. Then, for some $\epsilon > 0$
 > $\prod B_{i}=\prod B_{\rho}(x_i,\epsilon)\in \mathcal{B}$
 > [[therefore]] the [[Product Topoplogy]] is [[Finer]] than the [[Metric Topology]] on $\mathbb{R}^n$ by the [[Finer Bases Lemma]].

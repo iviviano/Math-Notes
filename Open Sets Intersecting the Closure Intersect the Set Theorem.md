@@ -4,8 +4,8 @@ mathLink: open sets intersecting the closure intersect the set theorem
 ---
 > [!thm]
 > Let $A$ be a [[Subset]] of the [[Topological Space]] $X$.
-> 1. Then $x\in$ [[closure]] [[iff]] every [[Open Set]] set $U$ containing $x$ [[Intersects]] $A$ (Every [[Neighborhood]] of $x$ [[Intersects]] $A$)
-> 2. Supposing the [[Topology]] of $X$ is given by a [[Basis]], then $x\in$ [[closure]] [[iff]] every [[Basis]] element $B$ containing $x$ [[Intersects]] $A$.
+> 1. Then $x\in$ [[notation for closure]] [[iff]] every [[Open Set]] set $U$ containing $x$ [[Intersects]] $A$ (Every [[Neighborhood]] of $x$ [[Intersects]] $A$)
+> 2. Supposing the [[Topology]] of $X$ is given by a [[Basis]], then $x\in$ [[notation for closure]] [[iff]] every [[Basis]] element $B$ containing $x$ [[Intersects]] $A$.
 
 > [!proof]
 > 1. Suppose $x\in\bar{A}$. Then $x$ is in every [[Closed Set]] set containing $A$. So, if an [[Open Set]] set $U$ contains $x$, its [[Compliment]] does not contain $A$, so $U$ [[Intersects]] $A$.

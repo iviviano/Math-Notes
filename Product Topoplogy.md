@@ -3,7 +3,7 @@ tag: topology
 mathLink: product topology
 ---
 > [!def]
-> Let $X$ and $Y$ be [[Topological Space]]s. The *product topology* on $X$[[cartesian product]]$Y$ is the [[Topology]] having as [[Basis]] the collection [[basis]] of all sets of the form $U$[[cartesian product]] $V$ where $U$ is [[Open Set]] in $X$ and $V$ is [[Open Set]] in $Y$.
+> Let $X$ and $Y$ be [[Topological Space]]s. The *product topology* on $X$[[notation for cartesian product]]$Y$ is the [[Topology]] having as [[Basis]] the collection [[notation for basis]] of all sets of the form $U$[[notation for cartesian product]] $V$ where $U$ is [[Open Set]] in $X$ and $V$ is [[Open Set]] in $Y$.
 
 Consider the more general [[Cartesian Product|Cartesian Product]]s:
 $$X_1 \times \cdots \times X_n \text{  and  } X_1\times X_2\times\cdots$$

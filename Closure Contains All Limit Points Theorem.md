@@ -4,7 +4,7 @@ mathLink: closure contains all limit points
 ---
 > [!thm]
 > Let $A$ be a [[Subset]] of the [[Topological Space]] $X$; let $A'$ be the [[Set]] of all [[Limit Point]]s of $A$ Then
-> $\bar{A} = A\cup A'$
+> $$\bar{A} = A\cup A'$$
 
 > [!proof]
 > Let $x\in$ [[closure]] be given. Then, any [[Neighborhood]]s of $x$ [[Intersects]] $A$ by the [[Open Sets Intersecting the Closure Intersect the Set Theorem]]. Suppose $x\in A$. Then, $x\in A\cup A'$. Otherwise, $A - \{x\} = A$, so any neighborhood of $x$ [[Intersects]] $A$ at a point besides $x$, making $x$ a [[Limit Point]] of $A$, so $x\in A'$ and $x\in A\cup A'$.

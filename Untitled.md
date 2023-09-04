@@ -1,3 +1,7 @@
+---
+tag: topology
+mathLink:
+---
 > [!thm]
 > Let $\bar{d}(a,b)=\min\{|a-b|,1\}$ be the [[Standard Bounded Metric]] on $\mathbb{R}$. If $\mathbf{x}$ and $\mathbf{y}$ are two points of $\mathbb{R}^{\omega}$, define
 > $D(\mathbf{x},\mathbf{y})=\sup\{\frac{\bar{d}(x_{i},y_{i})}{i}\}$

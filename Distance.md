@@ -2,5 +2,9 @@
 tag: set theory
 mathLink: distance
 ---
-> [!def]
-> Given a [[Metric]] $d$ on $X$, the number $d(x, y)$ is often called the [[Distance]] of between $x$ and $y$ in the [[Metric]] $d$. 
+>[!def]
+>Let $(X, d)$ be a [[Metric Space]], $A\subseteq X,x\in X$. Then, the *distance* from $x$ to $A$ is defined as 
+>$$\text{dist}(x,A)=\inf \{d(x,a):a\in A\}$$
+>where $\inf$ is the [[infinum]]. 
+
+

@@ -4,6 +4,6 @@ mathLink: limit point
 ---
 > [!def]
 > If [[topological space]] is a [[Topological Space]] and $x\in X$, we say $x$ is a *limit point* of $A$ if every [[Neighborhood]] of $x$ [[Intersects]] $A$ at some point other than $x$ itself:
-> $\forall U\in T: x\in U: (A - \{x\})\cap U \ne \emptyset$
+> $$\forall U\in T: x\in U: (A - \{x\})\cap U \ne \emptyset$$
 > 
 > Equivalently, $x$ is a limit point of $A$ if it belongs to the [[Closure]] of $A - \{x\}$.
