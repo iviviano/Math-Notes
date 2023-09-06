@@ -4,7 +4,7 @@ mathLink: $\epsilon-\delta$ formulation of continuity
 ---
 > [!thm]
 > Let $f:X\rightarrow Y$; let $X$ and $Y$ be [[Metrizable]] with [[Metric]]s $d_X$ and $d_Y$. Then $f$ is [[Continuous]] [[iff]] $\forall x\in X:\forall \epsilon>0:\exists \delta>0$ such that
-> $d_X(x,y)<\delta\implies d_Y(f(x),f(y))<\epsilon$
+> $$d_X(x,y)<\delta\implies d_Y(f(x),f(y))<\epsilon$$
 
 > [!proof]
 > Suppose $f$ is [[Continuous]]. Let $\epsilon>0,x\in X$, be given. Then, $U=f^{-1}(B_{d_{Y}}(f(x)),\epsilon)$ is [[Open Set]] in $X$. As $x\in U$, pick $\delta>0$ such that $B_{d_X}(x,\delta)\subseteq U$. If $y\in X$ and $d_X(x,y)<\delta$, $y\in B_{d_{X}}(x,\delta)$, so $y\in U$ and $f(y)\in B_{d_Y}(f(x),\epsilon)$. [[therefore]] $d_Y(f(x),f(y))<\epsilon$

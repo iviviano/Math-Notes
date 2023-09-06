@@ -4,7 +4,7 @@ mathLink: ball
 ---
 > [!def]
 > Given a metrix $d$ on $X$ and $\epsilon > 0$, the set
-> $B_d(x, \epsilon) = \{y\in X|d(x, y)< \epsilon\}$
+> $$B_d(x, \epsilon) = \{y\in X|d(x, y)< \epsilon\}$$
 > of all points whose distance from $x$ is less than $\epsilon$ is called the $\boldsymbol{\epsilon}$-*ball centered at $x$*.
 
 > [!not]

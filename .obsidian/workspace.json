@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c9c4f144fbf63017",
+            "id": "167a17642c5d91b5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Interior, Closure, and Boundary Proposition.md",
+                "file": "Finite Intersection Property.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -21,12 +21,12 @@
             }
           },
           {
-            "id": "49a5b7d009ee104c",
+            "id": "c922be2b8c4c9ec8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Metric Product.md",
+                "file": "Characterizations of Compactness in Metric Spaces.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -34,12 +34,12 @@
             }
           },
           {
-            "id": "2449ac078a306e86",
+            "id": "c640c7fa5660b4ec",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Metric Space.md",
+                "file": "Unions and Intersections Commute.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -47,12 +47,12 @@
             }
           },
           {
-            "id": "ae47c4080d6091e0",
+            "id": "295c3bf24d8268c7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Product Topoplogy.md",
+                "file": "Topology Homework/9-5 Problems.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -60,12 +60,12 @@
             }
           },
           {
-            "id": "e461958442b05be1",
+            "id": "9d875e2e622ec3c4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dense.md",
+                "file": "Functions from Compact Spaces are Uniformly Continuous.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -73,12 +73,12 @@
             }
           },
           {
-            "id": "dac67261a2d3c2d1",
+            "id": "7ba620f3a09f73ee",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Closed Sets in Metric Spaces contain their Limit Points.md",
+                "file": "Converges.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -86,12 +86,12 @@
             }
           },
           {
-            "id": "68f60c803552a4a9",
+            "id": "e3e5e14623ca7ca8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Closed Sets in Metric Spaces contain their Limit Points.md",
+                "file": "Connected.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -99,12 +99,12 @@
             }
           },
           {
-            "id": "d9b17ea27ffe1456",
+            "id": "f40cdd849f627307",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Subsequences of Convergent Sequences Converge.md",
+                "file": "Intervals are Connected in R.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -112,12 +112,12 @@
             }
           },
           {
-            "id": "73ffe6d87c4f3304",
+            "id": "3f8bbd7153209c16",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Limit Point.md",
+                "file": "Intermediate Value Theorem.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -125,12 +125,12 @@
             }
           },
           {
-            "id": "84aa6c2a45d7860e",
+            "id": "07f28a92fd31448e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Distance.md",
+                "file": "Unions of Overlapping Connected Sets are Connected.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -138,12 +138,12 @@
             }
           },
           {
-            "id": "b0249b6d23d58308",
+            "id": "10ccf15a71abe8b4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Open Sets Intersecting the Closure Intersect the Set Theorem.md",
+                "file": "Component.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -151,12 +151,12 @@
             }
           },
           {
-            "id": "a6c6ba5c3698240a",
+            "id": "260cc3e92310cad2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Closed Sets in Subspace Theorem.md",
+                "file": "Components Proposition.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -164,12 +164,64 @@
             }
           },
           {
-            "id": "d7823bf9aa038f24",
+            "id": "84c773d986f5db1f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Topology Homework/9-7 Problems.md",
+                "file": "Components are Closed.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "dcade39032e7c869",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Ep Chain.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b287f6db593fdb3f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Baire Category Theorem.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "08fc13187bbc5c7a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Cantor's Theorem.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f87170edd0b215cc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Topology Homework/9-12 Problems.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -177,7 +229,7 @@
             }
           }
         ],
-        "currentTab": 12
+        "currentTab": 16
       }
     ],
     "direction": "vertical"
@@ -243,7 +295,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Topology Homework/9-7 Problems.md",
+                "file": "Topology Homework/9-12 Problems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -260,7 +312,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Topology Homework/9-7 Problems.md",
+                "file": "Topology Homework/9-12 Problems.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -283,7 +335,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Topology Homework/9-7 Problems.md"
+                "file": "Topology Homework/9-12 Problems.md"
               }
             }
           }
@@ -303,34 +355,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d7823bf9aa038f24",
+  "active": "f87170edd0b215cc",
   "lastOpenFiles": [
+    "Complete.md",
+    "Topology Homework/9-12 Problems.md",
+    "Cantor's Theorem.md",
     "Topology Homework/9-7 Problems.md",
-    "Open Sets Intersecting the Closure Intersect the Set Theorem.md",
-    "Limit Point.md",
-    "Limit Points and Convergent Sequences Lemma.md",
-    "Boundary.md",
-    "Closed Sets in Subspace Theorem.md",
-    "Distance.md",
-    "Intersects.md",
-    "Finite Sets in Hausdorff Spaces are Closed Theorem.md",
+    "Closure and Interior in Subspaces.md",
+    "Closure Contains All Limit Points Theorem.md",
     "Closure.md",
-    "Closure in Subspace Theorem.md",
-    "Characterizations of Continuity Theorem.md",
+    "Dense.md",
+    "Limit Point.md",
+    "Closed Characterization of Topology Theorem.md",
+    "Discrete Topology.md",
+    "Discrete Metric.md",
+    "Baire Category Theorem.md",
+    "Untitled 9.md",
+    "Components of Rn Prop.md",
     "Topology Homework/9-5 Problems.md",
     "Interior, Closure, and Boundary Proposition.md",
-    "Closure Set of Distance 0 Points.md",
-    "Untitled 4.md",
-    "Subsequences of Convergent Sequences Converge.md",
-    "Isolated Point.md",
-    "iff.md",
-    "[Product Topoplogy.md",
-    "Metrics Induce the Product Topology on Rn.md",
-    "Closed Subspaces are Complete.md",
-    "Bounded Sets in Metric Spaces Lemma.md",
-    "Metric Space.md",
-    "Complete.md",
-    "Cauchy Sequence.md",
+    "Ep Chain.md",
+    "Components are Closed.md",
+    "Components Proposition.md",
+    "Component.md",
+    "Unions of Overlapping Connected Sets are Connected.md",
+    "Maximal.md",
+    "Collection.md",
+    "Intermediate Value Theorem.md",
+    "Continuous.md",
     "Topology Homework",
     "Convex Subspace Order Topology Theorem.md.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak",
     "Converges.md.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak",

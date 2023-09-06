@@ -1,6 +1,6 @@
 ---
 tag: topology
-mathLink: separated
+mathLink: separable
 ---
 >[!def]
->A [[Metric Space]] $(X,d)$ is *separable* if it has a countable *dense* [[Subset]].
+>A [[Metric Space]] $(X,d)$ is *separable* if it has a countable [[Dense]] [[Subset]].

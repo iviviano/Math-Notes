@@ -3,7 +3,7 @@ tag: topology
 mathLink: continuous
 ---
 > [!def]
-> Let $X$ and $Y$ be [[Topological Space]]s. A [[Function]] $f:X\rightarrow Y$ is said to be *continuous* if for each [[Open Set]] [[Subset]] $V$ of $Y$, the [[Set]] $U = f$[[inverse]]$(V)$ is an [[Open Set]] [[Subset]] of $X$.
+> Let $X$ and $Y$ be [[Topological Space]]s. A [[Function]] $f:X\rightarrow Y$ is said to be *continuous* if for each [[Open Set]] [[Subset]] $V$ of $Y$, the [[Set]] $U = f$[[notation for inverse]]$(V)$ is an [[Open Set]] [[Subset]] of $X$.
 
 Note: 
 - Continuity depends not only on $f$ but on the [[Topology]]s of its [[Domain]] and [[Range]]. 

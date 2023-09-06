@@ -9,7 +9,8 @@ mathLink: closed characterization of a topology theorem
 > 3. Finite [[Union]]s of [[Closed Set]] [[Set]]s are [[Closed Set]]
 > 
 
-Note: there is nothing special about defining [[Topology]] in terms of [[Open Set]] sets. It could just as easily be defined in terms of [[Closed Set]] sets.
+>[!note]
+There is nothing special about defining [[Topology]] in terms of [[Open Set]] sets. It could just as easily be defined in terms of [[Closed Set]] sets.
 
 > [!proof]
 > Let $X$ be a [[Topological Space]]. $X$ is [[Open Set]], so $\emptyset$ is [[Closed Set]], and $\emptyset$ is [[Open Set]], so $X$ is [[Closed Set]]. [[therefore]] 1.

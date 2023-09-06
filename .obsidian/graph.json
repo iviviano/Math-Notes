@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "",
+  "search": "tag:#topology",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
@@ -53,6 +53,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 256,
-  "scale": 0.558158298240129,
+  "scale": 0.6177036969930532,
   "close": true
 }
