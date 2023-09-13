@@ -9,6 +9,6 @@ Let $(X,d_{X}),(Y,d_{Y})$ be [[Metric Space]]s.
 
 Let $\epsilon>0$ be given. Pick $\delta>0$ such that for all $x,y\in X$, $d_{X}(x,y)<\delta$ [[implies]] $d_{Y}(f(x),f(y))<\epsilon$. Then, pick $N\in \mathbb{N}$ such that for $n,m≥N$, $d_{X}(x_{n},x_{m})<\delta$. Clearly, if $n,m≥N$, $d_{Y}(f(x_{n}),f(x_{m}))<\epsilon$, so $f(x_{n})$ is [[Cauchy Sequence]].
 
-If $x\in \bar{A}$, then there is a [[Sequence]] $\{a_{n}\}$ in $A$ such that $a_{n}\rightarrow x$. As any [[Sequence]] that [[Converges]]s is [[Cauchy Sequence]] ([[Convergent Sequences in Metric Spaces are Cauchy]]), $a_{n}$ is a [[Cauchy Sequence]] [[Sequence]]. By 1., $f(a_{n})$ is [[Cauchy Sequence]] in $Y$. As $Y$ is [[Complete]], $f(a_{n})\rightarrow y\in Y$. Set $f(x)=z$.
+If $x\in \bar{A}$, then there is a [[Sequence]] $\{a_{n}\}$ in $A$ such that $a_{n}\rightarrow x$. As any [[Sequence]] that [[Converges (Sequence)]]s is [[Cauchy Sequence]] ([[Convergent Sequences in Metric Spaces are Cauchy]]), $a_{n}$ is a [[Cauchy Sequence]] [[Sequence]]. By 1., $f(a_{n})$ is [[Cauchy Sequence]] in $Y$. As $Y$ is [[Complete]], $f(a_{n})\rightarrow y\in Y$. Set $f(x)=z$.
 >[!note] Note: show $y$ is independent of which sequence $a_{n}$ is 
 

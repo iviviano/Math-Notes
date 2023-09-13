@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Characterizations of Compactness in Metric Spaces.md",
+                "file": "Characterizations of Compactness.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -40,19 +40,6 @@
               "type": "markdown",
               "state": {
                 "file": "Unions and Intersections Commute.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "295c3bf24d8268c7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Topology Homework/9-5 Problems.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -78,20 +65,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Converges.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e3e5e14623ca7ca8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Connected.md",
+                "file": "Converges (Sequence).md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -125,12 +99,12 @@
             }
           },
           {
-            "id": "07f28a92fd31448e",
+            "id": "0ef60f818b399144",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Unions of Overlapping Connected Sets are Connected.md",
+                "file": "Monomorphism.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -138,12 +112,12 @@
             }
           },
           {
-            "id": "10ccf15a71abe8b4",
+            "id": "7d7a463c47188faf",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Component.md",
+                "file": "Isomorphism.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -151,12 +125,12 @@
             }
           },
           {
-            "id": "260cc3e92310cad2",
+            "id": "585b25bb781adac8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Components Proposition.md",
+                "file": "Closed Subspaces are Complete.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -164,46 +138,7 @@
             }
           },
           {
-            "id": "84c773d986f5db1f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Components are Closed.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "dcade39032e7c869",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Ep Chain.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b287f6db593fdb3f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Baire Category Theorem.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "08fc13187bbc5c7a",
+            "id": "2ccba89b76ca46f2",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -216,7 +151,111 @@
             }
           },
           {
-            "id": "f87170edd0b215cc",
+            "id": "e278f8f793d8c2dd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Topology Homework/9-12 Problems.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c43cfb9b03ac4bcb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Regular.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "16f79dd709735956",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Characterizations of Regular Spaces Proposition.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "770f2fcd8d066e73",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Compact Spaces and Metric Spaces are Regular.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ebcbf9bab6f8b3f1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Completely Regular.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "316ac76e993a861e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Completely Regular 2.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ef805cbb59662a94",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Completely Regular Subspaces.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "18b954809b2aa8b6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Weak Topology.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "5ba34978e5926b36",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -229,7 +268,7 @@
             }
           }
         ],
-        "currentTab": 16
+        "currentTab": 18
       }
     ],
     "direction": "vertical"
@@ -258,7 +297,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "closure",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -295,7 +334,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Topology Homework/9-12 Problems.md",
+                "file": "Weak Topology.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -312,7 +351,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Topology Homework/9-12 Problems.md",
+                "file": "Weak Topology.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -335,7 +374,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Topology Homework/9-12 Problems.md"
+                "file": "Weak Topology.md"
               }
             }
           }
@@ -355,34 +394,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f87170edd0b215cc",
+  "active": "18b954809b2aa8b6",
   "lastOpenFiles": [
-    "Complete.md",
+    "Projection.md",
+    "Weak Topology.md",
+    "Completely Regular Subspaces.md",
+    "Constructing Continuous Functions Theorem.md",
+    "Completely Regular 2.md",
+    "Completely Regular.md",
+    "Compact Spaces and Metric Spaces are Regular.md",
+    "Characterizations of Compactness.md",
     "Topology Homework/9-12 Problems.md",
+    "Topology Homework/Problem Set 1.md",
+    "Compactness.md",
+    "Subspaces and Products of Regular Spaces are Regular.md",
+    "Regular.md",
+    "Topological Space.md",
+    "T1 Axiom.md",
+    "Monotone Convergence Theorem.md",
+    "Characterizations of Regular Spaces Proposition.md",
+    "Upper Bound.md",
+    "Closed Sets in Metric Spaces contain Sequence Limits.md",
+    "Extreme Value Theorem.md",
+    "Bounded Metric Space.md",
     "Cantor's Theorem.md",
-    "Topology Homework/9-7 Problems.md",
-    "Closure and Interior in Subspaces.md",
-    "Closure Contains All Limit Points Theorem.md",
-    "Closure.md",
-    "Dense.md",
-    "Limit Point.md",
-    "Closed Characterization of Topology Theorem.md",
-    "Discrete Topology.md",
-    "Discrete Metric.md",
-    "Baire Category Theorem.md",
-    "Untitled 9.md",
-    "Components of Rn Prop.md",
-    "Topology Homework/9-5 Problems.md",
-    "Interior, Closure, and Boundary Proposition.md",
-    "Ep Chain.md",
-    "Components are Closed.md",
-    "Components Proposition.md",
-    "Component.md",
-    "Unions of Overlapping Connected Sets are Connected.md",
-    "Maximal.md",
-    "Collection.md",
-    "Intermediate Value Theorem.md",
-    "Continuous.md",
+    "Closed Subspaces are Complete.md",
+    "Cauchy Subsequence Converges Implies Sequence Converges.md",
+    "Subsequence.md",
+    "Convergent Sequences in Metric Spaces are Cauchy.md",
     "Topology Homework",
     "Convex Subspace Order Topology Theorem.md.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak",
     "Converges.md.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak.bak",

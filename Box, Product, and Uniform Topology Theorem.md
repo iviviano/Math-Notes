@@ -3,7 +3,7 @@ tag: topology
 mathLink:
 ---
 > [!thm]
-> The [[Uniform Topology]] on $\mathbb{R}^n$ is [[Finer]] than the [[Product Topoplogy]] and [[Coarser]] than the [[Box Topology]]. All three are different when $J$ is infinite.
+> The [[Uniform Topology]] on $\mathbb{R}^n$ is [[Finer]] than the [[Product Topology]] and [[Coarser]] than the [[Box Topology]]. All three are different when $J$ is infinite.
 
 Let $J$ be an indexing set. Let $\mathcal{B}$ be the collection of [[Ball]]s $B_\bar{\rho}(\mathbf{x}, \epsilon)$ for $\mathbf{x}\in \mathbb{R}^J$ and $\epsilon>0$. $\mathcal{B}$ is a [[Basis|Basis]] for the [[Uniform Topology]] on $\mathbb{R}^J$. 
 Coarser than the [[Box Topology]]:

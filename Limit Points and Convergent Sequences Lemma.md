@@ -4,8 +4,8 @@ mathLink:
 ---
 >[!prop]
 >Let $(X, d)$ be a [[Metric Space]], let $A$ [[notation for subset]] $X$. Then,
->1. A point $x$ is a [[Limit Point]] of $A$ [[iff]] there is a [[Sequence]] of distinct points in $A$ that [[Converges]] to $x$.
->2. $A$ is a [[Closed Set]] [[Set]] [[iff]] $A$ contains all its [[Limit Point]]s ([[Closed Sets in Metric Spaces contain their Limit Points]])
+>1. A point $x$ is a [[Limit Point]] of $A$ [[iff]] there is a [[Sequence]] of distinct points in $A$ that [[Converges (Sequence)]] to $x$.
+>2. $A$ is a [[Closed Set]] [[Set]] [[iff]] $A$ contains all its [[Limit Point]]s ([[Closed Sets in Metric Spaces contain Sequence Limits]])
 >3. [[notation for closure]] $=A\cup\{x:x \text{ is a a limit point of }A\}$. ([[Closure Contains All Limit Points Theorem]])
 
 >[!proof]

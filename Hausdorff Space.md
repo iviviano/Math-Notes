@@ -6,6 +6,6 @@ mathLink: Hausdorff space
 > A [[Topological Space]] $X$ is called a *Hausdorff space* if it possesses the [[Hausdorff Axiom]].
 
 Hausdorff Spaces have many nice properties and are the [[Topology]]cally interesting spaces:
-1. [[Sequences Converge Uniquely in Hausdorff Spaces Theorem]] (a [[Sequence]] that [[Converges|Converges]]s has a [[Limit of a Sequence]])
+1. [[Sequences Converge Uniquely in Hausdorff Spaces Theorem]] (a [[Sequence]] that [[Converges (Sequence)|Converges (Sequence)]]s has a [[Limit of a Sequence]])
 2. [[Limit Points in T1 Spaces Theorem]]
 3. 

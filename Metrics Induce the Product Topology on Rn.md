@@ -3,9 +3,9 @@ tag: topology
 mathLink: metrics induce the product topology on $\mathbb{R}^n$
 ---
 > [!thm]
-> The [[Topology]]s on $\mathbb{R}^n$ induced by the [[Euclidean Metric]] $d$ and the [[Square Metric]] $\rho$ are the same as the [[Product Topoplogy]] on $\mathbb{R}^n$.
+> The [[Topology]]s on $\mathbb{R}^n$ induced by the [[Euclidean Metric]] $d$ and the [[Square Metric]] $\rho$ are the same as the [[Product Topology]] on $\mathbb{R}^n$.
 
-Note: as the [[Box Topology]] is the same as the [[Product Topoplogy]] on $\mathbb{R}^n$, it is also the same as the [[Topology]] induced by the [[Euclidean Metric]] and the [[Square Metric]].
+Note: as the [[Box Topology]] is the same as the [[Product Topology]] on $\mathbb{R}^n$, it is also the same as the [[Topology]] induced by the [[Euclidean Metric]] and the [[Square Metric]].
 
 > [!proof]
 > Equivalence of the two [[Metric Topology]]s:
@@ -26,11 +26,11 @@ Note: as the [[Box Topology]] is the same as the [[Product Topoplogy]] on $\math
 > Let $B$ be a [[Ball]] containing $x$. Then, pick $\epsilon>0$ such that $B_{d}(x,\epsilon)\subseteq B$. $B_d(x,\epsilon)=(x-\epsilon,x+\epsilon)$, which is [[Open Set]] in $\mathbb{R}$, so the [[Order Topology]] on $\mathbb{R}$ is [[Finer]] than the [[Euclidean Topology]] by the [[Finer Bases Lemma]]. 
 > 
 > Product of metrics is metric of product:
-> By the [[Basis for the Product Topology Theorem]], a [[Basis]] for the [[Product Topoplogy]] on $\mathbb{R}^n$ is the collection $\mathcal{B}$ of sets $\prod B_\rho(x_{i},\epsilon_{i})$ where $x_{i}\in \mathbb{R}$. A [[Basis]] for the [[Metric Topology]] on $\mathbb{R}^n$ is the collection $\mathcal{B}'$ of [[Ball]]s $B_{\rho}(\mathbf{x},\epsilon)$, where $\mathbf{x}\in \mathbb{R}^n$. Let $\mathbf{x}\in \mathbb{R}^n$ be given. Let $B\in \mathcal{B}$ be given with $\mathbf{x}\in B$. Pick $\epsilon>0$ such that $\forall i : B_{\rho}(x_{i},\epsilon)\subseteq B_i$. Then, 
+> By the [[Basis for the Product Topology Theorem]], a [[Basis]] for the [[Product Topology]] on $\mathbb{R}^n$ is the collection $\mathcal{B}$ of sets $\prod B_\rho(x_{i},\epsilon_{i})$ where $x_{i}\in \mathbb{R}$. A [[Basis]] for the [[Metric Topology]] on $\mathbb{R}^n$ is the collection $\mathcal{B}'$ of [[Ball]]s $B_{\rho}(\mathbf{x},\epsilon)$, where $\mathbf{x}\in \mathbb{R}^n$. Let $\mathbf{x}\in \mathbb{R}^n$ be given. Let $B\in \mathcal{B}$ be given with $\mathbf{x}\in B$. Pick $\epsilon>0$ such that $\forall i : B_{\rho}(x_{i},\epsilon)\subseteq B_i$. Then, 
 > $B_{\rho}(\mathbf{x},\epsilon)\subseteq B$
-> As $B_{\rho}(\mathbf{x},\epsilon)\in \mathcal{B}'$, the [[Metric Topology]] on $\mathbb{R}^n$ is [[Finer]] than the [[Product Topoplogy]] on $\mathbb{R}^n$ by the [[Finer Bases Lemma]].
+> As $B_{\rho}(\mathbf{x},\epsilon)\in \mathcal{B}'$, the [[Metric Topology]] on $\mathbb{R}^n$ is [[Finer]] than the [[Product Topology]] on $\mathbb{R}^n$ by the [[Finer Bases Lemma]].
 > Let $B'\in \mathcal{B}'$ be given with $\mathbf{x}\in B'$. Then, for some $\epsilon > 0$
 > $\prod B_{i}=\prod B_{\rho}(x_i,\epsilon)\in \mathcal{B}$
-> [[therefore]] the [[Product Topoplogy]] is [[Finer]] than the [[Metric Topology]] on $\mathbb{R}^n$ by the [[Finer Bases Lemma]].
+> [[therefore]] the [[Product Topology]] is [[Finer]] than the [[Metric Topology]] on $\mathbb{R}^n$ by the [[Finer Bases Lemma]].
 > 
-> [[therefore]] The [[Metric Topology]]s induced by the [[Euclidean Metric]] and the [[Square Metric]] are the same as the [[Product Topoplogy]] of $\mathbb{R}^n$ under the [[Order Topology]].
+> [[therefore]] The [[Metric Topology]]s induced by the [[Euclidean Metric]] and the [[Square Metric]] are the same as the [[Product Topology]] of $\mathbb{R}^n$ under the [[Order Topology]].

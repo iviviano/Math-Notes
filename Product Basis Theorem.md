@@ -6,5 +6,5 @@ mathLink: Product Basis Theorem
 > If [[basis]] is a [[Basis]] for the [[Topology]] of $X$ and $\mathcal{C}$ is a [[Basis]] for the [[Topology]] $Y$, then the collection:
 > 	$\mathcal{D} = \{B\times C|B\in\mathcal{B}\text{ and } C\in\mathcal{C}\}$
 > 
-> is a [[Basis]] for the [[Product Topoplogy]] of $X$ and $Y$. 
+> is a [[Basis]] for the [[Product Topology]] of $X$ and $Y$. 
 

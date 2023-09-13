@@ -1,6 +1,6 @@
 ---
 tag: set theory
-mathLink: union under inverse image lemma
+mathLink: union under inverse image proposition
 ---
 > [!prop]
 > The [[Union]] behaves nicely under the [[Preimage]]:

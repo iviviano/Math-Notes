@@ -3,7 +3,7 @@ From Section 1.2: 5, 6
 
 >[!note] 7: Prove the [[Interior, Closure, and Boundary Proposition]] for [[Metric Space]]s
 >>[!proof] Proof of 1.
->>Let $A$ be [[Closed Set]]. Let $x\in A$. As $x\in A$ and $A$ is [[Closed Set]], $x$ is in all [[Closed Set]] [[Set]]s containing $A$, so $x\in\bar{A}$. Let $x\in\bar{A}$. Then, $x$ is in all [[Closed Set]] sets containing $A$. As $A$ is a [[Closed Set]] containing $A$, $x\in A$. [[therefore]] $A=\bar{A}$
+>>Let $A$ be [[Closed Set]]. Let $x\in A$. As $x\in A$ and $A$ is [[Closed Set]], $x$ is in all [[Closed Set]] [[Set]]s containing $A$, so $x\in\bar{A}$. Let $x\in\bar{A}$. Then, $x$ is in all [[Closed Set]] sets containing $A$. As $A$ is a [[Closed Set]] set containing $A$, $x\in A$. [[therefore]] $A=\bar{A}$
 >>Let $A=\bar{A}$. $\bar{A}$ is an [[Intersection]] of [[Closed Set]] sets, so it is [[Closed Set]]. [[therefore]] $A$ is [[Closed Set]].
 >
 >>[!proof] Proof of 2.
@@ -23,7 +23,18 @@ From Section 1.2: 5, 6
 >>As $X-O$ is [[closed Set]], this is the [[Compliment]] of the [[Closure]] of the [[Compliment]] of $A$, since $O\subseteq A$ [[iff]] $X-A\in X-O$. So,
 >>$$\text{int }A=X-\bigcap_{O\in \mathcal{O}}(X-O)=X-\text{cl}(X-O)$$
 >>
->>Let 
+>>Let $x\in \partial A$. Then, $X\in \text{cl }A$ and $x\in \text{cl }(X-A)$.
+>>Claim:
+>>$$X-\text{cl}(X-A)\supseteq \text{int }A$$ 
+>>Let $y\in \text{int }A$ be given. Then, if $U$ is any [[Open Set]] set contained in $A$, $X-U$ is a [[Closed Set]] set containing $X-A$. If $y\in U$, then $y\notin X-U$, so if $y\in \text{int }A$, then $y\notin \text{cl }(X-A)\implies y\in X-\text{cl}(X-A)$.
+>>As $x\in \text{cl }(X-A)$, then $x\notin X-\text{cl}(X-A)$. So, $x\notin \text{int }A$. $$\therefore \partial A\subseteq \text{cl }A-\text{int }A$$
+>>Claim: 
+>>$$X-\text{cl}(X-A)\subseteq \text{int }A$$ 
+>>Let $y\in X-\text{cl}(X-A)$. Then, if $C$ is any [[Closed Set]] [[Set]] containing $A$, then $y\notin C$, so $y\in X-C$, which is an [[Open Set]] contained in $A$. [[therefore]] $y\in \text{int }A$
+>> 
+>>Let $x\in \text{cl }A-\text{int }A$. Then, $x\in \text{cl }A$ and $x\notin \text{int }A$. [[therefore]] $x\notin X-\text{cl }(X-A)$, so $x\in \text{cl}(X-A)$. [[therefore]] $x\in \text{cl }A\cap \text{cl}(X-A)$.
+>>$$\therefore \text{cl }A-\text{int }A\subseteq\partial A$$
+>>
 >
 >>[!proof] Proof of 4.
 >>Let $x\in \text{cl }[\bigcup A_{k}]$. Then, $x$ is in every [[Closed Set]] set containing $\bigcup A_{k}$. If $C_{k}$ are [[Closed Set]] for each $k$ and $A_{k}\subseteq C_{k}$, then $\bigcup C_{k}$ is [[Closed Set]] and contains $\bigcup A_{k}$, so $x\in\bigcup C_{k}$.

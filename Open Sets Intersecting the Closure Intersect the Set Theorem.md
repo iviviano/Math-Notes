@@ -1,6 +1,6 @@
 ---
 tag: topology
-mathLink: open sets intersecting the closure intersect the set theorem
+mathLink: open sets intersecting the closure intersect the set
 ---
 > [!thm]
 > Let $A$ be a [[Subset]] of the [[Topological Space]] $X$.
@@ -9,7 +9,7 @@ mathLink: open sets intersecting the closure intersect the set theorem
 
 > [!proof]
 > 1. Suppose $x\in\bar{A}$. Then $x$ is in every [[Closed Set]] set containing $A$. So, if an [[Open Set]] set $U$ contains $x$, its [[Compliment]] does not contain $A$, so $U$ [[Intersects]] $A$.
-> Suppose every [[Open Set]] set containing $x$ [[Intersects]] $A$. Then, no [[Closed Set]] set containing $A$ does not contain $x$. Therefore, $x\in$ [[closure]]
+> Suppose every [[Open Set]] set containing $x$ [[Intersects]] $A$. Then, no [[Closed Set]] set containing $A$ does not contain $x$. Therefore, $x\in$ [[notation for closure]]
 > 
 > 2. Suppose $x\in\bar{A}$. Then, every [[Basis]] element containing $x$ is an [[Open Set]] set containing $x$, so it [[Intersects]] $A$ by (1). Suppose every [[Basis]] element $B$ containing $x$ [[Intersects]] $A$. Every open set containing $x$ contains a [[Basis]] element $B$ containing $x$. Therefore, every [[Open Set]] set containing $x$ [[Intersects]] $A$, so $x\in\bar{A}$ by (1)
 

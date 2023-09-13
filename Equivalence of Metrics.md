@@ -3,7 +3,7 @@ tag: topology
 mathLink: equivalent
 ---
 >[!def]
-Let $X$ be a [[Set]] and let $d,\rho$ be [[Metric]]s on $X$. Then, $d$ and $\rho$ are said to be *equivalent* if they define the same [[Converges]]nt [[Sequence]]s. Equivalently, $d$ and $\rho$ are equivalent if the identity [[Function]]:
+Let $X$ be a [[Set]] and let $d,\rho$ be [[Metric]]s on $X$. Then, $d$ and $\rho$ are said to be *equivalent* if they define the same [[Converges (Sequence)]]nt [[Sequence]]s. Equivalently, $d$ and $\rho$ are equivalent if the identity [[Function]]:
 $$i:(X,d)\rightarrow(X,\rho)$$ is a [[Homeomorphism]].
 
 >[!note]

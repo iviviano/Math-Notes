@@ -3,7 +3,7 @@ tag: topology
 mathLink: cauchy sequence converges $\implies$ sequence converges
 ---
 >[!prop]
->Let $(X,d)$ be a [[Metric Space]]. Then, if $\{x_{n}\}$ is a [[Cauchy Sequence]] [[Sequence]] in $X$, and some [[Subsequence]] of $\{x_{n}\}$ [[Converges]]s to $x\in X$, then $x_{n}\rightarrow x$.
+>Let $(X,d)$ be a [[Metric Space]]. Then, if $\{x_{n}\}$ is a [[Cauchy Sequence]] [[Sequence]] in $X$, and some [[Subsequence]] of $\{x_{n}\}$ [[Converges (Sequence)]]s to $x\in X$, then $x_{n}\rightarrow x$.
 
 >[!proof]
 >Let $\epsilon>0$ be given. Then, pick $N_{1}\in \mathbb{N}$ such that if $k\ge N_{1}$, 

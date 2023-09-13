@@ -41,7 +41,7 @@ As $F$ is [[Closed Set]], $X-F$ is [[Open Set]], so $Y\cap(X-F)$ is [[Open Set]]
 >$$B_{d}(x,\epsilon)\subseteq \text{int}\left[\bigcap A_{k}\right]\subseteq\bigcap A_{k}$$
 >So, $B_{d}(x,\epsilon)$ is contained in each $A_{k}$, a [[Neighborhood]] of $x$ is contained in $\bigcap A_k$.
 >[[therefore]] $\text{int}\left[\bigcap A_{k}\right]\subseteq\bigcap \text{int}A_{k}$. 
->Let $x\in\bigcap \text{int}A_{k}$ be given. For each $k$, pick $\epsilon>0$ such that 
+>Let $x\in\bigcap \text{int}A_{k}$ be given. For each $k$, pick $\epsilon_{k}>0$ such that 
 >$$B_{d}(x,\epsilon_{k})\subseteq A_k$$
 >Let
 >$$\epsilon=\min\{\epsilon_{k}:1≤k≤n\}$$

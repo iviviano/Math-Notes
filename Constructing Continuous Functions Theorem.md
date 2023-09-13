@@ -9,7 +9,14 @@ mathLink: contructing continuous functions theorem
 > 3. ([[Composition]]) If $f:X\rightarrow Y$ and $g:Y\rightarrow Z$ are [[Continuous]], then the map $f$ [[composition]] $g:X\rightarrow Z$ is [[Continuous]].
 > 4. ([[Restriction]] of the [[Domain]]) If $f:X\rightarrow Y$ is [[Continuous]], and if $A$ is a [[Subspace]] of $X$, then, the restricted function: $f|A: A\rightarrow Y$ is [[Continuous]].
 > 5. (Restricting or expanding [[Range]]) Let $f:X\rightarrow Y$ be [[Continuous]]. If $Z$ is a [[Subspace]] of $Y$ containing the [[Image]] set $f(X)$, then the [[Function]] $g:X\rightarrow Z$ obtained by contained by restricting the range of $f$ is [[Continuous]]. If $Z$ is a [[Topological Space]] having $Y$ as a [[Subspace]], then the [[Function]] $h:X\rightarrow Z$ obtained by expanding the [[Range]] of $f$ to $Z$ is [[Continuous]].
-> 6. (Local formulation of continuity) The map $f:X\rightarrow Y$ is [[Continuous]] if $X$ can be written as the [[Union]] of [[Open Set]] sets $U_\alpha$ such that $f|U_\alpha$ is [[Continuous]] for each $\alpha$.
+> 6. ([[Local]] formulation of continuity) The map $f:X\rightarrow Y$ is [[Continuous]] if $X$ can be written as the [[Union]] of [[Open Set]] sets $U_\alpha$ such that $f|U_\alpha$ is [[Continuous]] for each $\alpha$.
+> If $f,g:X \rightarrow \mathbb{R}$, define:
+> $$\begin{align}
+> (f\lor g)(x)&=\max\{f(x),g(x)\} \\
+> (g\land f)(x)&=\min\{f(x),g(x)\}\\
+> |f|(x)&=|f(x)|
+> \end{align}$$
+> 7. If $f,g$ are [[Continuous]], then so are $f\lor g,g\land f,|f|$.
 
 > [!proof]
 > 1. Let $V$ be a [[Open Set]] [[Subset]] of $Y$. Then, if $y_0\in V$, $f$[[inverse]]$(V) = X$, which is [[Open Set]] in $X$. Otherwise, $f$[[inverse]]$(V) = \emptyset$, which is [[Open Set]] in $X$. [[therefore]] $f$ is [[Continuous]].

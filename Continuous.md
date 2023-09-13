@@ -8,4 +8,4 @@ mathLink: continuous
 Note: 
 - Continuity depends not only on $f$ but on the [[Topology]]s of its [[Domain]] and [[Range]]. 
 - A function can also be [[Continuity at a Point]] $x\in X$.  
-- Continuity can also be defined in terms of the [[Preimage|Preimage]]s of [[Basis|Basis]] elements: [[Basis Formulation of Continuity]]. 
+- Continuity can also be defined in terms of the [[Preimage|Preimage]]s of [[Basis|Basis]] elements: [[Basis and Subbasis Formulation of Continuity]]. 

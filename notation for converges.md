@@ -3,5 +3,5 @@ tag: notation
 mathLink: $\rightarrow$
 ---
 > [!not]
-> Notation for [[Converges]]
+> Notation for [[Converges (Sequence)]]
 
