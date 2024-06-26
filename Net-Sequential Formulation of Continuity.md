@@ -3,7 +3,7 @@ tag: topology
 mathLink: net-sequential formulation of continuity
 ---
 >[!thm]
-Let $X,Y$ be [[Topological Space]]s. Let $f:X \rightarrow Y$ be a [[Function]]. Then, $f$ is [[Continuity at a Point]] $x\in X$ if whenever $\{x_{i}\}$ is a [[Net]] in $X$ and $x_{i} \rightarrow x$, $f(x_{i})\rightarrow f(x)$.
+Let $X,Y$ be [[Topological Space]]s. Let $f:X \rightarrow Y$ be a [[Function]]. Then, $f$ is [[Continuity at a Point]] $x\in X$ [[iff]] whenever $\{x_{i}\}$ is a [[Net]] in $X$ and $x_{i} \rightarrow x$, $f(x_{i})\rightarrow f(x)$.
 
 >[!thm] Theorem (for metric spaces)
 >Let $(X,d_{X}),(Y,d_{Y})$ be [[Metric Space]]s. Let $f:X \rightarrow Y$ be a [[Function]]. Then, $f$ is [[Continuity at a Point]] $x\in X$ [[iff]] whenever $\{x_{n}\}$ is a [[Sequence]] in $X$ and $x_{n}\rightarrow x$, $f(x_{n})\rightarrow f(x)$ in $Y$.
@@ -13,4 +13,4 @@ Suppose $f$ is [[Continuous]] at $x\in X$ and $\{x_{n}\}$ is a [[Sequence]] in $
 $$d_{Y}(f(x),f(x_{n}))<\epsilon$$
 so $f(x_{n})\rightarrow f(x)$.
 >
-Suppose the implication holds. Let $x\in X$ and suppose $f$ is not [[Continuity at a Point]] $x$. Pick $\epsilon>0$ such that for all $\delta>0$, there exists $x_{0}\in B_{d_{X}}(x,\delta)$ such that $d_{Y}(f(x),f(x_{0}))≥\epsilon$. Let $\{x_n\}$ be a [[Sequence]] in $X$ converging to $x$. Let $\delta=\frac{1}{n}$. Then, let $x_{n}\in B_{d_{X}}(x,\delta_{n})$ such that $f(x_{n})\notin B_{d_{Y}}(f(x),\epsilon)$. Clearly, $x_{n}\rightarrow x$, but $f(x_{n})$ does not converge to $f(x)$. This is a contradiction proving the reverse implication.
+Suppose the implication holds. Let $x\in X$ and suppose $f$ is not [[Continuity at a Point]] $x$. Pick $\epsilon>0$ such that for all $\delta>0$, there exists $x_{0}\in B_{d_{X}}(x,\delta)$ such that $d_{Y}(f(x),f(x_{0}))≥\epsilon$. Construct $\{x_n\}$ a [[Sequence]] in $X$ converging to $x$. Let $\delta=\frac{1}{n}$. Then, let $x_{n}\in B_{d_{X}}(x,\delta_{n})$ such that $f(x_{n})\notin B_{d_{Y}}(f(x),\epsilon)$. Clearly, $x_{n}\rightarrow x$, but $f(x_{n})$ does not converge to $f(x)$. This is a contradiction proving the reverse implication.

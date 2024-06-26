@@ -17,12 +17,13 @@ mathLink: contructing continuous functions theorem
 > |f|(x)&=|f(x)|
 > \end{align}$$
 > 7. If $f,g$ are [[Continuous]], then so are $f\lor g,g\land f,|f|$.
+> 8. Expanding the [[Domain]]: [[Tietze's Expansion Theorem]]
 
 > [!proof]
 > 1. Let $V$ be a [[Open Set]] [[Subset]] of $Y$. Then, if $y_0\in V$, $f$[[inverse]]$(V) = X$, which is [[Open Set]] in $X$. Otherwise, $f$[[inverse]]$(V) = \emptyset$, which is [[Open Set]] in $X$. [[therefore]] $f$ is [[Continuous]].
-> 2. For any [[Subset]] $B$ of $X$, $j$[[inverse]]$(B) = B\cap A$. Therefore, if $V$ is [[Open Set]] in $X$, $j$[[inverse]]$(V) = A\cap V$ is [[Open Set]] in $A$, so $j$ is [[Continuous]].
-> 3. Let $W$ be an [[Open Set]] in $Z$. Pick $V$ [[Open Set]] in $Y$ such that $g$[[inverse]]$(W) = V$. Pick $U$ [[Open Set]] in $X$ such that $f$[[inverse]]$(V) = U$. Then, $(f$[[composition]]$g)$[[inverse]]$(W) = U$, so the [[Composition]] if [[Continuous]].
-> 4. $f|A = f$ [[composition]] $j$, which are both continuous (2.), so $f|A$ is [[Continuous]] by (3.)
+> 2. For any [[Subset]] $B$ of $X$, $j$[[notation for inverse]]$(B) = B\cap A$. Therefore, if $V$ is [[Open Set]] in $X$, $j$[[notation for inverse]]$(V) = A\cap V$ is [[Open Set]] in $A$, so $j$ is [[Continuous]].
+> 3. Let $W$ be an [[Open Set]] in $Z$. Pick $V$ [[Open Set]] in $Y$ such that $g$[[notation for inverse]]$(W) = V$. Pick $U$ [[Open Set]] in $X$ such that $f$[[notation for inverse]]$(V) = U$. Then, $(f$[[notation for composition]]$g)$[[notation for inverse]]$(W) = U$, so the [[Composition]] is [[Continuous]].
+> 4. $f|A = f$ [[notation for composition]] $j$, which are both continuous (2.), so $f|A$ is [[Continuous]] by (3.)
 > 5. Let $V$ be [[Open Set]] in $Y$. 
 > idea: preimage($V\cap Z$) = preimage($V$)
 > idea: preimage($V$) = preimage($V\cap Y$)

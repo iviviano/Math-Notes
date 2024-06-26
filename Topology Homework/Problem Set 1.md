@@ -3,6 +3,7 @@ Topology <br>
 Problem Set 1 <br>
 Isaac Viviano
 </p>
+
 ---
 
 I will use the following proposition to prove proposition 1.1.5, which I do not think is in the book.

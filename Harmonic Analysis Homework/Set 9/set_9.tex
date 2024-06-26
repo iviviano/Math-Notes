@@ -1,0 +1,369 @@
+\documentclass[12pt, reqno]{amsart}
+
+%\usepackage{upgreek}
+\usepackage[margin=3.5 cm]{geometry}
+\usepackage{graphicx,mathabx,hyperref}
+\usepackage{color}
+%\usepackage{subfigure}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}          %theorem without number
+\newtheorem{prop}{Proposition}[section]
+\newtheorem*{prop*}{Proposition}  % proposition without number
+\newtheorem{coro}{Corollary}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conj}{Conjecture}[section]
+\newtheorem{obs}{Observation}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{xca}[theorem]{Exercise}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+%\numberwithin{equation}
+
+%    Absolute value notation
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\newcommand{\ud}{\mathrm{d}}
+
+\begin{document}
+
+\title[Math 357 - Harmonic Analysis]{Problem set no. 9 - Isaac Viviano}
+
+
+\begin{titlepage}
+    \maketitle
+
+    I affirm that I have adhered to the Honor Code in this assignment.
+
+    Isaac Viviano
+\end{titlepage}
+
+blank
+\newpage
+
+\section*{}
+
+% {\bf{Only the problems marked as ``{\em{mandatory problems}}'' are to be turned in as part of this week's problem set.}} Any remaining problems are {\em{recommended}}, but you do not need to turn them in. 
+
+% For the recommended problems, I suggest to just think about a strategy, possibly jotting down some rough ideas, but only work out the details if you have extra time at your disposal. {\bf{As stated in the syllabus, you are allowed to use the results of recommended problems (even if you do not prove them) as well as any of the problems from previous sets.}} Just make sure to clearly reference them in your work. 
+
+% \vspace{0.2 cm}
+% {\underline{\bf{Mandatory problems:}}} Problem 1, 2, 3(b)
+
+% \vspace{0.1 cm}
+% {\bf{From the above mandatory problems, you have to turn in all mandatory problems written up using TeX.}} 
+% \vspace{0.1 cm}
+
+% \vspace{0.2 cm}
+% {\underline{\bf{Recommended problems:}}} Problem 3(a)
+
+% \vspace{0.2 cm}
+% {\underline{NOTE:}} Even though you do not have to do the recommended problems, you are explicitly allowed ({\tiny{and should consider to}}) use their results in your work; as with all other results you are using, just make it clear by referencing appropriately what you use; see also the section ``homework'' in the syllabus.
+
+% \vspace{0.2 cm}
+% In the following, I will use [CM] for my book manuscript and [DJB] for David J. Benson's text.
+
+\section{Problems:} 
+
+\begin{itemize}
+
+\item {\bf{Problem 1 - $\mathcal{L}^1$-Functions \& Schwartz Functions:}} 
+
+\vspace{0.1 cm}
+\begin{itemize}
+\item[(a)] 
+
+\begin{prop}
+If $f: \mathbb{R} \to \mathbb{C}$ is an $\mathcal{L}^1$-function, then the improper Riemann integral $\int_{-\infty}^{+\infty} f(t) ~\ud t$ always exists. 
+\end{prop}
+
+\begin{proof}
+    Suppose $f\in\mathcal{L}^{1}$. That is, $$\int_{-\infty}^{\infty}|f(t)|\ dt<\infty$$Since the integral converges, we have both 
+    \begin{align*}
+        \int_{0}^{\infty}|f(t)|\ dt&< \infty\\
+        \int_{-\infty}^{0}|f(t)|\ dt&< \infty
+        \end{align*}
+        Note that sequence convergence always implies Cauchy sequence. Let $\epsilon>0$ be given and pick $N_{-},N_{+}\in \mathbb{N}$ such that
+        \begin{align*}
+        \left|\int_{0}^{R}|f(t)|\ dt-\int_{0}^{S}|f(t)|\ dt\right|<\epsilon,\quad \text{for all }R>S\ge N_{+}\\
+        \left|\int_{-R}^{0}|f(t)|\ dt-\int_{-S}^{0}|f(t)|\ dt\right|<\epsilon,\quad \text{for all }R>S\ge N_{-}\\
+        \end{align*}
+        For $R>S\ge N_{+}$, we have
+        \begin{align*}
+        \left|\int_{0}^{R}f(t)\ dt-\int_{0}^{S}f(t)\ dt\right|&= \left|\int_{S}^{R}f(t)\ dt\right|\\
+        &\le \int_{S}^{R}|f(t)|\ dt\\
+        &= \underbrace{\int_{0}^{R}|f(t)|\ dt-\int_{0}^{S}|f(t)|\ dt}_{\ge0}\\
+        &= \left|\int_{0}^{R}|f(t)|\ dt-\int_{0}^{S}|f(t)|\ dt\right|\\
+        &< \epsilon
+        \end{align*}
+        and similarly for $R>S\ge N_{-}$, we have 
+        \begin{align*}
+        \left|\int_{-R}^{0}f(t)\ dt-\int_{-S}^{0}f(t)\ dt\right|&= \left|\int_{-R}^{-S}f(t)\ dt\right|\\
+        &\le \int_{-R}^{-S}|f(t)|\ dt\\
+        &= \underbrace{\int_{-R}^{0}|f(t)|\ dt-\int_{-S}^{0}|f(t)|\ dt}_{\ge0}\\
+        &= \left|\int_{-R}^{0}|f(t)|\ dt-\int_{-S}^{0}|f(t)|\ dt\right|\\
+        &< \epsilon
+        \end{align*}
+        This shows that both $\int_{0}^{R}f(t)\ dt$ and $\int_{-R}^{0}f(t)\ dt$ are Cauchy sequences in $\mathbb{R}$. Since $\mathbb{R}$ is complete, Cauchy implies convergence. Thus, the improper Riemann integral of $f$ converges. 
+\end{proof}
+
+% \vspace{0.1 cm}
+% {\underline{Hint:}} Use the analoge of the Cauchy criterion for sequences ({\tiny{to see this analogy, think of $R$ as chosen from natural numbers}}) to prove that both the limits
+% \begin{align} \label{eq_improper-1}
+% \lim_{R \to +\infty} \int_0^R f(t) ~\ud t ~\mbox{, } \lim_{R \to +\infty} \int_{-R}^0 f(t) ~\ud t ~\mbox{}
+% \end{align}
+% exist: specifically, show that if $f \in \mathcal{L}^1$, then for each $\epsilon > 0$, there exists $R_0 > 0$ such that for all $R,S \in \mathbb{R}$ satisfying $S \geq R \geq R_0$, one has
+% \begin{equation} \label{eq_cauchy-cond}
+% \left\vert \int_R^S f(t) ~\ud t \right\vert < \epsilon ~\mbox{.}
+% \end{equation}
+% Make sure to explain how specifically (\ref{eq_cauchy-cond}) relates to a Cauchy condition for the limits in (\ref{eq_improper-1})
+
+\vspace{0.1 cm}
+\item[(b)] 
+
+\begin{prop}
+    If $f\in\mathcal{S}(\mathbb{R;C})$, then $f\in\mathcal{L}^1$.
+\end{prop}
+
+
+\begin{proof}
+    Let $f\in\mathcal{S}(\mathbb{R};\mathbb{C})$ and let $$C_{m,n}:=\sup_{x\in \mathbb{R}}|x^{m}f^{(n)}(x)|$$
+Let $1<R\in \mathbb{R}$ be given. Estimate \begin{align*}
+\int_{-R}^{R}|f(x)|\ dx&= \underbrace{\int_{-1}^{1}|f(x)|\ dx}_{:=C\in \mathbb{R}}+\int_{[-R,R]\setminus(-1,1)}|f(x)|\ dx\\
+&= C+\int_{[-R,R]\setminus(-1,1)} \frac{1}{x^{2}}\underbrace{|x^{2}f(x)|}_{\le C_{2,0}}\ dx\\
+&\le C+ C_{2,0}\int_{[-R,R]\setminus(-1,1)} \frac{1}{x^{2}}\ dx\\
+&= C+2C_{2,0}\int_{1}^{R} \frac{1}{x^{2}}\ dx\\
+&= C+2C_{2,0} \left(\frac{-1}{x}\bigg|_{1}^{R}\right)\\
+&= C+ 2C_{2,0}\left(1- \frac{1}{R}\right)
+\end{align*}
+Thus, $$\lim_{R\rightarrow \infty}\int_{-R}^{R}|f(x)|\ dx\le\sup_{R>1}\left(C+2C_{2,0}\left(1- \frac{1}{R}\right)\right)= C+2C_{2,0}<\infty$$
+This shows that the Cauchy principal value and thus also the improper Riemann integral of $|f|$ is finite. So, $f\in\mathcal{L}^{1}$.
+\end{proof}
+
+% Recall the definition of the class of Schwartz functions $\mathcal{S}(\mathbb{R}; \mathbb{C})$ from set 7, problem 4. Show that if $f \in \mathcal{S}(\mathbb{R}; \mathbb{C})$, then $f$ is an $\mathcal{L}^1$-function.
+
+\end{itemize}
+
+\vspace{0.2 cm}
+\item {\bf{Problem 2 - Approximate Identities on $\mathbb{R}$:}} 
+
+\vspace{0.1 cm}
+\begin{itemize}
+% \item[(a)] Read Section 9.3 in [CM] again; this was also the reading assignment for class on Friday 04/19. {\em{There is nothing to turn in here.}} The following four questions in this problem follow up on the reading.
+
+\vspace{0.1 cm}
+\item[(b)] %From the reading for part (a), recall the definition of $\mathcal{C}^k$-approximate identities on $\mathbb{R}$ ($\mathcal{C}^k$-$\mathbb{R}$AI) in [CM] Definition 9.9. As pointed out, $\mathcal{C}^k$-$\mathbb{R}$AIs are the analogs of periodic approximate identities which played a key role in our treatment of Fourier series; see [CM] Section 3.4. Prove the main approximation theorem for $\mathcal{C}^k$-$\mathbb{R}$AIs given in Theorem 9.11 in [CM]. To do so, appropriately adapt the argument which we used to prove the analogous result for periodic functions ([CM] Theorem 3.12). {\bf{Follow the hint below.}}
+
+% \vspace{0.1 cm}
+% {\underline{Hint:}} First prove that the theorem holds for all continuous functions $g \in \mathcal{C}_c(\mathbb{R}; \mathbb{C})$ of {\em{compact support}}. This will make it easier to adapt the proof from the periodic case, since for $g \in \mathcal{C}_c(\mathbb{R}; \mathbb{C})$ the improper Riemann integral can be replaced by a proper Riemann integral over a closed interval which contains the support of $g$; see [CM], equations (9.28) -- (9.29).
+
+\begin{theorem}[Approximate Identities on $\mathbb{R}$] \label{RAI}
+    For $k\in \mathbb{N}_{0}\cup\{\infty\}$, let $\{\phi_{\lambda},\lambda>0\}$ be a $\mathcal{C}^{k}$-$\mathbb{R}AI$. Then, for every function $f\in\mathcal{C}_{\infty}(\mathbb{R};\mathbb{C})$, one has $$f\star \phi_{\lambda} \rightarrow f,\text{ uniformly as }\lambda \rightarrow \infty$$     
+\end{theorem}
+
+\vspace*{20 pt}
+
+Before proving Theorem \ref{RAI}, we prove the following lemma that extends the regularity of continuous functions that vanish at $\infty$.
+
+\begin{lemma} \label{vanish}
+    If $f$ is continuous and $f$ vanishes at $\infty$: 
+    \[
+        f\in\mathcal{C}_{\infty}(\mathbb{R;C})
+    \]
+    then $f$ is uniformly continuous.
+\end{lemma}
+
+\begin{proof}
+
+Let $f\in\mathcal{C}_{\infty}$, and let $\epsilon>0$ be given. Pick $R>0$ such that for all $|x|\ge R$, $$|f(x)|< \frac{\epsilon}{3}$$
+Since continuous functions are uniformly continuous on compact sets, pick $\delta>0$ such that for all $x,y\in[-R,R]$, $$|f(x)-f(y)|< \frac{\epsilon}{3}$$
+For all $x,y\in \mathbb{R}$ with $|x-y|<\delta$, we consider three cases without loss of generality. If $x,y\in[-R,R]$, we have $$|f(x)-f(y)|< \frac{\epsilon}{3}<\epsilon$$
+If $x\in[-R,R]$ and $y>R$, 
+\begin{align*}
+    |f(x)-f(y)|&\le |f(x)-f(R)|+|f(R)-f(y)|\\
+    &< \frac{\epsilon}{3}+|f(R)|+|f(y)|\\
+    &< \frac{\epsilon}{3}+ \frac{\epsilon}{3}+ \frac{\epsilon}{3}\\
+    &=\epsilon
+\end{align*}
+If $x,y\notin[-R,R]$, $$|f(x)-f(y)|\le |f(x)|+|f(y)|< \frac{\epsilon}{3}+ \frac{\epsilon}{3}\le\epsilon$$
+Thus, $f$ is uniformly continuous.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{RAI}]
+  
+    Let $f\in \mathcal{C}_{\infty}(\mathbb{R};\mathbb{C})$. Let $\epsilon>0$ be given. Since $f$ vanishes at $\infty$, it is uniformly continuous on $\mathbb{R}$. Pick $\delta>0$ such that for all $x,y\in \mathbb{R}$ with $|x-y|<\delta$, $|f(x)-f(y)|<\epsilon$.
+
+    \vspace*{10 pt}
+
+Since $f$ vanishes at $\infty$, pick $R>0$ such that $$\|f\|_{\infty;\mathbb{R}\setminus(-R,R)}\le \epsilon$$
+We also have that that the continuous $f$ is bounded on $[-R,R]$ by (EVT). Thus, $f$ is bounded with $$\|f\|_{\infty}=\max\{\|f\|_{\infty;[-R,R]} ,\underbrace{\|f\|_{\infty;\mathbb{R}\setminus(-R,R)}}_{\le \epsilon}\}<\infty$$
+Pick $\Lambda$ such that for all $\lambda>\Lambda$, $$\int_{\mathbb{R}\setminus(-\delta,\delta)}|\phi_{\lambda}(t)|\ dt<\epsilon$$
+
+\vspace*{10 pt}
+
+Let $C$ be the constant given by $\mathbb{R}AI$-2. 
+
+\vspace*{10 pt}
+
+If $\lambda>\Lambda$,
+\begin{align}
+\left|(\phi_{\lambda}\star f)(t)-f(t)\right|&= \left|\int_{-\infty}^{\infty}\phi_{\lambda}(s)\cdot f(t-s)\ ds-f(t)\right|\\
+&= \left|\int_{-\infty}^{\infty}\phi_{\lambda}(s)\cdot f(t-s)\ ds-f(t)\int_{-\infty}^{\infty}\phi_{\lambda}(s)\ ds\right|\\
+&= \left|\int_{-\infty}^{\infty}\phi_{\lambda}(s)(f(t-s)-f(t))\ ds \right|\\
+&= \left|\int_{\mathbb{R}\setminus(-\delta,\delta)}\phi_{\lambda}(s)(f(t-s)-f(t))\ ds+ \int_{-\delta}^{\delta}\phi_{\lambda}(s)(f(t-s)-f(t))\ ds\right|\\
+&\le \int_{\mathbb{R}\setminus(-\delta,\delta)}\left|\phi_{\lambda}(s)(f(t-s)-f(t))\right|\ ds+ \int_{-\delta}^{\delta}\left|\phi_{\lambda}(s)(f(t-s)-f(t))\right|\ ds\\
+&\le \int_{\mathbb{R}\setminus(-\delta,\delta)}|\phi_{\lambda}(s)|\cdot\underbrace{|(f(t-s)-f(t))|}_{\le2\|f\|_{\infty}}\ ds+ \int_{-\delta}^{\delta}|\phi_{\lambda}(s)|\cdot\underbrace{|(f(t-s)-f(t))|}_{<\epsilon}\ ds \label{unif}
+\\
+&\le 2\|f\|_{\infty}\underbrace{\int_{\mathbb{R}\setminus(-\delta,\delta)}|\phi_{\lambda}(s)|\ ds}_{<\epsilon}+ \epsilon\int_{-\delta}^{\delta}|\phi_{\lambda}(s)|\ ds\\
+&< 2\epsilon\|f\|_{\infty}+\epsilon\underbrace{\int_{-\infty}^{\infty}|\phi_{\lambda}|\ ds}_{\le C\text{, by }\mathbb{R}AI-2}\\
+&\le 2\epsilon\|f\|_{\infty}+\epsilon C
+\end{align}
+where the bound on $|f(t-s)-f(t)|$ in (\ref{unif}) comes from the uniform continuity of $f$ and $|s|<\delta$. Since this bound in (9) a constant (independent of $t$) multiple of $\epsilon$, $$f\star \phi_{\lambda}=\phi_{\lambda}\star f\rightarrow 0,\quad \text{uniformly in }t$$for all $f\in\mathcal{C}_{\infty}(\mathbb{R};\mathbb{C})$.
+\end{proof}
+
+\vspace{0.1 cm}
+\item[(c)] 
+% One of the most important sources of $\mathcal{C}^k$-$\mathbb{R}$AIs is given by {\bf{approximate delta functions}}, introduced in Example 9.12: suppose that $0 \leq \phi \in \mathcal{L}^1 \cap \mathcal{C}^k(\mathbb{R};\mathbb{C})$ satisfies
+% \begin{equation}
+% \int_{-\infty}^\infty \phi(x) ~\ud x = 1 ~\mbox{.}
+% \end{equation}
+% By verifying the three defining properties for $\mathcal{C}^k$-$\mathbb{R}$AIs in [CM] Definition 9.9, supply the details which show that the family
+% \begin{equation}
+% \phi_\epsilon := \epsilon^{-1} \phi (\epsilon^{-1} x) ~\mbox{, } 0 < \epsilon < 1 ~\mbox{,}
+% \end{equation}
+% forms a continuous $\mathbb{R}$AI so that Theorem 9.11 in [CM] holds with $\lambda = \epsilon^{-1}$, or equivalently, as $\epsilon \to 0^+$.
+
+\begin{prop}
+    For a $\mathcal{L}^1$ function $\phi$ satisfying 
+    \begin{equation}
+        \int_{-\infty}^\infty \phi(x) ~\ud x = 1
+    \end{equation}
+    the family of approximate delta functions 
+    \[
+        \phi_\epsilon := \epsilon^{-1} \phi (\epsilon^{-1} x) ~\mbox{, } 0 < \epsilon < 1 ~\mbox{,}
+    \]
+    forms an approximate identity on $\mathbb{R}$.
+\end{prop}
+
+\begin{proof}
+    Let $0<\phi\in\mathcal{L}^{1}\cap\mathcal{C}^{k}(\mathbb{R};\mathbb{C})$ satisfy $$\int_{-\infty}^{\infty}\phi(x)\ dx=1$$
+Note that $\phi$ real valued and non-negative implies $|\phi|=\phi$.
+\begin{itemize}
+
+\item[$\mathbb{R}AI-1$:] \begin{align*}
+\int_{-\infty}^{\infty}\phi_{\epsilon}(x)\ dx&= \int_{-\infty}^{\infty} \frac{1}{\epsilon}\phi\left( \frac{1}{\epsilon}x\right)\ dx\\
+&= \int_{-\infty}^{\infty}\phi(t)\ dt\quad(\text{change variables }t= \frac{x}{\epsilon})\\
+&= 1
+\end{align*}
+
+\item[$\mathbb{R}AI-2$:] Since $|\phi|=\phi$, $$\phi_{\epsilon}(x)=\frac{1}{\epsilon}\phi\left( \frac{1}{\epsilon}x\right)=\left| \frac{1}{\epsilon}\phi\left( \frac{1}{\epsilon}x\right)\right|=\left|\phi_{\epsilon}\right|$$Thus, $\mathbb{R}AI-2$ follows from $\mathbb{R}AI-1$ by Remark 9.10 (2) of [CM].
+
+\item[$\mathbb{R}AI-3$:] Since $\phi\in\mathcal{L}^{1}$, pick $R>0$ such that $$\int_{\mathbb{R}\setminus(-R,R)}\phi(x)\ dx<\epsilon$$
+If $\epsilon<1$, we have 
+\begin{align}
+\int_{\mathbb{R}\setminus(-R,R)}\phi_{\epsilon}(x)\ dx&= \int_{-\infty}^{-R} \frac{1}{\epsilon}\phi\left( \frac{1}{\epsilon}x\right)dx+\int_{R}^{\infty} \frac{1}{\epsilon}\phi\left( \frac{1}{\epsilon}x\right)\ dx\\
+&= \int_{-\infty}^{- \frac{R}{\epsilon}}\phi(t)\ dt+\int_{\frac{R}{\epsilon}}^{\infty}\phi(t)\ dt\quad(\text{change variables }t= \frac{x}{\epsilon})\\
+&\le \int_{-\infty}^{R}\phi(t)\ dt+\int_{R}^{\infty}\phi(t)\ dt \label{c}
+\\
+&= \int_{\mathbb{R}\setminus(-R,R)}\phi(t)\ dt\\
+&< \epsilon
+\end{align}
+where the monotonicity of the integrals in (\ref{c}) holds for the non-negative real-valued function $\phi$.
+
+\end{itemize}
+\end{proof}
+
+\vspace{0.1 cm}
+\item[(d)] %From the reading in part (a), recall item (1) of Remark 9.8 in [CM] about the supposed asymmetry in the definition of convolutions on $\mathbb{R}$ (one factor is assumed to be in $\mathcal{L}^1$, the other in $\mathcal{L}^\infty$.) To understand the origin, show that $\mathcal{L}^1$ is not closed with respect to multiplication by giving an example of an $\mathcal{L}^1$-function $f: \mathbb{R} \to \mathbb{C}$ whose square $f^2$ is not in $\mathcal{L}^1$.
+
+\begin{prop}
+    The function $f:\mathbb{R}\to\mathbb{R}$ defined by
+    \begin{equation} \label{f}
+        f(x):=\begin{cases}
+         \sqrt{n} & x\in \left[n,n+ \frac{1}{n^ 2}\right]\text{ for some }n\in \mathbb{N}_{0} \\
+        0 & \text{otherwise}
+        \end{cases}
+    \end{equation}
+    satisfies $f\in\mathcal{L}^1$ but $f^2\notin\mathcal{L}^1$.
+\end{prop}
+
+\begin{proof}
+    We see $$\int_{-\infty}^{0}f(x)\ dx=0$$
+For $n\in \mathbb{N}$, we see, $$\int_{0}^{n}f(x)\ dx= \sum_{k=0}^{n-1} \frac{\sqrt{k}}{k^{2}}=\sum_{k=0}^{n-1} \frac{1}{k^{\frac{3}{2}}}$$which converges as $n \rightarrow \infty$, since it is a $p$ series with $p>1$. Thus, $|f|=f$ has convergent improper Riemann integrals and $f\in\mathcal{L}^{1}$
+
+\vspace*{10 pt}
+
+However, for $n\in \mathbb{N}$, $$\int_{0}^{n}(f(x))^{2}\ dx=\sum_{k=0}^{n-1} \frac{k}{k^{2}}=\sum_{k=0}^{n-1} \frac{1}{k}$$which diverges as $n \rightarrow \infty$, since it is the harmonic series. Thus, $f^{2}\notin\mathcal{L}^{1}$. 
+\vspace*{10 pt}
+
+In particular, we have shown that $f,g\in\mathcal{L}^1$ is not sufficient for $f\star g$ to converge.
+\end{proof}
+
+\end{itemize}
+
+
+\vspace{0.2 cm}
+
+\item {\bf{Problem 3 - $\alpha$-comma Meantone Temperaments:}} 
+% Our discussion of the quarter-comma mean-tone temperament in class on 04/15 (see also the handout ``{\em{Just Intonation, Meantone temperament, Wendy Carlos Scales}}'' posted in blackboard/Course Material/week 10) can be generalized by defining the {\bf{$\alpha$-comma mean-tone temperament}}: if $g = \log_2(3/2)$ denotes the generator of the Pythagorean tuning (=pure fifth), for $\alpha \in [0,1) \cap \mathbb{Q}$ (rational!), define the generator of the $\alpha$-comma mean-tone temperament by
+% \begin{equation} \label{eq_alphaMT}
+% g_\alpha = g - \alpha ~\epsilon_s ~\mbox{,}
+% \end{equation}
+% where $\epsilon_s$ is the syntonic comma (in the logarithmic scale):
+% \begin{equation}
+% \epsilon_s = \log_2(81/80) 
+% \end{equation}
+
+\vspace{0.1 cm}
+\begin{itemize}
+% \item[(a)] Show that for each (rational) $\alpha$, $g_\alpha$ is irrational. 
+
+% \vspace{0.1 cm}
+\item[(b)] %On p. 188 of [DJB] Section 5.12 (see also the table on p. 19 of the slides on meantone temperament in above-mentioned handout from class), it is mentioned that the value $\alpha = 1/11$ gives an excellent approximation of the 12-tone equal temperament. This was discovered by Johann P. Kirnberger in ``{\em{Die Kunst des reinen Satzes in der Musik}},'' 2nd part, 3rd division, p. 197f, 1779. 
+
+% \vspace{0.1 cm}
+% Rationalize this choice using continued fractions, based on the hint below.
+
+% \vspace{0.1 cm}
+% {\underline{Hint:}} Show that the 12-tone equal temperament would correspond to an {\em{irrational}} value of $\alpha$ in (\ref{eq_alphaMT}) given by
+% \begin{equation}
+% \alpha_{\mathrm{ET}} := \dfrac{g - 7/12}{\epsilon_s} ~\mbox{.}
+% \end{equation}
+% Then, compute the first two convergents $p_1/q_1$ and $p_2/q_2$ of $\alpha_{\mathrm{ET}}$ {\bf{by hand}}. 
+
+For the mean-tone temperament, $g_{\alpha}= \frac{7}{12}$ ([CM] (8.41)), so 
+\begin{align*}
+&g_{\alpha}= g-\alpha \epsilon_{s}\\
+&\iff \alpha= \frac{g-g_{\alpha}}{\epsilon_{s}}= \frac{g-7/12}{\epsilon_{s}}\\
+\end{align*}
+Compute the first couple continued fraction approximants:
+\begin{align*}
+\alpha&= .09090368\ldots\\
+a_{0}&= \lfloor \alpha\rfloor= 0\\
+x_{1}&= \frac{1}{\alpha-a_{0}}=11.0006548\ldots\\
+a_{1}&= \lfloor x_{1}\rfloor=11\\
+\alpha_{1}&= a_{0}+ \frac{1}{a_{1}}= \frac{1}{11}\\
+r_{1}&= x_{1}-a_{1}=.00065477\ldots\\
+x_{2}&= \frac{1}{r_{1}}=1527.25201\ldots\\
+a_{2}&= \lfloor x_{2}\rfloor =1527\\
+\alpha_{2}&= a_{0}+ \frac{1}{a_{1}+\frac{1}{a_{2}}}= \frac{1527}{16798} 
+\end{align*}
+The first continued fraction approximant $\frac{1}{11}$ is a very good approximant because of the huge jump in denominators from $11$ to $16798$. Also, a scale of 16798 tones would be impractical.
+
+\end{itemize}
+
+
+
+\end{itemize}
+
+\end{document}
+
+%------------------------------------------------------------------------------
+% End of journal.tex
+%------------------------------------------------------------------------------

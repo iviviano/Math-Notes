@@ -1,0 +1,489 @@
+\documentclass[12pt, reqno]{amsart}
+
+%\usepackage{upgreek}
+\usepackage[margin=3.5 cm]{geometry}
+\usepackage{graphicx, mathabx}
+\usepackage{color}
+%\usepackage{subfigure}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}          %theorem without number
+\newtheorem{prop}{Proposition}[section]
+\newtheorem*{prop*}{Proposition}  % proposition without number
+\newtheorem{coro}{Corollary}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conj}{Conjecture}[section]
+\newtheorem{obs}{Observation}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{xca}[theorem]{Exercise}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+%\numberwithin{equation}
+
+%    Absolute value notation
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\newcommand{\ud}{\mathrm{d}}
+
+\begin{document}
+
+\title[Math 357 - Harmonic Analysis]{Problem set no. 10 (due on Wednesday, May 08 at 1:30 pm ET (beginning of class))}
+
+\begin{titlepage}
+    
+\maketitle
+
+I affirm that I have adhered to the Honor Code in this assignment.
+
+Isaac Viviano
+\end{titlepage}
+
+blank
+\newpage
+
+% \section*{}
+% {\bf{Only the problems marked as ``{\em{mandatory problems}}'' are to be turned in as part of this week's problem set.}} Any remaining problems are {\em{recommended}}, but you do not need to turn them in. 
+
+% For the recommended problems, I suggest to just think about a strategy, possibly jotting down some rough ideas, but only work out the details if you have extra time at your disposal. {\bf{As stated in the syllabus, you are allowed to use the results of recommended problems (even if you do not prove them) as well as any of the problems from previous sets.}} Just make sure to clearly reference them in your work. 
+
+% \vspace{0.2 cm}
+% {\underline{\bf{Mandatory problems:}}} problem 1; problem 3; problem 4
+
+% \vspace{0.1 cm}
+% {\bf{From the above mandatory problems, you have to turn in all mandatory problems written up using TeX.}} 
+% \vspace{0.1 cm}
+
+% \vspace{0.2 cm}
+% {\underline{\bf{Recommended problems:}}} problem 2
+
+% \vspace{0.2 cm}
+% {\underline{NOTE:}} Even though you do not have to do the recommended problems, you are explicitly allowed ({\tiny{and should consider to}}) use their results in your work; as with all other results you are using, just make it clear by referencing appropriately what you use; see also the section ``homework'' in the syllabus.
+
+% \vspace{0.2 cm}
+
+% In the following, I will use [CM] for my book manuscript and [DJB] for David J. Benson's text.
+
+\section{Problems:} 
+
+\begin{itemize}
+
+\vspace{0.2 cm}
+\item {\bf{Problem 1:}} %The purpose of this problem is to establish that while the Fourier inversion theorem is in general {\underline{FALSE}} for merely {\em{continuous}} $\mathcal{L}^1$-functions, the Fourier transform still uniquely determines continuous functions, i.e., one has:
+
+
+% Theorem \ref{thm_uniqueness} will follow as a consequence of a {\bf{continuum analogue of Fej\`er's theorem}}, namely:
+
+% To prove Theorem \ref{thm_fejercontinuum}, you will use approximate delta functions (as defined in [CM] Example 9.12) and the main result on $\mathbb{R}$AI stated in [CM] Theorem 9.11 (which you proved in set 9, problem 2b). 
+
+\vspace{0.1 cm}
+\begin{itemize}
+\item[(a)] As a first step, define
+
+\begin{prop}
+    The function $K$ defined by 
+
+\begin{equation}
+K(x):= \int_{-1}^1 \left(1 - \vert y \vert \right) \cdot \mathrm{e}^{2 \pi i x y} ~\ud y ~\mbox{, for $x \in \mathbb{R}$ ,}
+\end{equation}
+may be written as
+\begin{equation}
+K(x) = \left( \dfrac{\sin(\pi x)}{\pi x} \right)^2 ~\mbox{.}
+\end{equation}
+\end{prop}
+
+\begin{proof}
+    \begin{align*}
+        K(x)&=  \int_{-1}^{1}(1-|y|)\cdot e^{2\pi ixy}\ dy\\
+        &= \int_{-1}^{0}(1-|y|)\cdot e^{2\pi ixy}\ dy+ \int_{0}^{1}(1-|y|)\cdot e^{2\pi ixy}\ dy\\
+        &= \int_{-1}^{0}(1+y)\cdot e^{2\pi ixy}\ dy+ \int_{0}^{1}(1-y)\cdot e^{2\pi ixy}\ dy\\
+        &\overset{\text{IBP}}{=} (1+y) \frac{e^{2\pi ixy}}{2\pi ix}\bigg|_{y=-1}^{0}-\int_{-1}^{0}\frac{e^{2\pi ixy}}{2\pi ix}\ dx\\
+        &\quad+ (1-y) \frac{e^{2\pi ixy}}{2\pi ix}\bigg|_{y=0}^{-1}+\int_{0}^{1}\frac{e^{2\pi ixy}}{2\pi ix}\ dx\\\\
+        &= \frac{1}{2\pi ix}- \frac{e^{2\pi ixy}}{(2\pi ix)^{2}}\bigg|_{y=-1}^{0}- \frac{1}{2\pi ix}+ \frac{e^{2\pi ixy}}{(2\pi ixy)^{2}}\bigg|_{y=0}^{1}\\
+        &= - \frac{1-e^{-2\pi ix}}{-(2\pi x)^{2}}+ \frac{e^{2\pi ix}-1}{-(2\pi x)^{2}}\\
+        &= \frac{2-e^{2\pi ix}-e^{-2\pi ix}}{(2\pi x)^{2}}\\
+        &= \frac{2-\Re \text{e}(e^{2\pi ix})}{(2\pi x)^{2}}\\
+        &= \frac{2-\cos 2\pi x}{(2\pi x)^{2}}\\
+        &= \frac{\sin^{2} \pi x}{(2\pi x)^{2}}\\
+        &= \left(\frac{\sin \pi x}{2\pi x}\right)^{2}
+        \end{align*}
+\end{proof}
+
+\vspace{0.1 cm}
+\item[(b)] %Assuming problem 2, i.e., that $\{K_\lambda ~\mbox{, } \lambda > 0 \}$ forms a $\mathcal{C}^\infty$-approximate delta function, first obtain Theorem \ref{thm_fejercontinuum} ({\em{this should be quick based on [CM] Theorem 9.11}}). Then use Theorem \ref{thm_fejercontinuum} to prove Theorem \ref{thm_uniqueness} for the special case that $f,g \in \mathcal{L}^1 \cap \mathcal{C}_\infty(\mathbb{R}; \mathbb{C})$ (continuous, vanishing at $\infty$). 
+
+\begin{theorem}[\bf{Continuous Analogue of Fejer's Theorem}] \label{thm_fejercontinuum}
+    Let $f \in \mathcal{L}^1 \cap \mathcal{C}_\infty(\mathbb{R}; \mathbb{C}))$, then one has
+    \begin{equation}
+    f(t) = \lim_{\lambda \to +\infty} \int_{-\lambda}^\lambda \left(1 - \dfrac{\vert \nu \vert}{\lambda} \right) \cdot  \widehat{f}(\nu) \mathrm{e}^{2 \pi i \nu t} ~\ud \nu ~\mbox{, for all $t \in \mathbb{R}$. }
+    \end{equation}
+    \end{theorem}
+
+\begin{proof}
+    Applying a change of variables, we find a more useful expression of $K_{\lambda}$: $$
+K_{\lambda}(x)=\lambda K(\lambda x)=\int_{-1}^{1}(1-|y|)e^{2\pi i \lambda xy}\ dy=\int_{-\lambda}^{\lambda}\left(1- \frac{|\nu|}{\lambda}\right)e^{2\pi i \nu x}\ d \nu
+$$
+Compute:
+\begin{align*}
+f\star K_{\lambda}&= \int_{-\infty}^{\infty}f(s)\cdot K_{\lambda}(t-s)\ ds\\
+&= \int_{-\infty}^{\infty}f(s)\int_{-\lambda}^{\lambda} \left(1- \frac{|\nu|}{\lambda}\right)e^{2\pi i \nu (t-s)}\ d \nu\ ds\\
+&\overset{\text{Fubini}}{=} \int_{-\lambda}^{\lambda} \left(1- \frac{|\nu|}{\lambda}\right)e^{2\pi i \nu t} \left(\underbrace{\int_{-\infty}^{\infty}f(s)~e^{-2\pi i \nu s}\ ds}_{=\widehat f(\nu)}\right)\ d \nu\\
+&= \int_{-\lambda}^{\lambda} \left(1- \frac{|\nu|}{\lambda}\right)\widehat f(\nu)~e^{2\pi i \nu t}\ d \nu
+\end{align*}
+Since $$\left|f(s) \left(1- \frac{|\nu|}{\lambda}\right) e^{2\pi i \nu t-s}\right|=\left|f(s)\right|\cdot \underbrace{\left(1- \frac{|\nu|}{\lambda}\right)}_{\le1}\cdot\underbrace{\left| e^{2\pi i \nu t-s}\right|}_{=1}\le |f(s)|$$
+we can apply Fubini because $f$ is a Schwartz function in $s$ and the $\lambda$ domain is compact. 
+
+\vspace*{10 pt}
+
+By problem 2, $K_{\lambda}$ is an approximate $\delta$ function and thus an $\mathbb{R}AI$ by Set 9, Problem 2 (c). Thus, the convolution $$
+f\star K_{\lambda}\rightarrow f,\text{ uniformly}
+$$
+by the Approximate Identities on $\mathbb{R}$ Theorem. So, \begin{align*}
+f(t)&= \lim_{\lambda \rightarrow \infty} f\star K_{\lambda}
+\end{align*}
+\end{proof}
+
+\begin{theorem}[{\bf{Uniqueness Theorem for the Fourier Transform}}]  \label{thm_uniqueness}
+    Suppose $f,g$ are $\mathcal{L}^1 \cap\mathcal{C}_\infty(\mathbb{R}; \mathbb{C})$, then one has
+    \begin{equation*}
+    \widehat{f} = \widehat{g} ~\Rightarrow f = g ~\mbox{.}
+    \end{equation*}
+\end{theorem}
+
+\begin{proof}
+    if $\widehat f=\widehat g$, 
+\begin{align*}
+(f-g)(t)&= \lim_{\lambda \rightarrow \infty}\int_{-\lambda}^{\lambda}\left(1- \frac{|\nu|}{\lambda}\right)\widehat {[f-g]}(\nu)~e^{2\pi i \nu t}\ d \nu\\
+&= \lim_{\lambda \rightarrow \infty}\int_{-\lambda}^{\lambda}\left(1- \frac{|\nu|}{\lambda}\right)[\widehat f-\widehat g](\nu)~e^{2\pi i \nu t}\ d \nu\\
+&= \lim_{\lambda \rightarrow \infty}\int_{-\lambda}^{\lambda}\left(1- \frac{|\nu|}{\lambda}\right)\cdot 0\cdot~e^{2\pi i \nu t}\ d \nu\\
+&= \lim_{\lambda\rightarrow \infty}0\\
+&= 0
+\end{align*}
+
+
+\end{proof}
+
+
+\end{itemize}
+
+% \vspace{0.2 cm}
+% \item {\bf{Problem 2:}} To show that the family of functions in (\ref{eq_problem3a_family}) forms a $\mathcal{C}^\infty$-approximate delta function, it suffices to verify that 
+% \begin{equation} \label{eq_problem4_norm}
+% \int_{-\infty}^{\infty} K(x) ~\ud x =  \int_{-\infty}^{\infty} \left( \dfrac{\sin(\pi x)}{\pi x} \right)^2 ~\ud x = 1 ~\mbox{.}
+% \end{equation}
+% Do exactly that. 
+
+% \vspace{0.1 cm}
+% {\underline{Hint:}} To prove (\ref{eq_problem4_norm}), note that since for all $n \in \mathbb{N}$, one has
+% \begin{equation}
+% \int_{-\infty}^{\infty} K(x) ~\ud x = \int_{-\infty}^{\infty} K_n(x) ~\ud x ~\mbox{,}
+% \end{equation}
+% it is enough to show that 
+% \begin{equation} \label{eq_problem4_key}
+% \lim_{n \to \infty} \int_{-\infty}^{\infty} K_n(x) ~\ud x = 1 ~\mbox{.}
+% \end{equation}
+% To show (\ref{eq_problem4_key}), use the properties of the Fej\`er kernel,
+% \begin{equation}
+% F_n(x):= \dfrac{1}{n} \left( \dfrac{\sin(n \pi x)}{\sin(\pi x)} \right)^2 ~\mbox{, } n \in \mathbb{N} ~\mbox{,}
+% \end{equation}
+% i.e. that $\{F_n ~,~ n \in \mathbb{N}\}$ is an approximate identity for periodic functions to prove that for $0 < \delta < \frac{1}{2}$, sufficiently small, one has
+% \begin{equation}
+% \left(\dfrac{\sin(\delta)}{\delta}\right)^2 \leq \dfrac{\int_{-\delta}^{\delta} K_n(x) ~\ud x}{\int_{-\delta}^{\delta} F_n(x) ~\ud x} \leq 1 ~\mbox{, for all $n \in \mathbb{N}$. }
+% \end{equation}
+
+\vspace{0.2 cm}
+\item {\bf{Problem 3 - Convolutions \& Products:}} %We know that the Fourier transform
+% \begin{equation}
+% \mathcal{F}: \mathcal{S}( \mathbb{R}; \mathbb{C}) \to \mathcal{S}( \mathbb{R}; \mathbb{C}) ~\mbox{, } \mathcal{F}(f) = \widehat{f} ~\mbox{,}
+% \end{equation}
+% is a {\bf{linear}} and {\bf{bijective map}} (inversion property), in particular, for all $\alpha, \beta \in \mathbb{C}$ and functions $f,g \in \mathcal{S}(\mathbb{R}; \mathbb{C})$, we have
+% \begin{equation}
+% \mathcal{F}[\alpha f + \beta g] = \alpha \mathcal{F}[f] + \beta \mathcal{F}[g] ~\mbox{.}
+% \end{equation}
+
+% Since $\mathcal{S}( \mathbb{R}; \mathbb{C})$ is also closed under multiplication, it is equally interesting to understand how the Fourier transform behaves under products: {\em{show that Fourier transform maps products to convolutions and vice versa}}, i.e., prove that for all $f,g \in \mathcal{S}(\mathbb{R}; \mathbb{C})$, one has
+
+\begin{prop}
+    For all functions $f,g\in\mathcal{S}(\mathbb{R;C})$, 
+\begin{align}
+\mathcal{F}[f \cdot g] = \widehat{f} \star \widehat{g} ~\mbox{, } \label{eq_FT_prod} \\
+\mathcal{F}[f \star g] = \widehat{f} \cdot \widehat{g} ~\mbox{. } \label{eq_FT_conv}
+\end{align}
+\end{prop}
+% To do so, first argue that by the Fourier inversion theorem it suffices to only prove (\ref{eq_FT_conv}) (explain why!). Then, prove (\ref{eq_FT_conv}) by an explicit computation. The latter will require using Fubini's theorem as stated in [CM] Theorem 9.23; make sure to {\bf{check that the hypotheses hold}}.
+
+\begin{proof}[Proof: (\ref{eq_FT_conv})$\implies$(\ref{eq_FT_prod})]
+    Suppose (\ref{eq_FT_conv}) and let $f,g\in\mathcal{S}(\mathbb{R};\mathbb{C})$. Note that $f\cdot g,f\star g\in\mathcal{S}(\mathbb{R};\mathbb{C})$. Define:
+$$h^{(-)}(x)=h(-x)$$for each $h\in\mathcal{S}(\mathbb{R};\mathbb{C})$. Note that $h^{(-)}\in\mathcal{S}(\mathbb{R};\mathbb{C})$.
+
+\begin{align*}
+\widehat h(\nu)&= \int_{-\infty}^{\infty}h(t)~e^{-2\pi i \nu t}\ dt\\
+&= -\int_{\infty}^{-\infty}h(-t)~e^{2\pi i \nu t}\ dt\\
+&= \int_{-\infty}^{\infty}h^{(-)}(t)~e^{2\pi i \nu t}\ dt\\
+&= \widecheck{h^{(-)}}(\nu)
+\end{align*}
+Also, note that $$(f\cdot g)^{(-)}=f^{(-)}\cdot g^{(-)}$$
+Compute:
+\begin{align*}
+\widehat f\star \widehat g&= \widecheck{f^{(-)}}\star\widecheck{g^{(-)}}\\
+&= \mathcal{F}^{-1}(\mathcal{F}(\widecheck{f^{(-)}}\star\widecheck{g^{(-)}}))\\
+&= \mathcal{F}^{-1}(f^{(-)}\cdot g^{(-)})\\
+&= \mathcal{F}^{-1}((f\cdot g)^{(-)})\\
+&= \mathcal{F}(f\cdot g)
+\end{align*}
+\end{proof}
+
+\begin{proof}[Proof: (\ref{eq_FT_conv})]
+\begin{align}
+        \mathcal{F}[f\star g](\nu)&= \int_{-\infty}^{\infty}(f\star g)(t)~e^{-2\pi i \nu t}\ dt\\
+        &= \int_{-\infty}^{\infty}e^{-2\pi i \nu t} \left[\int_{-\infty}^{\infty}f(s)\cdot g(t-s)\ ds\right]\ dt\\
+        &\overset{\text{Fubini}}{=} \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f(s)\cdot g(t-s)~e^{-2\pi i \nu t}\ dt\ ds \label{fubini}
+        \\
+        &= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}f(s)\cdot g(u)~e^{-2\pi i \nu(u+s)}\ du\ ds\quad(\text{change variables: }u=t-s)\\
+        &= \int_{-\infty}^{\infty}f(s)~e^{-2\pi i \nu s}\underbrace{\left[\int_{-\infty}^{\infty}g(u)~e^{-2\pi i \nu u}\ du\right]}_{=\widehat g(\nu)}\ ds\\
+        &= \widehat g(\nu)\cdot\underbrace{\int_{-\infty}^{\infty}f(s)~e^{-2\pi i \nu s}\ ds}_{=\widehat{f}(\nu)}\\
+        &= (\widehat f\cdot\widehat g)(\nu)
+        \end{align}
+        Note that (\ref{fubini}) we can apply Fubini's theorem for integration on $\mathbb{R}^{2}$, since the integrand satisfies an $\mathcal{L}^{1}$ bound:
+        $$
+        \left|e^{-2\pi i \nu t}f(s)\cdot g(t-s)\right|=\left|f(s)|\cdot |g(t-s)\right|
+        $$
+        because $f$ is Schwartz in $s$ and $g$ is Schwartz in $t$. 
+\end{proof}
+
+\vspace{0.2 cm}
+\item {\bf{Problem 4 - Uncertainty principle:}}
+\vspace{0.1 cm}
+% In class we proved the following version of the uncertainty principle: for every Schwartz function $f \in \mathcal{S}(\mathbb{R}; \mathbb{C})$ with $\Vert f \Vert_{\mathcal{L}^2(\ud t)} = 1$, one has:
+% \begin{equation} \label{eq_uncertainty}
+% \Vert f(t) \cdot t \Vert_{\mathcal{L}^2(\ud t)} ~ \Vert \nu \cdot \widehat{f}(\nu) \Vert_{\mathcal{L}^2(\ud \nu)} \geq \dfrac{1}{4 \pi} ~\mbox{.}
+% \end{equation}
+% In the following problem you will generalize the formulation of the uncertainty principle given in (\ref{eq_uncertainty}). 
+
+% In parts (a) and (b) below, you will continue to consider {\bf{Schwartz functions which are normalized}} so that $\Vert f \Vert_{\mathcal{L}^2(\ud t)} = 1$. Notice that by Plancherel, we then automatically have
+% \begin{equation}
+% \Vert \widehat{f} \Vert_{\mathcal{L}^2(\ud \nu)} = \Vert f \Vert_{\mathcal{L}^2(\ud t)} = 1 ~\mbox{.}
+% \end{equation}
+
+% \vspace{0.2 cm}
+\item[(a)] 
+
+\begin{prop}
+    The class of functions which minimize the uncertainty product is given by 
+    \[
+        f(t)=A\mathrm{e}^{-\pi|A|^4\frac{t^2}{2}}
+    \]
+    for parameter $A\in\mathbb{C}$. These functions satisfy
+    \[
+        w_t\cdot w_\nu=\frac{1}{4\pi}
+    \]
+\end{prop}
+
+\begin{proof}
+    The first inequality in the proof of the Uncertainty principle applies Cauchy Schwartz: $$
+    \|t\cdot f(t)\|_{\mathcal{L}^{2}(dt)}\cdot\| \frac{1}{2\pi i}\cdot \frac{df}{dt}(t)\|_{\mathcal{L}^{2}(dt)}\\
+    \ge \left|\left\langle t\cdot f(t), \frac{1}{2\pi i} \frac{df}{dt}(t)\right\rangle_{\mathcal{L}^{2}}\right|\\
+    $$
+    Here, equality holds if and only if the inner product functions are linearly dependent. That is, there exists a $\lambda\in \mathbb{C}$ such that
+    $$t\cdot f(t)=-\lambda f'(t)$$
+    By the general solution to the decay equation, we see that $$
+    f(t)=A\cdot e^{-\int \frac{t}{\lambda}dt}= A\cdot e^{-\frac{t^{2}}{2\lambda}}
+    $$for some $A\in \mathbb{C}$. 
+    
+    The second inequality in the Uncertainty principle proof reduced the modulus of a complex number by looking at the modulus of the real part. Equality holds here if and only if the imaginary part is 0:
+    \begin{equation} \label{im_zero}
+    \Im \text{m}(\langle t f(t),f'(t)\rangle)=0
+    \end{equation}
+    
+    Computing the LHS,
+    \begin{align*}
+    \Im \text{m}(\langle tf(t),f'(t))&= \frac{1}{2i}(\langle tf(t),f'(t)\rangle-\overline{\langle tf(t),f'(t)\rangle})\\
+    &= \frac{1}{2i}(\langle tf(t),f'(t)\rangle-\langle f'(t),tf(t)\rangle)\\
+    &= \frac{1}{2i}(\langle f(t),tf'(t)\rangle+\langle f(t),tf'(t)+f(t)\rangle)\\
+    &= \frac{1}{2i}(\langle f(t),f(t)+2tf'(t\rangle)\\
+    &= \frac{1}{2i}(\langle f(t),f(t)\rangle+\langle f(t),2tf'(t)\rangle)\\
+    &= \frac{1}{2i}\left(\|f\|_{\mathcal{L}^{2}}^{2}+\int_{-\infty}^{\infty}\overline{f(t)}\cdot2tf'(t)\ dt\right)\\
+    &= \frac{1}{2i}\left(1-\int_{-\infty}^{\infty}\overline{f(t)}\cdot \frac{2t^{2}}{\lambda}f(t)\ dt\right)\\
+    &= \frac{1}{2i}\left(1-\frac{2}{\lambda}\int_{-\infty}^{\infty} \underbrace{t^{2}|f(t)|^{2}}_{\ge0}\ dt\right)
+    \end{align*}
+    we see that (\ref{im_zero}) implies $$
+    \lambda= 2\int_{-\infty}^{\infty}t^{2}|f(t)|^{2}\ dt
+    $$so, $\lambda\in \mathbb{R}$ with $\lambda>0$. 
+    
+    Also, note the normalization condition: \begin{align*}
+    1&= \|f\|_{\mathcal{L}^{2}}^{2}\\
+    &= \int_{-\infty}^{\infty}|f(t)|^{2}\ dt\\
+    &= |A|^{2}\int_{-\infty}^{\infty} e^{- \frac{t^{2}}{\lambda}}\ dt\\
+    &= |A|^{2}\sqrt{\pi \lambda}\underbrace{\int_{-\infty}^{\infty} e^{-\pi u^{2}}\ du}_{=1}\quad(\text{change variables: }u= \frac{t}{\sqrt{\pi \lambda}})\\
+    &= |A|^{2}\sqrt{\pi \lambda}
+    \end{align*}
+    Where the real change of variables is allowed since we showed $\lambda>0$. So, $|A|^{2}= \frac{1}{\sqrt{\pi \lambda}}$. Since $\lambda>0$ we can write: $$\lambda= \frac{1}{\pi|A|^{4}}$$ 
+    Therefore, we have that the class of functions which minimize uncertainty is \begin{equation} \label{norm_gaus}
+    f(t)=Ae^{-\pi|A|^{4} \frac{t^{2}}{2}}
+    \end{equation}
+    where $A\in \mathbb{C}$ is a parameter. 
+    
+    Via explicit computation, we can verify that $f$ defined in (\ref{norm_gaus}) minimizes uncertainty. First compute the Fourier Transform with Gaussian invariance: $$
+    \widehat f(\nu) = \frac{1}{|A|^{2}}e^{\frac{-\pi \nu^{2}}{|A|^{4}}} 
+    $$
+    Noting that the standard deviation of a normal random variable with distribution: $$
+    g(x)= \frac{1}{\sigma \sqrt{2\pi}}e^{- \frac{x^{2}}{2\sigma^{2}}}
+    $$
+    is $\sigma$, we see \begin{align*}
+    w_{t}&= \frac{1}{\sqrt{2\pi}|A|^{2}}\\
+    w_{\nu}&= \frac{|A|^{2}}{\sqrt{2\pi}}
+    \end{align*}
+    for $f$ and thus, $$
+    w_{t}\cdot w_{\nu}= \frac{1}{4\pi}
+    $$
+     
+\end{proof}
+
+% For every inequality it is interesting to understand when the inequality becomes an equality. In the case of the uncertainty principle in (\ref{eq_uncertainty}), this means for which functions $f \in \mathcal{S}(\mathbb{R}; \mathbb{C})$ the inequality sign ``$\geq$'' in (\ref{eq_uncertainty}) becomes an equal sign. {\em{To start review the proof of the uncertainty principle (\ref{eq_uncertainty}) from class from Wednesday 05/01.}} 
+
+% Since (\ref{eq_uncertainty}) was proven using the Cauchy-Schwarz inequality, employ the general characterization of equality for the Cauchy-Schwarz inequality from problem 2 of set 5, to show that (\ref{eq_uncertainty}) becomes an equality {\bf{if and only if}} $f$ is a normalized Gaussian (in $\mathcal{L}^2$-norm), i.e., if and only if, $f$ has the form
+% \begin{equation}
+% f(t) = c ~\mathrm{e}^{-\pi t^2/2} ~\mbox{,}
+% \end{equation}
+% for some $c \in \mathbb{C}$ so that $\vert c \vert=1$. {\bf{A word of caution:}} the proof of the uncertainty principle (\ref{eq_uncertainty}) from class showed that the inequality sign is a result of {\em{two}} inequalities, one of which originates from Cauchy-Schwarz. Hence, analyzing when Cauchy-Schwarz produces an equality narrows down the possible candidates for minimizers in the uncertainty principle in (\ref{eq_uncertainty}). Using these possible candidates for $f$, the remaining inequality in the proof from class is best taken care of by an explicit computation.
+
+% \vspace{0.1 cm}
+% {\underline{Note:}} Recall the decay equation; see the document ``{\em{Short Intro to Differential Equations}}'' posted on blackboard, \texttt{CourseMaterial/week 1}. Also, to make sure that $f$ is normalized (in $\mathcal{L}^2$-norm), it will be useful to recall the value of the Gaussian integral:
+% \begin{equation}
+% \int_{-\infty}^{+\infty} \mathrm{e}^{- 2 b \pi t^2} \ud t = \dfrac{1}{\sqrt{2b}} ~\mbox{, for every $b > 0$ ,}
+% \end{equation}
+% which we derived in class (using multivariable calculus).
+
+\vspace{0.1 cm}
+\item[(b)] 
+
+For $f\in\mathcal{S}(\mathbb{R;C})$, define 
+
+\begin{align}
+    T_{\mathrm{avg}} & := \int_{-\infty}^{+\infty} \vert f(t) \vert^2 ~t ~\ud t \\
+    \nu_{\mathrm{avg}} &:= \int_{-\infty}^{+\infty} \vert \widehat{f}(\nu) \vert^2 ~\nu ~\ud \nu\\
+    w_t &:= \left\{ \int_{-\infty}^{+\infty} \left\vert t - T_{\mathrm{avg}} \right\vert^2 ~\vert f(t) \vert^2 ~\ud t \right\}^{1/2} = \Vert  f(t) \cdot (t -T_{\mathrm{avg}}) \Vert_{\mathcal{L}^2(\ud t)}  \\
+    w_\nu &:= \left\{ \int_{-\infty}^{+\infty} \left\vert \nu - \nu_{\mathrm{avg}} \right\vert^2 ~\vert \widehat{f}(\nu) \vert^2 ~\ud \nu \right\}^{1/2} = \Vert  \widehat{f}(\nu) \cdot (\nu -\nu_{\mathrm{avg}}) \Vert_{\mathcal{L}^2(\ud \nu)}
+\end{align}
+
+We have the following version of the Uncertainty Principle from class:
+
+\begin{theorem}[Uncertainty Principle for functions centered in time and frequency]
+    For all $f\in\mathcal{S}(\mathbb{R;C})$ with $T_{\mathrm{avg}}=\nu_{\mathrm{avg}}=0$, 
+    \[
+        w_t\cdot w_\nu\ge\frac{pi}{4}\]
+\end{theorem}
+
+We first extend to functions which may not be centered in the time domain before extending to all Schwartz functions.
+
+\begin{lemma}[Uncertainty Principle for functions centered in frequency] \label{uncertainty_lemma}
+    For all $f\in\mathcal{S}(\mathbb{R;C})$ with $\nu_{\mathrm{avg}}=0$, \[
+        w_t\cdot w_\nu\ge\frac{pi}{4}\]
+    
+\end{lemma}
+
+\begin{proof}
+    Let $f\in\mathcal{S}(\mathbb{R};\mathbb{C})$ with $\nu_\text{avg}=0$.
+
+\vspace*{10 pt}
+
+    Define $g:\mathbb{R}\rightarrow \mathbb{C}$ with $$g(t)=f(t+T_\text{avg})$$
+    Note that \begin{align*}
+    \left|\widehat g(\nu)\right|&= \left|\int_{-\infty}^{\infty}g(t)~e^{-2\pi i \nu t}\ dt\right|\\
+    &= \left|\int_{-\infty}^{\infty}f(t+T_\text{avg})~e^{-2\pi i \nu t}\ dt\right|\\
+    &= \left|\int_{-\infty}^{\infty}f(\tau)~e^{-2\pi i \nu(\tau-T_{\text{avg}})}\ d \tau \right|\quad(\text{change variables: }\tau=t+T_\text{avg})\\
+    &= \left|e^{2\pi i \nu T_\text{avg}}\underbrace{\int_{-\infty}^{\infty}f(\tau)~e^{-2\pi i \nu \tau}\ d \tau}_{=\widehat f(\nu )} \right|\\
+    &= \left|e^{2\pi i \nu T_\text{avg}}\right|\cdot \left|\widehat f(\nu)\right|\\
+    &= \left|\widehat f(\nu)\right|
+    \end{align*}
+    Thus, the distributions $|\widehat g|^{2}$ and $\left|\widehat f\right|^{2}$ have the same mean and standard deviation. We have the expected value of $t$ for distribution $|g|^{2}$:
+    \begin{align*}
+    T'_\text{avg}&= \int_{-\infty}^{\infty}t\cdot |g(t)|^{2}\ dt\\
+    &= \int_{-\infty}^{\infty}t\cdot |f(t+T_\text{avg})|^{2}\ dt\\
+    &= \int_{-\infty}^{\infty}(\tau-T_\text{avg})|f(\tau)|^{2}\ d \tau\quad(\text{change variables: }\tau=t+T_\text{avg})\\
+    &= \underbrace{\int_{-\infty}^{\infty}\tau|f(\tau)|^{2}\ d \tau}_{=T_\text{avg}}- T_{\text{avg}}\underbrace{\int_{-\infty}^{\infty}|f(\tau)|^{2}\ d \tau}_{=1}\\
+    &= T_\text{avg}-T_\text{avg}\\
+    &= 0
+    \end{align*}
+    
+    and the variance:
+\begin{align*}
+    \underbrace{w_{t}^{2}}_{\text{for }f}&= \int_{-\infty}^{\infty}|t-T_\text{avg}|^{2} |f(t)|^{2}\ dt\\
+    &= \int_{-\infty}^{\infty}|\tau|^{2}|f(\tau+T_\text{avg})|^{2}\ d \tau\quad(\text{change variables: }\tau=t-T_\text{avg})\\
+    &= \int_{-\infty}^{\infty}|\tau|^{2}|g(\tau)|^{2}\ d \tau\\
+    &= \underbrace{w_{t}^{2}}_{\text{for }g}
+    \end{align*}
+    Since $g\in\mathcal{S}(\mathbb{R};\mathbb{C})$ with $T'_\text{avg}=0$, it satisfies the Uncertainty Principle. So, for $f$, we have $$
+    w_{t}\cdot w_{\nu}\ge \frac{\pi}{4}
+    $$
+\end{proof}
+
+\begin{theorem}[Uncertainty Principle]
+
+    For all $f\in\mathcal{S}(\mathbb{R;C})$, 
+    \[
+        w_t\cdot w_\nu\ge\frac{pi}{4}\]
+    
+\end{theorem}
+
+\begin{proof}
+    
+    Let $f\in\mathcal{S}(\mathbb{R};\mathbb{C})$. By the inversion property, let $h:\mathbb{R}\rightarrow \mathbb{C}$ such that $$
+    \widehat h(\nu)=\widehat f(\nu+\nu_\text{avg})
+    $$
+    By the above computation, $|\widehat h|^{2}$ is centered at 0 with the same standard deviation $w_\nu$ as $|\widehat f|^{2}$. So, by Lemma \ref{uncertainty_lemma}, we have the uncertainty principle for $h$.
+    
+    Apply the inversion property:
+\begin{align*}
+    |h(\nu)|&= \left|\int_{-\infty}^{\infty}\widehat h(\nu)~e^{2\pi i \nu t}\right|\ d \nu\\
+    &=\left| \int_{-\infty}^{\infty}\widehat f(\nu+\nu_\text{avg})e^{2\pi i \nu t}\ d \nu\right|\\
+    &=\left| \int_{-\infty}^{\infty}\widehat f(s)e^{2\pi i t (s-\nu_\text{avg})}\ ds\right|\quad(\text{change variables: }s=\nu+\nu_\text{avg})\\
+    &=\left| e^{-2\pi i t\nu_\text{avg}}\underbrace{\int_{-\infty}^{\infty}\widehat f(s)~e^{2\pi i t s}\ ds}_{=f(t)}\right|\\
+    &=\left| e^{2\pi i \alpha \nu}~ f(t)\right|\\
+    &= \left|f(t)\right|
+    \end{align*}
+    Thus, $h$ has the same intensity as $f$ for all $t\in \mathbb{R}$. So, $|h|^{2}$ and $|f|^{2}$ have the same expected value and standard deviation in the time domain. Since $h$ and $f$ have the same width in both the time and frequency domain, the uncertainty principle extends to $f$: $$w_{t}\cdot w_{\nu}\ge \frac{\pi}{4}$$
+\end{proof}
+
+
+% Thinking of $\vert f(t) \vert^2$ and $\vert \widehat{f}(\nu) \vert^2$ as the signal in the time domain (=intensity) and frequency domain (=sound spectrum), $\vert f(t) \vert^2$ and $\vert f(\nu) \vert^2$ may not be centered about the about the origin. Mathematically, the location of the centers is quantified by the averages
+% \begin{align}
+% T_{\mathrm{avg}} & := \int_{-\infty}^{+\infty} \vert f(t) \vert^2 ~t ~\ud t & ~\mbox{$\dots$ {\tiny{center in the time domain}} ,} \\
+% \nu_{\mathrm{avg}} &:= \int_{-\infty}^{+\infty} \vert \widehat{f}(\nu) \vert^2 ~\nu ~\ud \nu & ~\mbox{$\dots$ {\tiny{center in the frequency domain}} .} 
+% \end{align}
+
+% The width of the signals $\vert f(t) \vert^2$ and $\vert \widehat{f}(\nu) \vert^2$ in the time and frequency domain can then be measured by the mean square deviation from the centers, i.e., by
+% \begin{align}
+% w_t &:= \left\{ \int_{-\infty}^{+\infty} \left\vert t - T_{\mathrm{avg}} \right\vert^2 ~\vert f(t) \vert^2 ~\ud t \right\}^{1/2} = \Vert  f(t) \cdot (t -T_{\mathrm{avg}}) \Vert_{\mathcal{L}^2(\ud t)}  ~\mbox{,} \\
+% w_\nu &:= \left\{ \int_{-\infty}^{+\infty} \left\vert \nu - \nu_{\mathrm{avg}} \right\vert^2 ~\vert \widehat{f}(\nu) \vert^2 ~\ud \nu \right\}^{1/2} = \Vert  \widehat{f}(\nu) \cdot (\nu -\nu_{\mathrm{avg}}) \Vert_{\mathcal{L}^2(\ud \nu)} ~\mbox{.}
+% \end{align}
+% Here, $w_t$ can be interpreted as the mean duration of the signal in the time domain, and $w_\nu$ can be interpreted as the mean resolution of the signal in the frequency domain.
+
+% In the most general form, the uncertainty principle can then be expressed as:
+% \begin{equation} \label{eq_uncertainty_general}
+% w_t \cdot w_\nu = \Vert  f(t) \cdot (t -T_{\mathrm{avg}}) \Vert_{\mathcal{L}^2(\ud t)} \cdot \Vert  \widehat{f}(\nu) \cdot (\nu -\nu_{\mathrm{avg}}) \Vert_{\mathcal{L}^2(\ud \nu)} \geq \dfrac{1}{4 \pi} ~\mbox{.}
+% \end{equation}
+
+% \vspace{0.1 cm}
+% {\bf{Show that}} our version from class (\ref{eq_uncertainty}) really implies the more general version in (\ref{eq_uncertainty_general}). {\em{This should be relatively quick. Your proof should NOT redo the work we did in class in more general terms.}} Rather, try to relate the left side of the inequality in (\ref{eq_uncertainty_general}) to (\ref{eq_uncertainty}) by using the changes of variable:
+% \begin{align} \label{eq_FT_horizontal}
+% \tau:= t -T_{\mathrm{avg}} ~\mbox{, }
+% \xi:= \nu -\nu_{\mathrm{avg}}
+% \end{align}
+% Here, it will be useful to understand how the Fourier transform behaves under ``horizontal shifts'' of the form considered in (\ref{eq_FT_horizontal}): show that
+% \begin{align}
+% \widehat{g(t + \alpha)} = \widehat{g}(\nu) \cdot \mathrm{e}^{2 \pi i \alpha \nu} ~\mbox{, for $\alpha \in \mathbb{R}$ .} 
+% \end{align}
+\end{itemize}
+
+
+\end{document}
+
+%------------------------------------------------------------------------------
+% End of journal.tex
+%------------------------------------------------------------------------------

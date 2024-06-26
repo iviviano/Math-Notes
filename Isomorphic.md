@@ -8,3 +8,6 @@ mathLink: isomorphic
 >[!not]
 >Isomorphic is notated: $G\cong H$
 
+>[!question]
+>Is this the weakest [[Equivalence Relation]] between [[Group]]s?
+

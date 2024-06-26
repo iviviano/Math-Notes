@@ -1,0 +1,281 @@
+\documentclass[12pt, reqno]{article}
+
+\usepackage{amssymb, amsmath, mathrsfs}
+\usepackage{amsthm}
+\usepackage[margin=2 cm]{geometry}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{subfigure}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}          %theorem without number
+\newtheorem{prop}{Proposition}[section]
+\newtheorem*{prop*}{Proposition}  % proposition without number
+\newtheorem{coro}{Corollary}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conj}{Conjecture}[section]
+\newtheorem{obs}{Observation}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{xca}[theorem]{Exercise}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\newcommand{\ud}{\mathrm{d}}
+\newcommand{\e}{\mathrm{e}}
+\renewcommand{\i}{\mathrm{i}}
+
+% 
+
+\begin{document}
+
+\title{Comparison of Continuum and Atomistic Models for Chemical Diffusion and Phase Separation}
+\date{\today}
+\author{Isaac Viviano}
+
+\maketitle
+
+\begin{abstract}
+
+    We model the physical phenomena of diffusion and phase separation. Differential equations provide a continuum approximation of these processes. The heat equation models diffusion of a spatial concentration gradient. The Allen-Cahn and Cahn-Hilliard equations model phase separation of a binary mixture into its components. Each differential equation is approximated using the finite difference method. For particle-based models, the software LAMMPS is used to simulate molecular dynamics. The diffusive system study was an ideal gas diffusing into a vacuum. For phase separation, a two-component Leonard-Jones fluid was modeled. The qualitative behavior of the time evolution of the models is compared. Additionally, the differential equation parameters are estimated from molecular dynamics data to quantitatively connect the timescales.
+
+    % TODO: citations
+
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction} \label{sec_intro}
+
+spontaneous spinodal decomposition 
+
+\section{Diffusion} \label{sec_intro}
+
+\subsection{Heat Equation} \label{ssec_heat}
+
+The heat equation with periodic boundary conditions:
+\begin{equation} \label{eq_heat_de_1D}
+    \left\{
+    \begin{split}
+        \frac{\partial u}{\partial t}&=D\nabla^2u\quad x\in[0,1],t\ge0\\
+        u(x,0)&=u_0(x)\\
+        u(0,t)&=u(1,t), u_x(0,t)=u_x(1,t)
+    \end{split}
+    \right.
+\end{equation}
+
+
+\subsubsection{Analytical Solutions} \label{sssec_analytical}
+
+
+The Fourier series for the solution $u$ to the boundary value problem (\ref{eq_heat_de_1D}) can be written:
+\begin{equation} \label{eq_heat_solution}
+    u(x,t)=\sum_{k}C_k ~\e^{-4\pi^2k^2Dt}~\mathrm{e}^{2\pi\i k\cdot x}
+\end{equation}
+
+where 
+\begin{equation}
+    C_k
+\end{equation}
+
+From the analytical solution (\ref{eq_heat_solution}), we see that the heat equation satisfies a mass conservation constraint:
+\begin{equation*}
+    \frac{\ud}{\ud t}\int_\Omega u(x,t)~\ud x=\frac{\ud}{\ud t}~C_0=0
+\end{equation*}
+
+\subsubsection{Finite Difference Approaches} \label{sssec_heat_fd}
+
+
+For a numerical approximation of the differential equation, both temporal and spatial domains must be descretized. We choose a timestep $k$ approximate the solution in the time interval $[0, Nk]$.
+
+We partition each spatial coordinate into $J$ even pieces. The solution $u$ to the differential equation is then approximated by the sequence of samples
+\begin{equation*}
+	u_j^n\approx u(jh,nk)\quad j\in\{0,\ldots,J\}^d,\quad n=0,\ldots,N
+\end{equation*}
+where the spatial resolution $h=\frac{1}{J}$ reflects the domain size and sampling rate.
+
+
+
+
+Let $\Delta^h$ denote the discrete laplacian. In one dimension, 
+\begin{equation}
+    \Delta^hu_j^n=\frac{u_{j+1}^n-2u_j^n+u_{j-1}^n}{h^2}
+\end{equation}
+
+Let 
+\begin{equation}
+    u_j^n=\sum_{m}\alpha_m^n~\e^{2\pi\i\frac{m\cdot j}{J}}
+\end{equation}
+
+Then
+\begin{align*}
+    \Delta^hu_j^n&=\sum_{m}\alpha_m^n~\left(\e^{2\pi\i\frac{m\cdot(j+1)}{J}}-2\e^{2\pi\i\frac{m\cdot(j)}{J}}+\e^{2\pi\i\frac{m\cdot(j-1)}{J}}\right)\\
+    &=\sum_{m}\alpha_m^n\left( \e^{2\pi\frac{m}{J}}+\e^{-2\pi\i\frac{m}{J}}-2 \right)\e^{2\pi\i\frac{m\cdot j}{J}}\\
+    &=\sum_m\alpha_m^n\left(\underbrace{\cos\left(2\pi\frac{m}{J}\right)-2}_{:=\lambda_m}\right)~\e^{2\pi\i\frac{m\cdot j}{J}}
+\end{align*}
+
+We consider two difference schemes for the heat equation (\ref{eq_heat_de_1D}).
+
+Scheme (\ref{ds_heat_FD}) is forward Euler in time and central:
+\begin{equation} \label{ds_heat_FD}
+	\frac{u_j^{n+1}-u_j^n}{k}=D\Delta^hu_j^n{\tag{S1}}
+\end{equation}
+
+Scheme (\ref{ds_heat_CN}) is trapezoidal in time and central in space:
+\begin{equation} \label{ds_heat_CN}
+	\frac{u_j^{n+1}-u_j^n}{k}=\frac{D}{2}(\Delta^hu_j^{n+1}+\Delta^hu_j^n){\tag{S2}}
+\end{equation}
+
+
+
+% Stability and Convergence
+
+
+
+
+% Mass Conservation
+
+Note that each difference scheme also satisfies mass conservation. For the forward difference scheme (\ref{ds_heat_FD})
+\begin{equation*}
+	\sum_m\alpha^{n+1}_m~\e^{2\pi\i\frac{m\cdot j}{J}}=\sum_{m}\alpha_m^n~\e^{2\pi\i\frac{m\cdot j}{J}}+kD\sum_{m}\alpha_m^n\lambda_m~\e^{2\pi\i\frac{m\cdot j}{J}}
+\end{equation*}
+In particular, 
+\begin{equation*}
+	\alpha_0^{n+1}=\alpha_0^n+kD\underbrace{\lambda_0}_{=0}\alpha_0^n=\alpha_0^n
+\end{equation*}
+so,
+\begin{equation*}
+	\sum_{j}u_j^{n+1}=\alpha_0^{n+1}=\alpha_0^{n}=\sum_ju_j^n
+\end{equation*}
+
+For scheme (\ref{ds_heat_CN}), 
+\begin{equation*}
+	\alpha_0^{n+1}=\alpha_0^n+\frac{kD}{2}(\lambda_0\alpha_0^{n+1}+\lambda_0\alpha_0^n)=\alpha_0^n
+\end{equation*}
+
+\subsection{Molecular Dynamics} \label{ssec_diff_MD}
+
+
+\subsection{Parameter Estimation} \label{ssec_diff_estim}
+
+
+\section{Phase Separation} \label{sec_phase}
+
+\subsection{Energy Functional} \label{sec_func}
+
+\subsection{Allen-Cahn Equation} \label{ssec_AC}
+
+\begin{equation} \label{eq_AC}
+    \left\{
+        \begin{split}
+            \frac{\partial v}{\partial t}=
+        \end{split}
+    \right.
+\end{equation}
+
+\subsubsection{Linear Stability Analysis} \label{sssec_linear_AC}
+
+The Allen-Cahn equation (\ref{eq_AC}) admits three constant steady state solutions.
+
+\subsubsection{Finite Difference Approaches} \label{sssec_AC_FD}
+
+
+
+
+
+
+
+
+
+The stability condition chosen for the heat equation is inconsistent with the physical application of Allen-Cahn. 
+Initial conditions with small amplitudes are expected to grow in amplitude as their components separate into pure phases. 
+We choose as stability condition
+\begin{equation} \label{eq_AC_stability}
+	\|v^n\|_\infty\le1
+\end{equation}
+This choice is compatible with the instability of the equilibrium 0. It also allows for phase separation to occur, while restricting solutions to the physical range.
+The nonlinearity of the difference equation (\ref{ds_AC_FD}) renders stability analysis more difficult.
+
+
+\subsection{Cahn-Hilliard Equation} \label{ssec_CH}
+
+\begin{equation} \label{eq_CH}
+    \left\{
+        \begin{split}
+            \frac{\partial c}{\partial t} &=M\nabla^2w\\
+            w&=\phi(c)-\gamma\nabla^2c
+        \end{split}
+    \right.
+\end{equation}
+
+
+Solutions $c$ to the Cahn-Hilliard equation (\ref{eq_CH}) satisfy the mass conservation constraint:
+
+\begin{align*}
+    \frac{\ud}{\ud t}\int_{\Omega} c(x,t)~\ud x&=\int_{\Omega} \frac{\partial}{\partial t}c(x,t)~\ud x\\
+    &= M\int_{\Omega}\nabla^{2}w(x,t)\ud x\\
+    &= M\int_{[0,1]^{d}}\sum_{n=1}^{d}\frac{\partial ^{2}w}{\partial x_{n}^{2}}(x,t)\ud x\\
+    &= M\sum_{n=1}^{d}\int_{[0,1]^{d}}\frac{\partial ^{2}w}{\partial x_{n}^{2}}(x,t)\ud x\\
+\end{align*}
+
+Without loss of generality, consider the first term:
+\begin{align*}
+    \int_{[0,1]^{d}}\frac{\partial ^{2}w}{\partial x_{1}^{2}}\ud x_{1}\cdots \ud x_{d}&= \int_{[0,1]^{d-1}} \frac{\partial w}{\partial x_{1}}(x_{1},\dots,t)\bigg|_{x_{1}=0}^{1}\ud x_{2}\cdots \ud x_{d}\\
+    &= \int_{[0,1]^{d-1}}\frac{\partial w}{\partial x_{1}}(1,\ldots,t)-\frac{\partial w}{\partial x_{1}}(0,\ldots,t)\ud x_{2}\cdots\ud x_{d}\\
+    &= 0
+\end{align*}
+
+
+\subsubsection{Finite Difference} \label{sssec_CH_FD}
+
+We use the same descretization of the domains as in \ref{sssec_heat_fd} and analogously define 
+\begin{align*}
+	c_j^n&\approx c(jh,nk),\quad j\in\{0,\ldots,J\}^d,n=0,\ldots,N\\
+	w_j^n&\approx w(jh,nk),\quad j\in\{0,\ldots,J\}^d,n=0,\ldots,N
+\end{align*}
+
+The forward difference scheme (\ref{ds_heat_FD}) easily extends to the Cahn-Hilliard equation: 
+\begin{equation} \label{ds_CH_FD}
+	\frac{c_j^{n+1}-c_j^n}{k}=M\Delta^hw_j^n= M\Delta^h(\phi(c_j^n))-M\gamma\Delta^h(\Delta^h c_j^n){\tag{S5}}
+\end{equation}
+
+In one dimension, written explicitly in terms of $c_n$ for the chosen $\phi$: 
+\begin{align*}
+	c_j^{n+1}&=c_j^n+ kM\left(\frac{(c^n_{j+1})^3-2(c^n_j)^3+(c^n_{j-1})^3}{h^2}\right)-kM\left( \frac{c_{j+1}^n-2c_j^n+c_{j-1}^n}{h^2}\right)\\
+	&-kM\gamma\left(\frac{c_{j+2}^n-4c_{j+1}^n+6c_j^n-4c_{j-1}^n+c_{j-2}^n}{h^4}\right)
+\end{align*}
+
+
+
+
+
+
+Just as with the difference schemes from the heat equation, the conservation condition holds.
+
+Writing 
+\begin{align*}
+	c_j^n&=\sum_m\alpha_m^n~\e^{2\pi\i\frac{m\cdot j}{J}}\\
+	w_j^n&=\sum_m\beta^n~\e^{2\pi\i\frac{m\cdot j}{J}}\\
+\end{align*}
+we see
+\begin{equation*}
+	\alpha_0^{n+1}=\alpha_0^n+\lambda_0\beta_0^n=\alpha_0^n
+\end{equation*}
+
+\subsection{Molecular Dynamics} \label{ssec_phase_MD}
+
+
+
+\subsection{Parameter Estimation} \label{ssec_phase_estim}
+
+
+
+\bibliography{bibliography}
+\bibliographystyle{plain}
+\end{document}

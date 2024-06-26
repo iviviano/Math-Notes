@@ -1,0 +1,61 @@
+\documentclass[12pt, reqno]{amsart}
+
+\usepackage[margin=3.5 cm]{geometry}
+\usepackage{graphicx, mathabx}
+\usepackage{color}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}          %theorem without number
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{coro}{Corollary}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conj}{Conjecture}[section]
+\newtheorem{obs}{Observation}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{xca}[theorem]{Exercise}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\newcommand{\ud}{\mathrm{d}}
+
+\begin{document}
+
+\title[Math 357 - Harmonic Analysis]{Math 357 - Peer feedback for set 2}   
+
+
+% rename the file: LastName_FirstName_feedback_setXXX (replace XXX with correct set number)
+
+
+\maketitle
+
+\section*{}
+
+
+Multiple computations on Set 2 involved periodic functions. We can often shorten computations by using periodicity. Sometimes, this may avoid a computation through a simple geometric argument. For example, on problem 5, integration by parts gave the term \begin{equation}
+  f(t)\overline{e_n(t)}\bigg\rvert_0^1
+\end{equation}Noting that both $f$ and $\overline{e_n}$ are 1-periodic, we see their product is 1-periodic. So, the difference in boundaries of (1) reduces to 0.
+
+
+On problem 6, we computed the real Fourier series of the sawtooth function. Many noticed that $\phi$ was $2\pi$-periodic and odd. That it has both of these properties makes it's Fourier series have only sine terms: $a_n=0$ for all $n$. \begin{align*}
+\hat \phi_n&=\int_0^1 \phi(t)\overline{e_n(t)}\ dt\\
+&=\int_{-\frac{1}{2}}^{\frac{1}{2}}\phi(t)\overline{e_n(t)}\ dt
+\end{align*}
+The real part of this integral is the product of an even fuction ($\cos$) with the odd $\phi$, so it reduces to 0. Computing the Fourier coefficients from \begin{align}
+  a_n&=\re(\hat\phi_n)\\
+  b_n&=\im(\hat\phi_n)
+\end{align}or directly from the their definitions gives the same result. These instances show how properties of odd and even, and periodic functions can simplify or avoid unecessary calculations. 
+
+
+
+\end{document}
+
+%------------------------------------------------------------------------------
+% End of journal.tex
+%------------------------------------------------------------------------------

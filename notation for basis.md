@@ -3,4 +3,4 @@ tag: notation
 mathLink: $\mathcal{B}$
 ---
 > [!not]
-> Notation for [[Basis]]
+> Notation for [[Basis of a Topology]]

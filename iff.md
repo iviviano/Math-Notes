@@ -1,6 +1,7 @@
 ---
-tag: logic
-mathLink: $\Leftrightarrow$
+tags:
+  - logic
+mathLink: $\iff$
 ---
 
 > [!def]

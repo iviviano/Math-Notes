@@ -1,4 +1,3 @@
-
 ---
 tag: differential topology
 mathLink: submanifold

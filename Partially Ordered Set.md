@@ -8,3 +8,7 @@ mathLink: partially ordered
 >2. $x≤y\land y≤x\implies x=y$ ([[Antisymmetry]])
 >3. $x≤y\land y≤z\implies x≤z$ ([[Transitivity]])
 
+Examples: 
+1. $\mathbb{R}$ with $≤$
+2. $\mathcal{P}(X)$ with $≤$ given by $\subseteq$ for any [[Set]] $X$
+3. 

@@ -9,5 +9,8 @@ mathLink: Cauchy-Schwartz inequality
 >[!prop] Corollary
 >If $d: \mathbb{R}^n$ [[notation for cartesian product]] $\mathbb{R}^{n} \rightarrow\mathbb{R}$ is defined, then $d$ is a [[Metric]]. 
 
+>[!prop]
+>Given a [[Semidefinite Inner Product]] [[Inner Product]] space $(V,\langle.,.\rangle)$. Then, for all [[Vector]]s $v,w\in V$, one has $$|\langle v,w\rangle|\le\|v\|\ \|w\|$$where $\|.\|$ is the [[Induced Norm]] by $\langle.,.\rangle$. If the [[Inner Product]] has the [[Positive Definiteness]] axiom and $v=\lambda w$, $$|\langle v,w\rangle|=\|v\|\ \|w\|$$
+
 
 

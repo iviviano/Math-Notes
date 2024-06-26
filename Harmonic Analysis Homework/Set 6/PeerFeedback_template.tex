@@ -1,0 +1,89 @@
+\documentclass[12pt, reqno]{amsart}
+
+\usepackage[margin=3.5 cm]{geometry}
+\usepackage{graphicx, mathabx}
+\usepackage{color}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}          %theorem without number
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{coro}{Corollary}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conj}{Conjecture}[section]
+\newtheorem{obs}{Observation}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{xca}[theorem]{Exercise}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\newcommand{\ud}{\mathrm{d}}
+
+\begin{document}
+
+\title[Math 357 - Harmonic Analysis]{Math 357 - Peer feedback for set 6}   % replace XXX with the correct number of the set
+
+%\author{Chris Marx}   % replace my name with your own name; YOU CAN ALSO DELETE THIS LINE IF YOU WOULD LIKE TO BE ANONYMOUS
+
+% rename the file: LastName_FirstName_feedback_setXXX (replace XXX with correct set number)
+
+\vspace*{-40 pt}
+
+\maketitle
+
+\vspace*{-20 pt}
+
+\section*{}
+
+%Write your feedback here.
+
+
+
+A rotation map $R_\alpha$ is said to be periodic if there exists $n\in\mathbb{N}$ such that $R_\alpha^n=\text{id}$, that is, 
+\begin{equation} \label{rot_per}
+    R_\alpha^n(x)=x,\text{ for all }x\in[0,1)
+\end{equation}
+When grading this week's problem set, I noticed several solutions lacking the appropriate quantitiers for $n$ and $x$ in this definition. To prove that $\alpha\in\mathbb{Q}$ implies $R_\alpha$, is periodic, we should produce an $n\in\mathbb{N}$ (independent of $x$) such that (\ref{rot_per}) holds. Any proof must explicitly clarify the quantitiers and their order.
+
+In some situations, this led to confusion on part b of problem 2. The statement $\alpha\in\mathbb{R}\setminus\mathbb{Q}$ implies $R_\alpha$ is not periodic is true (and follows from problem 2, part a). However, $R_\alpha$ not periodic implies that for all $n\in\mathbb{N}$, there exists $x\in[0,1)$ with 
+\[
+    R_\alpha^n(x)\ne x
+\]
+But this is not the same as part b, since we switch the order of quantitiers ($\exists n\forall x$ in part a vs $\forall x\not\exists n$ in part b).
+
+
+
+There was some confusion on problem 4. Many approached the proof with an argument by contradiction. First, log rules were applied to derive the equation
+\begin{equation} \label{four}
+    b^{n_1}\cdot c^{n_2}=a^{n_3}
+\end{equation}
+Then a contradiction came from applying the uniqueness of prime factorizations directly to (\ref{four}). 
+This general strategy is correct, but misses the detail that the $n_i$'s are arbitrary integers and can be negative. For example, if $n_3$ were $-1$, the RHS of (\ref{four}) would not be an integer, and thus doesn't have a prime factorization.
+
+There is a simple fix to this argument. If $n_1$ is negative, we multiply (\ref{four}) by $a^{-n_1}$. Repeating for each of $n_2$ and $n_3$, we get a similar version of (\ref{four}). Notably, each exponent will be positive, so the powers of $a,b,$ and $c$ are integers. We have introduced the posibility that there are 0, 1, 2, or 3 factors on each side. When there are 1 or 2 factors on one side the modified equation will resemble 
+\begin{equation} \label{four_mod}
+    b^{|n_1|}\cdot c^{|n_2|}=a^{|n_3|}
+\end{equation}
+with possibly different combinations of the factors. The argument procedes as before since each factor of (\ref{four_mod}) is an integer. This contradicts the uniqueness of prime factorizations since we get two different prime factorizations of 
+\begin{align*}
+    y&:=b^{|n_1|}\cdot c^{|n_2|}\\
+    y&:=a^{|n_3|}
+\end{align*}
+by applying the prime factorizations of $a,b,$ and $c$, and that they are pairwise coprime. 
+When all the factors are on one side (the 0/3 case), we get
+\begin{equation}
+    a^{|n_3|}\cdot b^{|n_1|}\cdot c^{|n_2|}=1
+\end{equation}
+But this is clearly a contradiction since $b,c\ne1$. 
+
+\end{document}
+
+%------------------------------------------------------------------------------
+% End of journal.tex
+%------------------------------------------------------------------------------

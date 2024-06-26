@@ -13,3 +13,6 @@ The *tangent space* of $X$ at $x$ is the [[Image Set]] of the [[Function]] $d \p
 >[!note]
 >It does not matter which local parameterization is chosen.
 
+>[!note]
+>The tangent space has [[Dimension]] $k$.
+

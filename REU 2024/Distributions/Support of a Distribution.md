@@ -1,0 +1,2 @@
+>[!def]
+Given a [[Distributions]] $u\in\mathcal{D}'(\Omega)$, we say $u=0$ on an [[Open Set]] [[Set]] $V\subseteq \Omega$ if for all $\phi\in\mathcal{D}(V)$, $$\langle u,\phi\rangle_{\mathcal{D}',\mathcal{D}}=0$$Let $V$ be the [[Maximal]] [[Open Set]] [[Subset]] of $V$ such that $u=0$ on $V$. Then, the [[Support of a Function or Form]] of $V$ is the [[Compliment]] of $V$ in $\Omega$. 

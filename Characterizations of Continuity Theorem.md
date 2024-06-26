@@ -10,8 +10,9 @@ mathLink: characterizations of continuity theorem
 > 4. For each $x\in X$ and each [[Neighborhood]] $V$ of $f(x)$, there is a [[Neighborhood]] $U$ of $x$ such that $f(U)$ [[notation for subset]] $V$.
 
 > [!proof]
-> This theorem will be proved by showing the following string of implications:
-> I'm pretty sure i did this on a board
-
-
+$1\implies 3$
+Let $C\subseteq Y$ be [[Closed Set]]. Then, $Y-C$ is [[Open Set]], so $f^{-1}(Y-C)$ is [[Open Set]]. So, $X-f^{-1}(C)$ is [[Open Set]] and $f^{-1}(C)$ is [[Closed Set]].
+>
+$3\implies 1$
+Let $C\subseteq Y$ be [[Open Set]]. Then, $Y-C$ is [[Closed Set]], so $f^{-1}(Y-C)$ is [[Closed Set]]. So, $X-f^{-1}(C)$ is [[Closed Set]] and $f^{-1}(C)$ is [[Open Set]].
 

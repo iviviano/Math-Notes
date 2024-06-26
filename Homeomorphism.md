@@ -3,7 +3,7 @@ tag: topology
 mathLink: homeomorphism
 ---
 > [!def]
-> Let $X$ and $Y$ be [[Topological Space]]s; let $f:X\rightarrow Y$ be a [[Bijective]] [[Function]]. If both the function $f$ and the [[Inverse]] [[Function]] $f$[[inverse]]$:Y\rightarrow X$ are [[Continuous]], then $f$ is called a *homeomorphism*.
+> Let $X$ and $Y$ be [[Topological Space]]s; let $f:X\rightarrow Y$ be a [[Bijective]] [[Function]]. If both the function $f$ and the [[Inverse]] [[Function]] $f$[[notation for inverse]]$:Y\rightarrow X$ are [[Continuous]], then $f$ is called a *homeomorphism*.
 > 
 > Another way to define it: a [[Bijective]] correspondence $f:X\rightarrow Y$ such that $f(U)$ is [[Open Set]] [[iff]] $U$ is [[Open Set]].
 

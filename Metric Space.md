@@ -13,3 +13,12 @@ Examples:
 		1. Suppose $x>z$, $z>y$. Then, $|x-z|+|z-y|=x-z+z-y=x-y$. 
 Therefore, $d$ is a [[Metric]] on $\mathbb{R}$, so $(\mathbb{R},d)$ is a [[Metric Space]] 
 1. 
+
+Lemma: The Triangle Inequality $$\forall x,y,z\in \mathbb{R}:|x-y|\le|x-z|+|y-z|$$
+Proof:
+Case 1: $x\ge y$: $$|x-y|=x-y=x-z+z-y\le|x-z|+|z-y|=|x-z|+|y-z|$$
+Case 2: $x<y$: $$|x-y|=y-x=z-x+y-z\le|z-x|+|y-z|=|x-z|+|y-z|$$
+Corollary: $$\begin{equation}
+|A+B|\le|A|+|B|
+\end{equation}$$
+Proof: simply apply the triangle inequality with $x=A,y=-B,z=0$.

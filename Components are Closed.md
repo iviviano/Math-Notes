@@ -8,4 +8,4 @@ mathLink: components are closed
 >then $Y$ is [[Connected]].
 
 >[!prop] Corollary
->The [[Closure]] of a connected set is [[Closed Set]] and each [[Component]] is [[Closed Set]].
+>The [[Closure]] of a connected set is [[Connected]] and each [[Connected Component]] is [[Closed Set]].

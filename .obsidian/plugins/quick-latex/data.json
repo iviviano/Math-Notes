@@ -6,7 +6,7 @@
   "autoCloseCurly_toggle": true,
   "addAlignBlock_toggle": true,
   "addAlignBlock_parameter": "align*",
-  "autoAlignSymbols": "= > < \\le \\ge \\neq \\approx",
+  "autoAlignSymbols": "= > < \\le \\ge \\neq \\approx ≤ ≥",
   "addCasesBlock_toggle": true,
   "shiftEnter_toggle": false,
   "addMatrixBlock_toggle": true,
@@ -20,5 +20,5 @@
   "autoGreekCommandMathMode_toggle": true,
   "customShorthand_toggle": true,
   "useTabtoComplete_toggle": false,
-  "customShorthand_parameter": "bi:::\\binom{#cursor}{#tab};\nsq:::\\sqrt{};\nbb:::\\mathbb{};\nbf:::\\mathbf{};\nmc:::\\mathcal{};\nte:::\\text{};\ninf:::\\infty;\ncd:::\\cdot;\nqu:::\\quad;\nti:::\\times;\nal:::\\alpha;\nbe:::\\beta;\nga:::\\gamma;\nGa:::\\Gamma;\nde:::\\delta;\nDe:::\\Delta;\nep:::\\epsilon;\nze:::\\zeta;\net:::\\eta;\nth:::\\theta;\nTh:::\\Theta;\nio:::\\iota;\nka:::\\kappa;\nla:::\\lambda;\nLa:::\\Lambda;\nmu:::\\mu;\nnu:::\\nu;\nxi:::\\xi;\nXi:::\\Xi;\npi:::\\pi;\nPi:::\\Pi;\nrh:::\\rho;\nsi:::\\sigma;\nSi:::\\Sigma;\nta:::\\tau;\nup:::\\upsilon;\nUp:::\\Upsilon;\nph:::\\phi;\nPh:::\\Phi;\nch:::\\chi;\nps:::\\psi;\nPs:::\\Psi;\nom:::\\omega;\nOm:::\\Omega;\nR:::\\mathbb{R};\nN:::\\mathbb{N};\nto:::\\rightarrow"
+  "customShorthand_parameter": "bi:::\\binom{#cursor}{#tab};\nsq:::\\sqrt{};\nbb:::\\mathbb{};\nbf:::\\mathbf{};\nmc:::\\mathcal{};\nte:::\\text{};\ninf:::\\infty;\ncd:::\\cdot;\nqu:::\\quad;\nti:::\\times;\nal:::\\alpha;\nbe:::\\beta;\nga:::\\gamma;\nGa:::\\Gamma;\nde:::\\delta;\nDe:::\\Delta;\nep:::\\epsilon;\nze:::\\zeta;\net:::\\eta;\nth:::\\theta;\nTh:::\\Theta;\nio:::\\iota;\nka:::\\kappa;\nla:::\\lambda;\nLa:::\\Lambda;\nmu:::\\mu;\nnu:::\\nu;\nxi:::\\xi;\nXi:::\\Xi;\npi:::\\pi;\nPi:::\\Pi;\nrh:::\\rho;\nsi:::\\sigma;\nSi:::\\Sigma;\nta:::\\tau;\nup:::\\upsilon;\nUp:::\\Upsilon;\nph:::\\phi;\nPh:::\\Phi;\nch:::\\chi;\nps:::\\psi;\nPs:::\\Psi;\nom:::\\omega;\nOm:::\\Omega;\nR:::\\mathbb{R};\nN:::\\mathbb{N};\nC:::\\mathbb{C};\nempty:::\\emptyset;\ncl:::\\text{cl };\nto:::\\to ;\ndel:::\\partial ;\nna:::\\nabla ;\nre:::\\Re \\text{e}(#cursor);\nim:::\\Im \\text{m}(#cursor);\nabs:::\\left|#cursor\\right|;\nalign:::\\begin{align*}\n#cursor\n\\end{align*};\nequation:::\\begin{equation} %\\label{eq_#cursor}\n\\end{equation};\nsplit:::\\begin{split} %\\label{eq_#cursor}\n\\end{split};\nunder:::\\underbrace{#cursor}_{};"
 }

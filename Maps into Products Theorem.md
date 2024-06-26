@@ -16,7 +16,4 @@ mathLink: maps into products theorem
 > $$U = f^{-1}(V_1\times V_2) = f_1^{-1}(V_1)\cup f_2^{-1}(V_2)$$
 > is [[Open Set]] in $A$. [[therefore]] $f$ is [[Continuous]].
 > 
-Suppose $f$ is [[Continuous]]. Let $V$ be [[Open Set]] in $X$. Then, 
-$$f^{-1}(V\times\emptyset)=f_{1}^{-1}(V)\cup f_{2}^{-1}(\emptyset)=f_{1}^{-1}(V_{1})$$
-As $V$ is [[Open Set]] in $X$, $V\times\emptyset$ is [[Open Set]] in $X\times Y$, so $f^{-1}(V\times\emptyset)=f_{1}^{-1}(V)$ is [[Open Set]] in $A$.
-[[therefore]] $f_{1}$ is [[Continuous]]. Parallel reasoning shows that $f_{2}$ is also [[Continuous]].
+Suppose $f$ is [[Continuous]]. Then, $\pi_{1}\circ f$ is [[Continuous]] by the [[Constructing Continuous Functions Theorem]]. As $f_{1}=\pi_{1}\circ f$, $f_{1}$ is [[Continuous]].

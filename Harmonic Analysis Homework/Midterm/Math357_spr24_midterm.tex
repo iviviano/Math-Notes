@@ -1,0 +1,591 @@
+\documentclass[12pt, reqno]{article}
+
+\usepackage{amssymb, amsmath, mathrsfs}
+\usepackage{amsthm}
+\usepackage[margin=2 cm]{geometry}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{subfigure}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}          %theorem without number
+\newtheorem{prop}{Proposition}[section]
+\newtheorem*{prop*}{Proposition}  % proposition without number
+\newtheorem{coro}{Corollary}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conj}{Conjecture}[section]
+\newtheorem{obs}{Observation}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{xca}[theorem]{Exercise}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\newcommand{\ud}{\mathrm{d}}
+
+\begin{document}
+
+\title{Math 357 / Spring 2024 (C. Marx)  -  Midterm Exam ({\bf{take-home}})}
+\date{}
+\author{Isaac Viviano}  %Please replace ``Student name:'' with your FULL name (First and Last name).
+
+\maketitle
+
+I affirm that I have adhered to the Honor Code in this exam. 
+Isaac Viviano
+
+\vspace{- 0.5 cm}
+%\begin{center} {\bf{Friday, March 15, 1:30 pm ET - Wednesday, March 20, 1:30 pm ET }} \end{center}
+
+
+% \section{Instructions}
+
+% {\bf{Please turn in your completed exam electronically using the link posted on blackboard in the same folder as the exam. Please name your pdf file in the form:}}
+
+% \vspace{0.1 cm}
+% \texttt{LastName\_FirstName\_midterm\_Math357.pdf}
+% \vspace{0.1 cm}
+
+
+% \vspace{0.2 cm}
+% {\bf{Please read the following carefully before starting the exam.}}
+
+% \begin{enumerate}
+% \item Label this cover sheet with your {\bf{full name (First \& Last)}}. To do so, replace the phrase ``Student name:'' inside the \texttt{ $\backslash$author\{ ... \} } statement of the TeX code with your full name.
+% \item The exam is to be {\bf{written up in TeX}}. Please {\bf{turn in}} your completed exam as a single {\bf{pdf file}}, using the link posted on blackboard. Your pdf file must be named as indicated above.
+% \item Clearly explain your reasoning, including the notation you use (if different from class) and objects you introduce. {\bf{Give a sufficient amount of details that makes your line or reasoning self-contained and clear}}; if in doubt, it is advisable to rather include more than too little details. {\bf{Use the attached writing rubric}} to help insure the clarity of your writing and presentation.
+% \item The exam is {\bf{strictly non-cooperative and in adherence to the Oberlin Honor code}}. 
+% \item {\bf{Please type the Oberlin honor pledge at the beginning of your work}} to acknowledge adherence to the honestly policies during the exam.
+
+% \item This exam is open-book, however {\bf{you may ONLY use the following sources}}: the {\bf{class's two textbooks}}, the textbook from Math 301 ``{\bf{{\em{Understanding Analysis, 2nd edition}}}}'' by {\bf{Stephen Abbott}} ({\tiny{accessible electronically through the website of the Oberlin library)}}, {\bf{your class notes}}, all other {\bf{resources and handouts posted on the class's blackboard page,}} and the RESULTS stated as problems in the {\bf{homework sets}}.  In addition, you may also consult your {\bf{own homework sets, as well as the solutions posted on blackboard}}, but referring to DETAILS of your sets or the solutions posted online is not admissible; if you would like to use, say an idea or a Lemma from the latter sources, you have to write it up again in your exam. Using {\bf{sources other than the above-mentioned is strictly forbidden (this in particular includes looking at other books or using other online-sources than the one mentioned above)}}.
+% \item Generally, {\bf{referencing from the above-mentioned sources must be made {\em{very explicit}} (complete statement of the theorem, and where to find)}}. Homework problems may only be referenced if the result you want to use is explicitly part of the statement of the respective homework question ({\small{i.e. not some Lemma you included yourself because it was useful to solve a given problem}}). You may reference both recommended and mandatory problems. \label{references}
+% \item Should something be {\bf{unclear, please send me an email or talk to me during office hours}}.
+% \end{enumerate}
+
+% \newpage
+
+% \section{Writing rubric}
+
+% Since developing your proof writing skills is an important learning goal in this class, you will be graded on both the mathematical correctness of your proofs, as well as on the clarity of your writing and presentation. 
+% The following rubric is intended to help you ensure the quality of your writing. {\bf{10 \% of the grade for this take-home exam will be assigned based on this rubric.}}
+
+% \begin{enumerate}
+% \item  {\bf{Audience and tone:}} The proofs are written in complete sentences, using a professional and inviting tone. The text is written with a fellow student of this class in mind, i.e. the mathematical reasoning assumes no more and no less background than is appropriate for a student in this class. 
+
+% \item {\bf{Evidence and sources:}} Every claim or statement is supported with sufficient reasoning, either by providing a self-contained argument or by citing a theorem from class or the class's textbook, which includes an explanation of how the theorem in question applies to the specific situation at hand.
+
+% \item {\bf{Genre and Disciplinary conventions:}} 
+
+% \begin{itemize}
+% \item[(a)] The arguments are structured abiding by the logical conventions of writing proofs in analysis, in particularly taking into account the significance and meaning of the logical quantifiers ``for all'' and ``there exists'' and their order.  
+% \item[(b)] The writing clearly and carefully distinguishes between the statements which are to be proven and the hypothesis of the claim. 
+% \item[(c)] Longer or important strings of mathematical symbols are typeset in display mode (i.e. using an equation environment in TeX) and not as part of the text. 
+% \item[(d)] Multiline equations or strings of inequalities are typed in such a way that they can be followed by reading each line from left to right, starting at the topmost left and ending with the conclusion at the bottom right. If possible, estimates are given as strings of inequalities.
+% \item[(e)] All symbols or variables have significance for the proof at hand and are either standard notation or have been clearly defined. 
+% \item[(f)] In computations or estimates, the algebra is correct and a sufficient amount of details are presented which allow the reader to follow along. 
+% \end{itemize}
+
+% \item {\bf{Content Development:}} The content of each proof is developed linearly and is logically coherent. Different thoughts are separated by paragraphs and are logically connected to the earlier parts of the argument. The overall proof strategy shows a clear progression which leads from the hypotheses of the claim to the final conclusion. 
+
+% \item {\bf{Control of Syntax and Mechanics:}} The arguments use language that skillfully communicates meaning to readers with clarity and fluency, and is virtually error and typo free. 
+% \end{enumerate}
+
+\newpage
+\section{Problems} 
+
+\subsection*{Problem 1: Rate of convergence in Fej\'er's theorem}
+
+% We proved in class that for each function $f \in \mathcal{C}_1(\mathbb{R}; \mathbb{C})$, one has
+% \begin{equation} \label{eq_problem1_Fejer}
+% F_n \star f \to f  ~\mbox{, uniformly as $n \to \infty$ (Fej\'er's theorem) .}
+% \end{equation}
+% Here, $(F_n)$ is Fej\'er's kernel with
+% \begin{equation}
+% F_n(x) := \sum_{k=-n}^{n} \left(1 - \dfrac{\vert k \vert}{n}\right) \mathrm{e}^{2 \pi i k x} = \dfrac{1}{n} \left( \dfrac{\sin(\pi n x)}{\sin(\pi x)}  \right)^2 ~\mbox{, and $n \in \mathbb{N}$.}
+% \end{equation}
+% In particular, Fej\'er's theorem is an explicit version of the {\em{Weierstrass approximation theorem for periodic functions}}: Fej\'er's theorem allows to uniformly approximate each continuous, 1-periodic function by an {\em{explicit}} sequence of trigonometric polynomials. 
+
+% From a practical point of view, however, it would be even more useful to know {\em{how fast}} the convergence in (\ref{eq_problem1_Fejer}) occurs. This is equivalent to asking the question: given a function $f \in \mathcal{C}_1(\mathbb{R}; \mathbb{C})$ and a prescribed numerical precision $\epsilon > 0$, {\em{how large}} does one have to choose $n$ so that $f$ can be replaced by $F_n \star f$ with an error at most given by $\epsilon$ (uniformly over the domain), i.e., so that
+% \begin{equation} \label{eq_error}
+% \Vert F_n \star f - f \Vert_\infty < \epsilon ~\mbox{?}
+% \end{equation}
+% In the following, you will prove such a {\bf{rate of convergence}} for the case that $f$ is {\bf{$\alpha$-H\"older continuous}}, i.e., for functions $f \in \mathcal{C}_1(\mathbb{R}; \mathbb{C})$ for which there exists $C > 0$ and $0 < \alpha \leq 1$ such that
+% \begin{equation} \label{eq_holder}
+% \vert f(x) - f(y) \vert \leq C \vert x- y \vert^\alpha ~\mbox{, for all $x,y \in \mathbb{R}$ .}
+% \end{equation}
+% The inequality in (\ref{eq_holder}) is an example of a modulus of continuity; it quantifies ``how continuous'' the function $f$ is. H\"older continuous functions with $\alpha = 1$ are also called Lipschitz functions, which we encountered in class. 
+
+\begin{itemize}
+\item[(a)] 
+
+\begin{prop} \label{one_a}
+
+    If $f\in\mathcal{C}_1(\mathbb{R;C})$ is $\alpha$-H\"older continuous, then for every fixed $0<\delta<\frac{1}{2}$, we have the bound 
+
+    \begin{equation} \label{eq_apriori}
+        \Vert F_n \star f - f \Vert_\infty \leq C \delta^\alpha + \dfrac{\Vert f \Vert_\infty}{2 n \delta^2} ~\mbox{, for all $n \in \mathbb{N}$.}
+        \end{equation}
+\end{prop}
+
+\begin{proof}
+    Fix $0<\delta< \frac{1}{2}$ and let $f\in\mathcal{C}_{1}(\mathbb{R};\mathbb{C})$ be $\alpha$-Hölder continuous. Pick $C>0$ such that for all $x,y\in \mathbb{R}$, \[|f(x)-f(y)|\le C|x-y|^{\alpha}\]
+For any $t\in \mathbb{R}$,
+
+\begin{align*}
+|(F_{n}\star f)(t)-f(t)|=& \left|\int_{- \frac{1}{2}}^{\frac{1}{2}} F_{n}(s)f(t-s)\ ds-f(t)\underbrace{\int_{- \frac{1}{2}}^{\frac{1}{2}}F_{n}(s)\ ds}_{=1 \text{, }F_{n} \text{ is a PAI}} \right|\\
+=& \left|\int_{- \frac{1}{2}}^{\frac{1}{2}} F_{n}(s)[f(t-s)-f(t)]\ ds\right|\\
+\le& \left|\int_{(-\delta,\delta)}F_{n}(s)[f(t-s)-f(t)]\ ds\right|\\
+&\quad\quad\quad+\left|\int_{[- \frac{1}{2}, \frac{1}{2}]-(-\delta,\delta)}F_{n}(s)[f(t-s)-f(t)\ ds\right|\\
+:=& I_{1}+I_{2} 
+\end{align*}
+
+We use the $\alpha$-Hölder condition to estimate $I_{1}$. For all $s\in(- \delta, \delta)$, $|t-s-t|=|s|<\delta$, so $|s|^{\alpha}<\delta^\alpha$ by the monotonicity of $\log$:
+
+\begin{align*}
+|s|&< \delta\\
+\iff\log|s|&< \log \delta\\
+\iff \alpha\log|s|&< \alpha\log \delta\\
+\iff\log|s|^{\alpha}&< \log \delta^{\alpha}\\
+\iff |s|^{\alpha}&< \delta^{\alpha}
+\end{align*}
+
+Therefore, 
+
+\begin{align}
+I_{1}&\le \int_{- \delta}^{\delta}\left|F_{n}(s)\right|\cdot \underbrace{\left|f(t-s)-f(s)\right|}_{\le C\cdot \delta^\alpha}\ ds\\
+&\le C\cdot \delta^{\alpha}\int_{-\delta}^{\delta}|F_{n}(s)|\ ds\\
+&\le C\delta^{\alpha}\int_{- \frac{1}{2}}^{\frac{1}{2}}\underbrace{|F_{n}(s)|}_{=F_{n}(s)}\ ds\\
+&\le C\delta^{\alpha}\int_{- \frac{1}{2}}^{\frac{1}{2}}F_{n}(s)\ ds \label{non_neg}\\
+&= C\delta^{\alpha} \label{PAI_one}
+\end{align}
+
+For~(\ref{non_neg}), we use that $F_{n}$ is positive and real. For~(\ref{PAI_one}), we use that $F_{n}$ is a periodic approximate identity (PAI-1 from Proposition 3.5.1 of [CM]).
+For $I_{2}$, 
+
+\begin{align*}
+I_{2}&\le \int_{[-\frac{1}{2},\frac{1}{2}]-(-\delta,\delta)}|F_{n}(s)|\cdot|[f(t-s)-f(t)]|\ ds\\
+&\le \int_{[-\frac{1}{2},\frac{1}{2}]-(-\delta,\delta)}|F_{n}(s)|\cdot(\underbrace{|f(t-s)|}_{\le\|f\|_\infty}+\underbrace{|f(t)|}_{\le\|f\|_\infty})\ ds\quad(\triangle \text{ inequality})\\
+&\le 2\|f\|_{\infty}\int_{[-\frac{1}{2},\frac{1}{2}]-(-\delta,\delta)}\underbrace{|F_{n}(s)|}_{=F_n(s)}\ ds\\
+&= 2\|f\|_{\infty}\int_{[-\frac{1}{2},\frac{1}{2}]-(-\delta,\delta)} \frac{1}{n} \left(\underbrace{\sin(\pi n s)}_{\le1}\right)^{2}\left(\frac{1}{\underbrace{\sin(\pi s)}_{\ge 2s}}\right)^{2}\ ds\\
+&\le 2\|f\|_{\infty}\int_{[- \frac{1}{2}, \frac{1}{2}]-(-\delta,\delta)} \underbrace{\frac{1}{4ns^{2}}}_\text{even}\ ds\\
+&\le \frac{\|f\|_{\infty}}{n}\int_{(\delta,\frac{1}{2}]} \frac{1}{s^{2}}\ ds\\
+&\le \frac{\|f\|_{\infty}}{n\delta^{2}}\cdot\left(\frac{1}{2}-\delta\right)\quad(\text{ML estimate})\\
+&< \frac{\|f\|_{\infty}}{2n\delta^{2}}
+\end{align*}
+
+Since the bounds on $I_{1}$ and $I_{2}$ have no dependence on $t$, we have shown the intended bound: 
+
+\[
+\|F_{n}\star f-f\|_{\infty}\le C\delta^{\alpha}+ \frac{\|f\|_{\infty}}{2n\delta^{2}}
+\]
+
+\end{proof}
+
+% Appropriately modify the proof of Fej\'er's theorem from class to show that if $f \in \mathcal{C}_1(\mathbb{R}; \mathbb{C})$ is $\alpha$-H\"older continuous as in (\ref{eq_holder}), then {\em{for every}} fixed $0< \delta < \frac{1}{2}$, one has
+% \begin{equation} %\label{eq_apriori}
+% \Vert F_n \star f - f \Vert_\infty \leq C \delta^\alpha + \dfrac{\Vert f \Vert_\infty}{2 n \delta^2} ~\mbox{, for all $n \in \mathbb{N}$.}
+%\end{equation}
+
+\item[(b)] 
+
+\begin{prop}
+
+    For every $\alpha$-H\"older continuous function $f\in\mathcal{C}_1(\mathbb{R;C})$, the rate of convergence for approximating $f$ by Fej\'er polynomials $F_n\star f$ is of the form 
+    \begin{equation} \label{eq_rateconv}
+        \Vert F_n \star f - f  \Vert_\infty \leq C_f \cdot n^{-\gamma} ~\mbox{,}
+        \end{equation}
+    where the constants $C_f>0$ and $\gamma=\gamma(\alpha)>0$ are given by \begin{align}
+        C_{f}&:= C+2\|f\|_{\infty}\\
+        \gamma&:= \frac{\alpha}{2+\alpha}
+    \end{align}
+
+\end{prop}
+
+\begin{proof}
+    Let $\delta= \frac{1}{2}n^{- \frac{1}{2+\alpha}}$ and apply the bound (\ref{eq_apriori}) from (a).  \begin{align*}
+        \|F_{n}\star f-f\|_{\infty}\le&~C\delta^{\alpha}+ \frac{\|f\|_{\infty}}{2n\delta^{2}}\\
+        =&~\frac{C}{\underbrace{2^{\alpha}}_{\ge1}n^{ \frac{\alpha}{2+\alpha}}}+ \frac{\|f\|_{\infty}}{2n\left(\frac{1}{2} n^{- \frac{1}{2+\alpha}}\right)^{2}}\\
+        \le&~\frac{C}{n^{\frac{\alpha}{2+\alpha}}}+ \frac{2\|f\|_{\infty}}{n^{1-\frac{2}{2+\alpha}}}\\
+        \le&~\frac{C}{n^{\frac{\alpha}{2+\alpha}}}+ \frac{2\|f\|_{\infty}}{n^{\frac{\alpha}{2+\alpha}}}\\
+        =&~\frac{C+2\|f\|_{\infty}}{n^{\frac{\alpha}{2+\alpha}}}\\
+        :=&~\frac{C_{f}}{n^{\gamma}}
+        \end{align*}
+\end{proof}
+
+% Use part (a) to prove that for every $\alpha$-H\"older continuous function $f \in \mathcal{C}_1(\mathbb{R}; \mathbb{C})$, the rate of convergence for approximating $f$ by Fej\'er polynomials $F_n \star f$ is of the form
+% \begin{equation} %\label{eq_rateconv}
+% \Vert F_n \star f - f  \Vert_\infty \leq C_f \cdot n^{-\gamma} ~\mbox{,}
+% \end{equation}
+% for some constants $C_f > 0$ ({\tiny{depends on properties of $f$}}) and $0 < \gamma = \gamma(\alpha)$ ({\tiny{depends on $\alpha$}}), which your proof should reveal; find optimal values for the constants $C_f>0$ and $0 < \gamma(\alpha)$.
+
+% {\underline{To find the optimal values}} for $C_f>0$ and $0 < \gamma(\alpha)$, take $\delta = \frac{1}{2} n^{- \kappa}$ in (\ref{eq_apriori}) with $\kappa > 0$. Here, $\kappa$ is an auxiliary exponent which will allow you to determine the optimal value for $\gamma$. To do so, choose $\kappa$ so that the exponents resulting from the two terms on the right-hand side of (\ref{eq_apriori}) after taking $\delta = \frac{1}{2} n^{- \kappa}$ become {\em{equal.}} This choice will give rise to the smallest possible (=optimal) upper bound.
+
+\end{itemize}
+
+\vspace{0.2 cm}
+\subsection*{Problem 2 - Queen Dido's problem:} 
+
+% In Virgil's epic poem {\em{The Aeneid}}, Queen Dido is credited to have invented and solved the following problem which won her the land to found the ancient city of Carthage:
+
+% \vspace{0.2 cm}
+% {\em{Isoperimetric problem:}} Among all closed curves in the plane with a fixed perimeter $L > 0$, which curve encloses the largest possible area?
+% \vspace{0.2 cm}
+ 
+% Through her mathematical wit, Queen Dido understood that the circle provides a solution to the problem; in her honor, the isoperimetric problem thus also became known as {\em{Queen Dido's problem.}} Unfortunately, Virgil forgot to include Queen Dido's proof in his epic poem. Providing a proof of Queen Dido's solution to the isoperimetric problem sparked the interest of many generations of later mathematicians. In the following, you will give a proof  of this ancient problem using Fourier series. 
+
+% In parts (a) and (b) you prove some preparatory lemmas, which you will use in part (c) to give a proof of Queen Dido's solution to the isoperimetric problem.
+
+\begin{itemize}
+\item[(a)] 
+
+\begin{lemma} \label{two_a}
+For every function $f\in\mathcal{C}_1^1(\mathbb{R;C})$ which satisfies \[
+\widehat{f}_0 = \int_0^1 f(t) ~\ud t = 0 ~\mbox{,}
+\]
+one has the equality
+\begin{equation} 
+\int_0^1 \vert f(t) \vert^2 ~\ud t \leq \dfrac{1}{4 \pi^2} \int_0^1 \vert f'(t) \vert^2 ~\ud t ~\mbox{.}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+    Let $f\in\mathcal{C}_{1}^{1}(\mathbb{R};\mathbb{C})$ satisfy 
+    
+    \[
+        \hat f_{0}=\int_{0}^{1}f(t)\ dt=0
+    \]
+
+    Note that the Fourier differentiation mantra (Theorem 5.3 of [CM]) states: 
+    
+    \[\hat f_{n}= \frac{\hat f'_{n}}{2\pi in},\text{ for all }|n|\in \mathbb{N}
+    \]
+    
+    Using Plancherel's Identity (Theorem 6.9 of [CM]) for $f$ and $f'$, we see 
+    \begin{align*}
+        \int_{0}^{1}|f(t)|^{2}\ dt&= \|f\|_{2}^{2}\\
+        &= \sum_{n=-\infty}^{\infty}\left|\hat f_{n}\right|^{2}\\
+        &= \sum_{n=1}^{\infty}\left|\hat f_{-n}\right|^{2}+\hat f_{0}+\sum_{n=1}^{\infty}\left|\hat f_{n}\right|\\
+        &= \sum_{n=1}^{\infty}\left|\frac{\hat f'_{-n}}{2\pi in}\right|^{2}+0+\sum_{n=1}^{\infty}\left|\frac{\hat f'_{n}}{2\pi in}^{2}\right|\\
+        &\le \frac{1}{4\pi^{2}}\sum_{n=1}^{\infty}\frac{\left|\hat f'_{-n}\right|^{2}}{n}+ \frac{1}{4\pi^{2}}\left|\hat f'_{0}\right|^{2}+ \frac{1}{4\pi^{2}}\sum_{n=1}^{\infty}\frac{\left|\hat f'_{n}\right|^{2}}{n}\\
+        &\le \frac{1}{4\pi^{2}}\sum_{n=1}^{\infty}\left|\hat f'_{-n}\right|^{2}+ \frac{1}{4\pi^{2}}\left|\hat f'_{0}\right|^{2}+ \frac{1}{4\pi^{2}}\sum_{n=1}^{\infty}\left|\hat f'_{n}\right|^{2}\quad(\text{comparison test})\\
+        &= \frac{1}{4\pi^{2}}\sum_{n=-\infty}^{\infty}\left|\hat f'_{n}\right|^{2}\\
+        &= \frac{1}{4\pi^{2}}\|f'\|_{2}^{2}\\
+        &= \frac{1}{4\pi^{2}}\int_{0}^{1}|f'(t)|^2\ dt
+    \end{align*}
+    where the comparison test refers to (Theorem 2.7.4 and Theorem 2.3.4 of Abott)
+\end{proof}
+
+
+% Use the Plancherel identity for Fourier series to prove that for every function $f \in \mathcal{C}_1^1(\mathbb{R}; \mathbb{C})$ which also satisfies
+% \begin{equation}
+% \widehat{f}_0 = \int_0^1 f(t) ~\ud t = 0 ~\mbox{,}
+% \end{equation}
+% one has the inequality
+% \begin{equation} 
+% \int_0^1 \vert f(t) \vert^2 ~\ud t \leq \dfrac{1}{4 \pi^2} \int_0^1 \vert f'(t) \vert^2 ~\ud t ~\mbox{.}
+% \end{equation}
+
+% {\underline{Hint:}} Given that $f \in \mathcal{C}_1^1(\mathbb{R}; \mathbb{C})$, recall the relation between the Fourier coefficients for $f^\prime$ and the ones for $f$.
+
+\vspace{0.1 cm}
+\item[(b)] 
+
+\begin{lemma} \label{two_b}
+for every $\alpha, \beta \in \mathbb{C}$ , one has
+\begin{equation} \label{geom_bound}
+\vert \alpha \beta \vert \leq \frac{1}{2} \left( \vert \alpha \vert^2 + \vert \beta \vert^2 \right) ~\mbox{.}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+    \begin{align*}
+        |\alpha \beta|&= |\alpha|\cdot|\beta|= \sqrt{|\alpha|^{2}\cdot|\beta|^{2}}\end{align*}
+        So, the claim of Lemma~\ref{two_b} reduces to showing that in general, the geometric mean of two non-negative real numbers is bound by their arithmetic mean:
+        \begin{equation}\sqrt{ab}\le \frac{a+b}{2}\end{equation}
+        Consider the squares:
+        \begin{align*}
+        0&\le  \left(\frac{a}{2}- \frac{b}{2}\right)^{2}=\frac{a^{2}}{4} - \frac{ab}{2}+ \frac{b^{2}}{4}\\
+        \iff ab&\le \frac{a^{2}}{4}+ \frac{ab}{2}+ \frac{b^{2}}{4}=\left(\frac{1}{2}(a+b)\right)^{2}
+        \end{align*}
+        showing (\ref{geom_bound}) for all non-negative real numbers. 
+\end{proof}
+
+\vspace{0.1 cm}
+\item[(c)] 
+
+% We will formulate and solve Queen Dido's problem for closed, simple ({\tiny{, i.e., no self-intersections except at the start and end}}) $\mathcal{C}^1$-curves in the plane. To take into account the constraint that the perimeter is fixed, recall from multivariable calculus that every closed, simple $\mathcal{C}^1$-curve $\gamma \subseteq \mathbb{R}^2$ can be parametrized using the arclength-function as the parameter, i.e. $\gamma$ can be parametrized by a vector-valued function $(x(t), y(t))$ where $t \in [0, L]$ and $x(t)$, $y(t)$ are $\mathcal{C}^1$-functions which satisfy
+% \begin{equation}
+% \vert x'(t) \vert^2 + \vert y'(t) \vert^2 = 1 ~\mbox{, for all $t \in [0,L]$ ,}
+% \end{equation}
+% and
+% \begin{equation}
+% \int_0^L x(t) ~\ud t = \int_0^L y(t) ~\ud t = 0 ~\mbox{.}
+% \end{equation}
+% In particular, one thus has
+% \begin{equation}
+% \int_0^L \left( \vert x'(t) \vert^2 + \vert y'(t) \vert^2 \right) ~\ud t = L ~\mbox{,}
+% \end{equation}
+% which expresses the constraint that the total length of the curve has the value $L$.
+
+% Using periodic extension, we can view the component functions $x(t)$ and $y(t)$ as $L$-periodic functions on all of $\mathbb{R}$. {\bf{From here on we will assume}}, without loss of generality, that the units of length are chosen so that the {\bf{fixed perimeter $L$ has unit length, i.e., that $L=1$.}} In this case the {\bf{component functions}} $x(t)$ and $y(t)$ are {\bf{periodic $\mathcal{C}^1$-functions on $\mathbb{R}$ with period $L=1$}}. 
+
+% Finally, given this set-up, multivariable calculus ({\tiny{specifically Green's theorem}}) allows to express the area $A(\gamma)$ enclosed by each such curve $\gamma$ in the form
+% \begin{equation}
+% A(\gamma) = \frac{1}{2} \int_0^1 \left( x(t) y'(t) - x'(t) y(t) \right) ~\ud t ~\mbox{.}
+% \end{equation}
+
+% \vspace{0.1 cm}
+% {\em{Use the results of parts (a) -- (b), to supply a proof of Queen Dido's solution to the isoperimetric problem by proving:}}
+\begin{theorem*}
+{\underline{For all}} closed, simple $\mathcal{C}^1$-curves $\gamma=(x,y)$ with fixed perimeter $L=1$ and parametrized by component functions which satisfy $x,y \in \mathcal{C}_1^1(\mathbb{R}; \mathbb{R})$, one has the inequality
+\begin{equation} \label{eq_isoperim}
+A(\gamma) \leq \frac{1}{4 \pi} \int_0^1 \left( \vert x'(t) \vert^2 + \vert y'(t) \vert^2 \right) ~\ud t = \frac{1}{4 \pi} ~\mbox{.}
+\end{equation}
+\end{theorem*}
+% Notice that taking into account our units of length, a circle with perimeter $L=1$ has radius $r = \frac{1}{2 \pi}$ and thus an area of $A= (\frac{1}{2 \pi})^2 \pi = \frac{1}{4 \pi}$. In particular, the upper bound for the area in (\ref{eq_isoperim}) is indeed attained by a circle, thereby providing a proof of Queen Dido's solution to the isomperimetric problem.
+
+\begin{proof}
+    \begin{align}
+        A(\gamma)&= \frac{1}{2}\int_{0}^{1}x(t)y'(t)-x'(t)y(t)\ dt\\
+        &\le \frac{1}{2}\int_{0}^{1}|x(t)y'(t)|+|x'(t)y(t)|\ dt\\
+        &= \frac{1}{2}\int_{0}^{1}|\sqrt{2\pi} x(t)\cdot \frac{1}{\sqrt{2\pi}}y'(t)|+|\sqrt{2\pi} x'(t)\cdot \frac{1}{\sqrt{2\pi}}y(t)|\ dt\\
+        &\le \frac{1}{2}\int_{0}^{1} \frac{1}{2}\left(|\sqrt{2\pi} x(t)|^{2}+ \left| \frac{1}{\sqrt{2\pi}}y'(t)\right|^{2}\right)+ \frac{1}{2}\left(|\sqrt{2\pi} y(t)|+ \left| \frac{1}{\sqrt{2\pi}} x'(t)\right|\right)\ dt \label{apply_b}\\
+        &= \frac{1}{4}\cdot 2\pi\int_{0}^{1}|x(t)|^{2}\ dt+ \frac{1}{4}\cdot \frac{1}{2\pi}\int_{0}^{1}|y'(t)|^{2}+|x'(t)|^{2}\ dt+ \frac{1}{4}\cdot 2\pi\int_{0}^{1}|y(t)|^{2}\ dt\\
+        &\le \frac{\pi}{2}\cdot \frac{1}{4\pi^{2}}\int_{0}^{1}|x'(t)|^{2}\ dt+ \frac{1}{4}\cdot \frac{1}{2\pi}\int_{0}^{1}|x'(t)|^{2}+|y'(t)|^{2}\ dt+ \frac{\pi}{2}\cdot \frac{1}{4\pi^{2}}\int_{0}^{1}|y'(t)|^{2}\ dt\label{apply_a}\\
+        &= \frac{1}{4\pi}\int_{0}^{1}|x'(t)|^{2}+|y'(t)|^{2}\ dt\\
+        &= \frac{1}{4\pi}
+    \end{align}
+
+    (\ref{apply_b}) follows from Lemma~\ref{two_b} and (\ref{apply_a}) uses Lemma~\ref{two_a}.
+\end{proof}
+
+\end{itemize}
+
+\vspace{0.2 cm}
+\subsection*{Problem 3 - Minimal Period and the Fourier Coefficients} 
+
+%Proposition 7.1.1 in [CM] bridges the gap between the audible pitch and the sound spectrum of a tone. Prove both parts of Proposition 7.1.1. Note that for part (ii), the hypothesis is that $f$ is continuous; remember, from class, that the Fourier inversion property is {\em{false}} in general for merely continuous functions.
+
+
+\begin{prop}
+    Let $f\in\mathcal{R}_T(\mathbb{R;C})$. If $0<T'<T$ is another period of $f$, then 
+    \begin{equation} \label{fc_zeros}
+        \hat{f}_n=0,\text{ for all }n\in\mathbb{Z}\text{ for which }n\frac{T'}{T}\notin\mathbb{Z}
+    \end{equation}
+\end{prop}
+
+\begin{proof}
+    Let $0<T'<T$ be another period of $f$ and let $n\in\mathbb{Z}$ such that $n\frac{T'}{T}\notin\mathbb{Z}$. Note that $e^{2\pi ik}=1$ precisely when $k\in\mathbb{Z}$. So, $e^{2\pi in \frac{T'}{T}}\ne1$. We have 
+    \begin{align*}
+        \hat f_{n}&= \frac{1}{T}\int_{0}^{T}f(t)\ e^{-2\pi in \frac{t}{T}}\ dt\\
+        &= \frac{1}{T}\int_{T'}^{T+T'}\underbrace{f(s-T')}_{=f(s)}\ e^{-2\pi in \frac{s-T'}{T}}\ ds\quad(\text{change variables }t=s-T')\\
+        &= e^{2\pi in \frac{T'}{T}} \frac{1}{T}\int_{0}^{T}f(s)\ e^{-2\pi in \frac{s}{T}}\ ds\\
+        &= e^{2\pi in \frac{T'}{T}}\hat f_{n}
+    \end{align*}
+    Thus, we have 
+    \[
+        \hat f_{n}(e^{2\pi in \frac{T'}{T}}-1)=0
+    \]
+    Since $e^{2\pi in \frac{T'}{T}}\ne1$, $\hat f_{n}=0$. 
+\end{proof}
+
+\begin{prop}
+    Suppose $f\in\mathcal{C}_T(\mathbb{R;C})$. If (\ref{fc_zeros}) holds for some positive $T'<T$, then $T'$ is another period of $f$.
+\end{prop}
+
+\begin{proof}
+    Let $f\in\mathcal{C}_{T}(\mathbb{R};\mathbb{C})$. Suppose 
+    
+    \[
+        \hat f_{n}=0\text{, for all }n\in\mathbb{Z}\text{, for which }n \frac{T'}{T}\notin\mathbb{Z}
+    \]
+
+    for some $T'>0$. Let $g:\mathbb{R}\rightarrow \mathbb{C}$ be defined by 
+    \[
+        g(t)=f(t+T'),\text{ for all }t\in \mathbb{R}
+    \]    
+
+    Note that $g\in\mathcal{C}_{T}(\mathbb{R};\mathbb{C})$. Compute 
+    
+    \begin{align*}
+        \hat g_{n}&= \frac{1}{T}\int_{0}^{T}g(t)\ e^{-2\pi in \frac{t}{T}}\ dt\\
+        &= \frac{1}{T}\int_{0}^{T}f(t+T')\ e^{-2\pi in \frac{t}{T}}\ dt\\
+        &= \frac{1}{T}\int_{T'}^{T+T'}f(s)\ e^{-2\pi in \frac{s-T'}{T}}\ ds\quad(\text{change variables }s=t+T')\\
+        &= e^{2\pi in \frac{T'}{T}} \frac{1}{T}\int_{0}^{T}f(s)\ d^{-2\pi in \frac{s}{T}}\ ds\\
+        &= e^{2\pi in \frac{T'}{T}}\hat f_{n}
+    \end{align*}
+    
+    Consider two cases for $n$. If $n \frac{T'}{T}\in\mathbb{Z}$, then $e^{2\pi in \frac{T'}{T}}=1$, so 
+    \[
+        \hat g_{n}=\hat f_{n}
+    \] 
+    Otherwise the hypothesis that $f$ satisfies (\ref{fc_zeros}) gives, 
+    \[
+        g_{n}=e^{2\pi in \frac{T'}{T}}\hat f_{n}=e^{2\pi in \frac{T'}{T}}\cdot0=0=\hat f_{n}
+    \] 
+    Thus, 
+    \[
+        \hat f_{n}=\hat g_{n},\text{ for all }n\in\mathbb Z
+    \] 
+    and $f,g\in\mathcal{C}_{T}(\mathbb{R};\mathbb{C})$, so the uniqueness property (Theorem 3.5 of [CM]) gives $f=g$. In particular, 
+    \[ 
+        f(t)=g(t)=f(t+T'),\text{ for all }t\in \mathbb{R}
+    \] 
+    showing that $f$ is $T'$-periodic.
+\end{proof}
+
+
+\vspace{0.2 cm}
+\subsection*{Problem 4 - Rotationally Invariant Functions}
+\begin{itemize}
+\item[(a)] 
+
+% Let $\alpha \in \mathbb{R}$ be a fixed {\bf{irrational}} number. Suppose a function $f \in \mathcal{C}_1(\mathbb{R}; \mathbb{C})$ is {\bf{$\alpha$-rotationally invariant}}, i.e., $f$ satisfies
+% \begin{equation} %\label{eq_rotinv}
+% f(x + \alpha) = f(x) ~\mbox{, for all } x \in \mathbb{R} ~\mbox{.}
+% \end{equation}
+% Show that such $f$ is necessarily a {\em{constant function}}. {\bf{Clearly explain how irrationality of $\alpha$ enters.}} 
+
+\begin{prop}
+    Let $\alpha\in\mathbb{R}$ be a fixed irrational number. If $f\in\mathcal{C}_1(\mathbb{R;C})$ satisfies
+    \begin{equation} \label{eq_rotinv}
+        f(x + \alpha) = f(x) ~\mbox{, for all } x \in \mathbb{R} ~\mbox{,}
+    \end{equation}then $f$ is a constant function.
+\end{prop}
+
+\begin{proof}
+    Fix an irrational $\alpha\in \mathbb{R}$ and let $f\in\mathcal{C}_{1}(\mathbb{R};\mathbb{C})$ be $\alpha$-rotationally invariant. 
+
+    Let $g:\mathbb{R} \rightarrow \mathbb{C}$ be defined by $g(t):=f(t+\alpha)$. By (\ref{eq_rotinv}), we have 
+    \[ 
+        \hat f_{n}=\hat g_{n},\text{, for all }n\in\mathbb{Z}
+    \]
+    For each $n\in\mathbb{Z}$,
+    \begin{align*}
+        \hat f_{n}&= \hat g_{n}\\
+        &= \int_{0}^{1}f(t+\alpha)e^{-2\pi int}\ dt\\
+        &= \int_{\alpha}^{1+\alpha}f(s)e^{-2\pi in(s-\alpha)}\ ds\quad(\text{change variables }s=t+\alpha)\\
+        &= e^{2\pi in \alpha}\int_{0}^{1}f(s)e^{-2\pi ins}\ ds\\
+        &= e^{2\pi in \alpha}\hat f_{n}
+    \end{align*}
+    So, 
+    \begin{equation}\label{four_a}
+        \hat f_{n}(e^{2\pi in \alpha}-1)=0,\text{ for all }n\in\mathbb{Z}
+    \end{equation}
+    The irrationality of $\alpha$ implies that $n \alpha\notin \mathbb{Z}$ if $n\ne 0$. Note that $e^{2\pi ik}=1$ precisely when $k\in\mathbb{Z}$. Therefore, $e^{2\pi in \alpha}\ne0$ for all $n\ne0$. Then, (\ref{four_a}) implies that $\hat f_{n}=0$ for all $n\in \mathbb{Z}$ with $n\ne0$. We now use the uniqueness property to show $f$ is constant. Let $h:\mathbb{R} \rightarrow \mathbb{C}$ be defined by $h(t)=c\in \mathbb{C}$ for all $t\in \mathbb{R}$. Compute 
+    \begin{align*}
+        \hat h_{0}&= \int_{0}^{1} c\ dt=c\\
+        \hat h_{n}&= \int_{0}^{1}ce^{-2\pi int}\ dt=c \delta_{-n,0}=0,\text{ for all }n\ne0
+    \end{align*}
+    By choosing $c=\hat f_{0}$, we see that 
+    \[ 
+        \hat f_{n}=\hat h_{n}, \text{ for all }n\in\mathbb{Z}
+    \]
+    Since $f,h\in\mathcal{C}_{1}(\mathbb{R};\mathbb{C})$, $f=h$ is constant (Theorem 3.5 of [CM]).
+\end{proof}
+
+\vspace{0.1 cm}
+% {\underline{Hint:}} Compute the sequence of Fourier coefficients for both sides of (\ref{eq_rotinv}). Use this to determine $f$ based on its Fourier coefficients.
+
+\item[(b)] 
+
+\begin{prop}
+    For each rational $\alpha\ne0$, there exists a continuous function $f\in\mathcal{C}_1(\mathbb{R;C})$ which satisfies~\ref*{eq_rotinv} but is not constant.
+\end{prop}
+
+\begin{proof}
+    Let $\alpha= \frac{p}{q}$ for $p,q\in \mathbb{N}$ and $p,q\ne0$. Define $f$ to be 
+    \[ 
+        f(t)=\begin{cases} t- \frac{n}{q} & t\in[ \frac{n}{q}, \frac{n}{q}+ \frac{1}{2q})\text{, for some }n\in\mathbb{Z} \\ 
+        \frac{n+1}{q}-t & t\in[\frac{n}{q}+ \frac{1}{2q},\frac{n+1}{q}),\text{ for some }n\in\mathbb{Z}\end{cases}
+    \]
+    % Rotationally invariant
+    For each $t\in\mathbb{R}$, if $t\in[ \frac{n}{q}, \frac{n}{q}+ \frac{1}{2q})$ for some $n\in\mathbb{Z}$, 
+    \[ 
+        t+\alpha=t+ \frac{p}{q}\in \left[ \frac{n+p}{q}, \frac{n+p}{q}+ \frac{1}{2q}\right)
+    \] 
+    so, 
+    \begin{align*}
+        f(t+\alpha)&= t+ \frac{p}{q}- \frac{n+p}{q}\\
+        &= t- \frac{n}{q}\\
+        &= f(t)
+    \end{align*}
+    Otherwise $t\in[ \frac{n}{q}+ \frac{1}{2q}, \frac{n+1}{q})$ for some $n\in\mathbb{Z}$, so
+    \[ 
+        t+\alpha=t+ \frac{p}{q}\in\left[ \frac{n+p}{q}+ \frac{1}{2q}, \frac{n+p+1}{q}\right)
+    \] 
+    so, 
+    \begin{align*}
+        f(t+\alpha)&= \frac{n+p+1}{q}-t-\frac{p}{q}\\
+        &= \frac{n+1}{q}-t\\
+        &= f(t)
+    \end{align*}
+    This shows that $f$ is $\alpha$-rotationally invariant. 
+
+    % 1-periodic
+    For each $t\in\mathbb{R}$, if $t\in[ \frac{n}{q}, \frac{n}{q}+ \frac{1}{2q})$ for some $n\in\mathbb{Z}$, 
+    \[ 
+        t+1=t+ \frac{q}{q}\in \left[ \frac{n+q}{q}, \frac{n+q}{q}+ \frac{1}{2q}\right)
+    \] 
+    so, 
+    \begin{align*}
+        f(t+1)&= t+ \frac{q}{q}- \frac{n+q}{q}\\
+        &= t- \frac{n}{q}\\
+        &= f(t)
+    \end{align*}
+    Otherwise $t\in[ \frac{n}{q}+ \frac{1}{2q}, \frac{n+1}{q})$ for some $n\in\mathbb{Z}$, so
+    \[ 
+        t+1=t+ \frac{q}{q}\in\left[ \frac{n+q}{q}+ \frac{1}{2q}, \frac{n+q+1}{q}\right)
+    \] 
+    so, 
+    \begin{align*}
+        f(t+1)&= \frac{n+q+1}{q}-t-\frac{q}{q}\\
+        &= \frac{n+1}{q}-t\\
+        &= f(t)
+    \end{align*}
+    This shows that $f$ is 1-periodic.
+    
+        
+    % Continuous
+    To verify that $f$ is continuous, we consider the endpoints of each of its pieces. 
+    
+    \begin{itemize}
+        \item[At $t= \frac{n}{q}$:]
+    The left limit of $f$ at $t$: 
+    \[ 
+        f(t-)= t- \frac{n}{q}=0
+    \] 
+    The right limit and value of $f$ at $t$: 
+    \[ 
+        f(t+)= \frac{n-1+1}{q}- t= \frac{n}{q}- \frac{n}{q}=0
+    \]
+    \item[At $t= \frac{n}{q}+ \frac{1}{2q}$:]
+    The left limit of $f$ at $t$: 
+    \[ 
+        f(t-)=t- \frac{n}{q}= \frac{n}{q}+ \frac{1}{2q}- \frac{n}{q}= \frac{1}{2q}
+    \]
+    The right limit and value of $f$ at $t$: 
+    \[ 
+        f(t+)= \frac{n+1}{q}- \frac{n}{q}- \frac{1}{2q}= \frac{1}{2q}
+    \]
+    \end{itemize}
+    Therefore, $f$ is continuous. 
+    Since $f$ attains values $0$ and $\frac{1}{2q}$, it is not constant.
+\end{proof}
+
+% To show that irrationality of $\alpha$ is indeed necessary for the conclusion of part (a) to be true, for each {\bf{rational}} $\alpha \neq 0$, provide an explicit example of a continuous function which is $\alpha$-rationally invariant but not constant.
+\end{itemize}
+
+
+
+\end{document}
+
+%------------------------------------------------------------------------------
+% End of journal.tex
+%------------------------------------------------------------------------------

@@ -11,5 +11,6 @@ If $I$ is directed, and $i_{1},\ldots,i_{n}\in I$, then there is an $i\in I$ wit
 Examples:
 1. $\mathbb{N}$
 2. $\mathbb{Z}$
-3. 
+3. $X$ is any set, [[notation for power set]]$(X)$ is a directed set.
+
 

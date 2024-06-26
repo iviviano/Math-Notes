@@ -7,6 +7,9 @@ mathLink: Baire category theorem
 >$$\bigcap_{n=1}^{\infty}U_{n}$$
 >is [[Dense]] in $X$
 
+>[!thm]
+>If $X$ is a [[Local Compactness]] [[Topological Space]] and $\{U_{n}\}$ is a [[Sequence]] of [[Open Set]] [[Subset]]s of $X$ each of which is [[Dense]] in $X$, then $$\bigcap_{n=1}^{\infty} U_{n}$$ is [[Dense]] in $X$.
+
 >[!question]
 >Is this not a logical equivalence?
 

@@ -1,0 +1,446 @@
+\documentclass[12pt, reqno]{article}
+
+\usepackage{amssymb, amsmath, mathrsfs}
+\usepackage{amsthm}
+\usepackage[margin=2 cm]{geometry}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{subfigure}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}          %theorem without number
+\newtheorem{prop}{Proposition}[section]
+\newtheorem*{prop*}{Proposition}  % proposition without number
+\newtheorem{coro}{Corollary}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conj}{Conjecture}[section]
+\newtheorem{obs}{Observation}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{xca}[theorem]{Exercise}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\newcommand{\ud}{\mathrm{d}}
+
+\begin{document}
+
+\title{Math 357 / Spring 2024 (C. Marx)  -  Final Exam ({\bf{problem-based portion}})}
+\date{}
+\author{Isaac Viviano}  %Please replace ``Student name:'' with your FULL name (First and Last name).
+
+\maketitle
+
+\vspace{- 0.5 cm}
+\begin{center} {\bf{Thursday, May 09, 11:00 am ET - Wednesday, May 15, 11:00 am ET }} \end{center}
+
+
+% \section{Instructions}
+
+% {\bf{Please turn in your completed exam electronically using the link posted on blackboard in the same folder as the exam. Please name your pdf file in the form:}}
+
+% \vspace{0.1 cm}
+% \texttt{LastName\_FirstName\_final\_Math357.pdf}
+% \vspace{0.1 cm}
+
+
+% \vspace{0.2 cm}
+% {\bf{Please read the following carefully before starting the exam.}}
+
+% \begin{enumerate}
+% \item Label this cover sheet with your {\bf{full name (First \& Last)}}. To do so, replace the phrase ``Student name:'' inside the \texttt{ $\backslash$author\{ ... \} } statement of the TeX code with your full name.
+% \item The exam is to be {\bf{written up in TeX}}. Please {\bf{turn in}} your completed exam as a single {\bf{pdf file}}, using the link posted on blackboard. Your pdf file must be named as indicated above.
+% \item Clearly explain your reasoning, including the notation you use (if different from class) and objects you introduce. {\bf{Give a sufficient amount of details that makes your line or reasoning self-contained and clear}}; if in doubt, it is advisable to rather include more than too little details. {\bf{Use the attached writing rubric}} to help insure the clarity of your writing and presentation.
+% \item The exam is {\bf{strictly non-cooperative and in adherence to the Oberlin Honor code}}. 
+% \item {\bf{Please type the Oberlin honor pledge at the beginning of your work}} to acknowledge adherence to the honestly policies during the exam.
+
+% \item This exam is open-book, however {\bf{you may ONLY use the following sources}}: the {\bf{class's two textbooks}}, the textbook from Math 301 ``{\bf{{\em{Understanding Analysis, 2nd edition}}}}'' by {\bf{Stephen Abbott}} ({\tiny{accessible electronically through the website of the Oberlin library)}}, {\bf{your class notes}}, all other {\bf{resources and handouts posted on the class's blackboard page,}} and the RESULTS stated as problems in the {\bf{homework sets}}.  In addition, you may also consult your {\bf{own homework sets, as well as the solutions posted on blackboard}}, but referring to DETAILS of your sets or the solutions posted online is not admissible; if you would like to use, say an idea or a Lemma from the latter sources, you have to write it up again in your exam. Using {\bf{sources other than the above-mentioned is strictly forbidden (this in particular includes looking at other books or using other online-sources than the one mentioned above)}}.
+% \item Generally, {\bf{referencing from the above-mentioned sources must be made {\em{very explicit}} (complete statement of the theorem, and where to find)}}. Homework problems may only be referenced if the result you want to use is explicitly part of the statement of the respective homework question ({\small{i.e. not some Lemma you included yourself because it was useful to solve a given problem}}). You may reference both recommended and mandatory problems. \label{references}
+% \item Should something be {\bf{unclear, please send me an email or talk to me during office hours}}.
+% \end{enumerate}
+
+% \newpage
+
+% \section{Writing rubric}
+
+% Since developing your proof writing skills is an important learning goal in this class, you will be graded on both the mathematical correctness of your proofs, as well as on the clarity of your writing and presentation. 
+% The following rubric is intended to help you ensure the quality of your writing. {\bf{10 \% of the grade for this take-home exam will be assigned based on this rubric.}}
+
+% \begin{enumerate}
+% \item  {\bf{Audience and tone:}} The proofs are written in complete sentences, using a professional and inviting tone. The text is written with a fellow student of this class in mind, i.e. the mathematical reasoning assumes no more and no less background than is appropriate for a student in this class. 
+
+% \item {\bf{Evidence and sources:}} Every claim or statement is supported with sufficient reasoning, either by providing a self-contained argument or by citing a theorem from class or the class's textbook, which includes an explanation of how the theorem in question applies to the specific situation at hand.
+
+% \item {\bf{Genre and Disciplinary conventions:}} 
+
+% \begin{itemize}
+% \item[(a)] The arguments are structured abiding by the logical conventions of writing proofs in analysis, in particularly taking into account the significance and meaning of the logical quantifiers ``for all'' and ``there exists'' and their order.  
+% \item[(b)] The writing clearly and carefully distinguishes between the statements which are to be proven and the hypothesis of the claim. 
+% \item[(c)] Longer or important strings of mathematical symbols are typeset in display mode (i.e. using an equation environment in TeX) and not as part of the text. 
+% \item[(d)] Multiline equations or strings of inequalities are typed in such a way that they can be followed by reading each line from left to right, starting at the topmost left and ending with the conclusion at the bottom right. If possible, estimates are given as strings of inequalities.
+% \item[(e)] All symbols or variables have significance for the proof at hand and are either standard notation or have been clearly defined. 
+% \item[(f)] In computations or estimates, the algebra is correct and a sufficient amount of details are presented which allow the reader to follow along. 
+% \end{itemize}
+
+% \item {\bf{Content Development:}} The content of each proof is developed linearly and is logically coherent. Different thoughts are separated by paragraphs and are logically connected to the earlier parts of the argument. The overall proof strategy shows a clear progression which leads from the hypotheses of the claim to the final conclusion. 
+
+% \item {\bf{Control of Syntax and Mechanics:}} The arguments use language that skillfully communicates meaning to readers with clarity and fluency, and is virtually error and typo free. 
+% \end{enumerate}
+
+\newpage
+\section{Problems} 
+
+% In the following, I will use [CM] for my book manuscript and [DJB] for David J. Benson's text.
+
+\subsection*{Problem 1}
+\vspace{0.1 cm}
+
+\begin{theorem}[Poisson Formula] \label{th_poisson}
+    For all Schwartz functions $f\in\mathcal{S}(\mathbb{R;C})$, 
+    \begin{equation} \label{eq_poisson}
+        \sum_{n=-\infty}^{+\infty} f(n) = \sum_{n=-\infty}^{+\infty} \widehat{f}(n) ~\mbox{.}
+    \end{equation}
+\end{theorem}
+
+% The Poisson formula provides a connection between the Fourier transform and Fourier series. It states that for every Schwartz function $f \in \mathcal{S}(\mathbb{R}; \mathbb{C})$, one has
+% Here, we recall the definition of convergence for a double-sided series given in [CM] Definition 4.30. In part (a) below, you will prove that both these double-sided series converge (in fact, even in the sense of absolute convergence) given that hypothesis that $f$ is a Schwartz function.
+
+% \vspace{0.1 cm}
+% {\bf{Prove the Poisson formula}} given in (\ref{eq_poisson}) based on the following outline:
+\begin{itemize}
+\item[(a)]
+
+\begin{lemma} \label{lm_schwartz_sum}
+    For all Schwartz functions $g\in\mathcal{S}(\mathbb{R;C})$, the series 
+    \begin{equation} \label{eq_schwartz_sum}
+        \sum_{n=0}^{\infty}g(n)
+    \end{equation}
+    converges.
+\end{lemma}
+
+\begin{proof}
+    Let $g\in\mathcal{S}(\mathbb{R};\mathbb{C})$. Pick $C\in \mathbb{R}$ such that $$
+|g(t)|\le \frac{C}{|t|^{2}},\text{ for all }t\ne0
+$$
+In particular, we have $$
+|g(n)|\le \frac{C}{n^{2}},\text{ for all }n\in \mathbb{N}
+$$
+$\frac{C}{n^{2}}$ is a $p$-series with $p=2>1$, so it converges. By the comparison test (Abott Theorem 2.7.4), $g(n)$ is absolutely summable. Therefore, the sum in (\ref{eq_schwartz_sum}) converges.
+\end{proof}
+
+\begin{remark} \label{rm_double_sum}
+    Lemma \ref{lm_schwartz_sum} immediately implies that both sides of (\ref{eq_poisson}) are summable. Let $f\in \mathcal{S}(\mathbb{R};\mathbb{C})$ and define $$f^{(-)}:\mathbb{R}\rightarrow \mathbb{C},~f^{(-)}(t)=f(-t)$$
+Note that $f^{(-)}\in \mathcal{S}(\mathbb{R};\mathbb{C})$: $$
+\left|t^{m}\cdot \frac{d^{n}f^{(-)}}{dt^{n}}(t)\right|= \left|t^{m}\cdot(-1)^{n} \frac{d^{n}f}{dt^{n}}(t)\right|<\infty
+$$
+Thus, by Lemma \ref{lm_schwartz_sum}, both of the series $$
+\sum_{n=0}^{\infty}f(n),~\sum_{n=1}^{\infty}f^{(-)}(n)
+$$
+converge. Since $$
+\sum_{n=-\infty}^{\infty}f(n)=\sum_{n=0}^{\infty}f(n)+\sum_{n=1}^{\infty}f^{(-)}(n)
+$$we have the double sided series on the left side of (\ref{eq_poisson}) converges. For the right side, we note that $f\in\mathcal{S}(\mathbb{R};\mathbb{C})$ implies $\widehat f\in\mathcal{S}(\mathbb{R};\mathbb{C})$ (Fourier transform is a linear map on the class of Schwartz functions). 
+\end{remark}
+
+% Both the left and the right hand side of (\ref{eq_poisson}) involve double-sided series. Use the hypothesis that $f$ is a Schwartz function, to show that the double-sided series on both sides of (\ref{eq_poisson}) converge absolutely. 
+
+\vspace{0.1 cm}
+\item[(b)] 
+
+\begin{lemma} \label{lm_b}
+    Let 
+    \begin{equation}
+        f_n:\mathbb{R}\to\mathbb{C},~f_n(t)=f(t+n),\quad\text{for all }t\in\mathbb{R}, n\in\mathbb{Z}
+    \end{equation}
+    and define the auxiliary function 
+    \begin{equation} \label{eq_aux}
+        g: \mathbb{R} \to \mathbb{C} ~\mbox{, } g(t) = \sum_{n=-\infty}^{+\infty} f_n(t) ~\mbox{.}
+    \end{equation}
+    Then, 
+    \begin{enumerate}
+        \item The series of functions $f_n$ in (\ref{eq_aux}) converges uniformly to $g$ on all compact subsets of $\mathbb{R}$.
+        \item $g$ is a 1-periodic function whose Fourier coefficients are given by 
+        \begin{equation}
+            \widehat{g}_n = \widehat{f}(n) ~\mbox{, for all $n \in \mathbb{Z}$ .}
+        \end{equation}
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+
+    \begin{enumerate}
+
+
+        \item 
+        
+        Let $K\subseteq \mathbb{R}$ be compact. We will to show that 
+        \begin{equation} \label{eq_weier}
+            \sum_{n=-\infty}^{\infty}\|f_{n}\|_{\infty;K}=\sum_{n=0}^{\infty}\|f_{n}\|_{\infty;K}+\sum_{n=1}^{\infty}\|f_{-n}\|_{\infty;K}
+            \end{equation}
+            converges. We first show the first term on the right-hand side is summable. Let $t_{0}=\min(K)$ by (EVT). Let $N\in \mathbb{N}$ such that $N>|t_{0}|+1$ by (A). Since $f$ is a Schwartz function, select $C\in \mathbb{R}$ with $$
+            |f(t)|\le \frac{C}{|t|^{2}},\text{ for all }t\ne0
+            $$
+            If $n\ge N$,
+            \begin{align*}
+            \|f_{n}\|_{\infty;K}&= \sup_{t\in K}|f(t+n)|\\
+            &\le \sup_{t\in K} \frac{C}{|\underbrace{t+n}_{>0}|^{2}} \\
+            &= \sup_{t\in K} \frac{C}{(t+n)^{2}}\\
+            &= \frac{C}{(t_{0}+n)^{2}}\\
+            &< \frac{C}{(n-N+1)^{2}}
+            \end{align*}
+            Thus, we have $\|f_{n}\|_{\infty;K}$ for $n\ge N$ is bounded by the terms of a convergent $p$ series for $p=2>1$. Thus, $$\sum_{n=0}^{\infty}\|f_{n}\|_{\infty;K}=\sum_{n=0}^{N-1}\|f_{n}\|_{\infty;K}+\sum_{n=N}^{\infty}\|f_{n}\|_{\infty;K}$$
+            converges.
+            
+            In complete analogy, we can show the second series converges. Let $t_{0}=\max(K)$ by (EVT). Let $N\in \mathbb{N}$ such that $N>|t_{0}|+1$ by (A). Since $f$ is a Schwartz function, select $C\in \mathbb{R}$ with $$
+            |f(t)|\le \frac{C}{|t|^{2}},\text{ for all }t\ne0
+            $$
+            If $n\ge N$,
+            \begin{align*}
+            \|f_{-n}\|_{\infty;K}&= \sup_{t\in K}|f(t-n)|\\
+            &\le \sup_{t\in K} \frac{C}{|\underbrace{t-n}_{<0}|^{2}} \\
+            &= \sup_{t\in K} \frac{C}{(n-t)^{2}}\\
+            &= \frac{C}{(n-t_{0})^{2}}\\
+            &< \frac{C}{(n-N+1)^{2}}
+            \end{align*}
+            Thus, we have $\|f_{-n}\|_{\infty;K}$ for $n\ge N$ is bounded by the terms of a convergent $p$ series for $p=2>1$. Thus, $$\sum_{n=1}^{\infty}\|f_{n-}\|_{\infty;K}=\sum_{n=1}^{N-1}\|f_{n-}\|_{\infty;K}+\sum_{n=N}^{\infty}\|f_{-n}\|_{\infty;K}$$
+            converges. So, both terms of (\ref{eq_weier}) converge. Therefore, the series $$
+            \sum_{n=-\infty}^{\infty}f_{n}
+            $$
+            converges uniformly to $g$ by the Weierstrass $M$-test.
+            
+            
+
+        \item 1-periodic:
+
+        For each $t\in \mathbb{R}$: 
+        \begin{align}
+        g(t+1)&= \sum_{n=-\infty}^{\infty}f(t+1+n)\\
+        &= \sum_{n=1}^{\infty}f(t+1-n)+\sum_{n=0}^{\infty}f(t+1+n)\\
+        &= \sum_{n=0}^{\infty}f(t-n)+\sum_{n=1}^{\infty}f(t+n)\quad(\text{reindex}) \label{eq_reindex}
+        \\
+        &= \sum_{n=-\infty}^{\infty}f(t+n)\\
+        &= g(t)
+        \end{align}
+        We justify the reindexing of the infinite sum in (\ref{eq_reindex}) by: 
+        
+        \begin{align*}
+        \sum_{n=1}^{\infty}f(t+1-n)&= \lim_{n \rightarrow \infty}\sum_{k=1}^{n}f(t+1-k)\\
+        &= \lim_{n \rightarrow \infty}\sum_{j=0}^{n-1}f(t-j)\quad(\text{reindex: }j=k-1)\\
+        &= \sum_{n=0}^{\infty}f(t-n)
+        \end{align*}
+        and similarly for the second term of (\ref{eq_reindex}). 
+
+        \vspace*{10 pt}
+
+        Recall the following theorem from analysis about interchanging limits and integrals:
+        
+        \begin{theorem}[Abott Theorem 7.4.4] \label{th_abott}
+            If the sequence of integrable functions $f_n\to f$ uniformly on $[a,b]\subseteq \mathbb{R}$, then $f$ is integrable with 
+            \[
+                \lim_{n\to\infty}\int_{a}^b f_n(x)\ dx=\int_a^b f(x)\ dx
+            \]
+            
+        \end{theorem}
+
+        We can easily extend this to exchanging series and integrals by the linearity of the integral: 
+        \begin{align*}
+            \sum_{n=-\infty}^\infty \int_a^b f_n(x)\ dx &=\lim_{N\to\infty}\sum_{n=0}^N\int_a^b f_n(x)dx+\lim_{N\to\infty}\sum_{n=1}^N\int_a^b f_{-n}(x)dx\\
+            &=\lim_{N\to\infty}\int_a^b\left(\sum_{n=0}^N f_n(x)\right)\ dx+\lim_{N\to\infty}\int_a^b\left(\sum_{n=1}^N f_{-n}(x)\right)\ dx\\
+            &= \int_{a}^b\left(\lim_{N\to\infty}\sum_{n=0}^nf_n(x)\ \right)dx+\int_{a}^b\left(\lim_{N\to\infty}\sum_{n=1}^nf_{-n}(x)\ \right)dx\\
+            &= \int_a^b\sum_{n=0}^\infty f_n(x)\ dx+\int_a^b\sum_{n=1}^\infty f_{-n}(x)\ dx\\
+            &= \int_a^b\sum_{n=-\infty}^\infty f_n(x)\ dx
+        \end{align*}
+        where the swap is allowed when the series convergence is uniform.
+        
+        \vspace*{10 pt}        
+
+        Note that by Lemma \ref{lm_cinfty}, $g$ is $\mathcal{C}^{\infty}$. In particular $g$ is Riemann integrable, so the Fourier coefficients are well-defined. Using the uniform convergence of part 1, we apply Theorem \ref{th_abott} in (\ref{eq_order_switch}) to compute the Fourier coefficients of $g$:
+        
+        \begin{align}
+        \hat g_{n}&= \int_{- \frac{1}{2}}^{\frac{1}{2}}g(t)~e^{-2\pi int}\ dt\\
+        &= \int_{- \frac{1}{2}}^{\frac{1}{2}}\left(\sum_{k=-\infty}^{\infty}f(t+k)\right)~e^{-2\pi int}\ dt\\
+        &= \int_{- \frac{1}{2}}^{\frac{1}{2}}\left(\sum_{k=-\infty}^{\infty}f(t+k)~e^{-2\pi int}\right)\ dt\\
+        &= \sum_{k=-\infty}^{\infty}\left(\int_{- \frac{1}{2}}^{\frac{1}{2}}f(t+k)~e^{-2\pi int}\ dt\right) \label{eq_order_switch}
+        \\
+        &= \sum_{k=-\infty}^{\infty}\int_{k- \frac{1}{2}}^{k+\frac{1}{2}}f(s)~e^{-2\pi ins}\cdot \underbrace{e^{2\pi ink}}_{=1}\ ds \label{eq_int}
+        \\
+        &= \lim_{N \rightarrow \infty}\sum_{k=0}^{N}\int_{k- \frac{1}{2}}^{k + \frac{1}{2}}f(s)~e^{-2\pi ins}\ ds+\lim_{N \rightarrow \infty}\sum_{k=1}^{N}\int_{-k- \frac{1}{2}}^{-k + \frac{1}{2}}f(s)~e^{-2\pi ins}\ ds\\
+        &= \lim_{N \rightarrow \infty}\int_{-\frac{1}{2}}^{N + \frac{1}{2}}f(s)~e^{-2\pi ins}\ ds+\lim_{N \rightarrow \infty}\int_{-N- \frac{1}{2}}^{-\frac{1}{2}}f(s)~e^{-2\pi ins}\ ds\\
+        &= \int_{- \frac{1}{2}}^{\infty}f(s)~e^{-2\pi ins}\ ds+\int_{-\infty}^{- \frac{1}{2}}f(s)~e^{-2\pi ins}\ ds\\
+        &= \int_{-\infty}^{\infty}f(s)~e^{-2\pi ins}\ ds\\
+        &= \widehat f(n)
+        \end{align}
+        
+        where $e^{2\pi ink}=1$ in (\ref{eq_int}) since $nk\in \mathbb{Z}$ and $e^{2\pi i x}=1\iff x\in\mathbb{Z}$.  
+    \end{enumerate}
+\end{proof}
+
+% To prove the claimed equality in (\ref{eq_poisson}), consider the following auxiliary function,
+
+% Show that the series of functions which defines $g$ converges uniformly on all compact subsets of $\mathbb{R}$ (Weierstrass $M$-test). Based on this argue that $g$ defines a $1$-periodic function whose Fourier coefficients are given by
+
+% {\em{Note all of this requires some care; make sure to show all your work and justify any ``formal computations'' rigorously.}}
+
+\vspace{0.1 cm}
+\item[(c)] %Use the theorem about interchanging derivatives and series from problem 3b of set 7 (carefully check all hypotheses!) to prove that $g$ is in fact a $\mathcal{C}^\infty$ $1$-periodic function, in particular its Fourier series converges uniformly. {\em{Recall from earlier class that for uniform convergence of Fourier series, checking that the function at hand is $\mathcal{C}^1$ is already enough; see [CM] Theorem 5.9.}}
+
+\begin{lemma} \label{lm_cinfty}
+    The function $g$ defined by (\ref{eq_aux}) is $\mathcal{C}^\infty$.
+\end{lemma}
+
+\begin{proof}
+    We verify the hypotheses of Set 7, problem 3b: 
+
+    \begin{enumerate}
+        \item We need that the series $\sum_{n=-\infty}^{\infty}f_{n}(t)$ converges for at least one point $x\in \mathbb{R}$. This follows from the uniform convergence of Part 1. 
+        
+        \item We need that for all compact sets $K$, the series of $k$-th derivatives is infinity norm summable on $K$: 
+\begin{equation} \label{eq_der_sum}
+0\le\sum_{n=-\infty}^{\infty}\|f_{n}^{(k)}\|_{\infty;K}<\infty
+\end{equation}
+Since $f$ is a Schwartz function, all of its derivatives are Schwartz functions (Set 7, problem 4a). By the chain rule, $$
+f_{n}^{(k)}(t)=f^{(k)}(t+n)
+$$
+
+So, for all $k\in \mathbb{N}$, (\ref{eq_der_sum}) follows immediately from part 1 of Lemma \ref{lm_b}.
+
+    \end{enumerate}
+Thus, the interchanging derivatives and series theorem implies that $g\in\mathcal{C}^{\infty}$. 
+\end{proof}
+
+\vspace{0.1 cm}
+\item[(d)] %Given that the Fourier series of $g$ converges uniformly, write it down and use it to obtain (\ref{eq_poisson}).
+
+\begin{proof}[Proof of Theorem \ref{th_poisson}:]
+
+    By the Fourier series inversion property for $\mathcal{C}^{2}_{1}$ functions (Proposition 5.2.2 of [CM]), the Fourier series of $g$ converges uniformly to $g$. So for all $t\in \mathbb{R}$,
+\begin{align*}
+\sum_{n=-\infty}^{\infty}f(t+n)&= g(t)\\
+&= \sum_{n=-\infty}^{\infty}\hat g_{n}~e^{2\pi int}\\
+&= \sum_{n=-\infty}^{\infty}\widehat f(n)~e^{-2\pi int}
+\end{align*}
+The desired equality of (\ref{eq_poisson}) follows from the $t=0$ case.
+
+
+\end{proof}
+
+
+\end{itemize}
+
+
+\vspace{0.2 cm}
+\subsection*{Problem 2} 
+
+\begin{prop}
+    For each Schwartz function $f\in\mathcal{S}(\mathbb{R;C})$, 
+    \begin{equation} \label{eq_sob}
+        \sup_{t \in \mathbb{R}} \vert f(t) \vert \leq C \max \{ \Vert f \Vert_{\mathcal{L}^2} ~,~ \Vert f^\prime \Vert_{\mathcal{L}^2} \} ~\mbox{.}
+    \end{equation}
+    for some constant $C>0$.
+\end{prop}
+
+\begin{proof}
+    First note that for all $a,b\in \mathbb{R}$,
+\begin{equation} \label{eq_useful-bound}
+ (a + b )^2 \leq 4 \max\{ a , b \}^2 = 4 \max\{a^2,b^2\}
+\end{equation}
+
+Without loss of generality, assume $a\ge b$: 
+\begin{align*}
+    (a+b)^2&=a^2+2ab+b^2\le a^2+2a\cdot a+a^2= 4a^2
+\end{align*}
+If $b\ge a$, we get the other bound.
+
+\vspace*{10 pt}
+
+Fix a $t\in \mathbb{R}$. By the Fourier Transform inversion property, we can write
+\begin{align}
+f(t)&= \int_{-\infty}^{\infty}\widehat f(\nu)~e^{2\pi i \nu t}\ d\nu \\
+&= \int_{-\infty}^{\infty} \underbrace{\frac{1}{1+|\nu|}}_{= \overline{ 1/1+|\nu|}}\cdot(1+|\nu|)\widehat f(\nu)e^{2\pi i \nu t}\ d \nu\\
+&= \left\langle \frac{1}{1+|\nu|},(1+|\nu|)\cdot\widehat f(\nu)~e^{2\pi i \nu t}\right\rangle_{\mathcal{L}^{2}} \label{eq_IP}
+\end{align}
+where we can take the $\mathcal{L}^{2}$ inner product of the Schwartz function $(1+|\nu|)\cdot \widehat f(\nu)~e^{2\pi i \nu t}$ and the square integrable function $\frac{1}{1+|\nu|}$:
+\begin{align}
+\left\| \frac{1}{1+|\nu|}\right\|_{\mathcal{L}^{2}}^{2}&= \int_{-\infty}^{\infty} \left|\frac{1}{1+|\nu|}\right|^{2}\ d \nu\\
+&= \int_{-\infty}^{\infty} \frac{1}{(1+|\nu|)^{2}}\ d \nu \label{eq_even}
+\\
+&= 2\int_{0}^{\infty} \frac{1}{(1+\nu)^{2}}\ d \nu\\
+&= 2\lim_{R \rightarrow \infty} \left(\frac{-1}{1+\nu}\bigg|_{0}^{R}\right)\\
+&= 2
+\end{align}
+
+where (\ref{eq_even}) uses the even symmetry of the integrand to remove the absolute value. Applying the Cauchy Schwarz inequality to the inner product in (\ref{eq_IP}), we have 
+
+\begin{align*}
+\left|\left\langle \frac{1}{1+|\nu|},(1+|\nu|)\cdot\widehat f(\nu)~e^{2\pi i \nu t}\right\rangle_{\mathcal{L}^{2}}\right|\le \left\| \frac{1}{1+|\nu|}\right\|_{\mathcal{L}^{2}}\cdot \left\|(1+|\nu|)\cdot\widehat f(\nu)~e^{2\pi i \nu t}\right\|_{\mathcal{L}^{2}}
+\end{align*}
+
+We compute the second norm factor:
+\begin{align*}
+\left\|(1+|\nu|)\cdot\widehat f(\nu)~e^{2\pi i \nu t}\right\|_{\mathcal{L}^{2}}^{2}&= \int_{-\infty}^{\infty}\left|\underbrace{(1+|\nu|)}_{>0}\cdot \widehat f(\nu)~e^{2\pi i \nu t}\right|^{2}\ d \nu\\
+&= \int_{-\infty}^{\infty}\underbrace{(1+|\nu|)^{2}}_{\le4\max\{1,|\nu|^{2}\}}\cdot \left|\widehat f(\nu)\right|^{2}\cdot\underbrace{\left|e^{2\pi i \nu t}\right|^{2}}_{=1}\ d \nu\\
+&\le 4\max\left\{\int_{-\infty}^{\infty}\left|\widehat f(\nu)\right|^{2}\ d \nu,\int_{-\infty}^{\infty}\left| \nu\cdot\widehat f(\nu)\right|^{2}\ d \nu,\right\}\quad(\ref{eq_useful-bound})
+\end{align*}
+The first argument of the max is handled with Plancherel's identity for the Fourier Transform: 
+\begin{align*}
+\int_{-\infty}^{\infty}\left|\widehat f(\nu)\right|^{2}\ d \nu&= \int_{-\infty}^{\infty}\left|f(t)\right|^{2} \ dt=\|f\|_{\mathcal{L}^{2}}^{2}
+\end{align*}
+For the second term, we must first apply the Fourier Differentiation Mantra: 
+\begin{align*}
+\int_{-\infty}^{\infty}\underbrace{\left|\nu \cdot\widehat f(\nu)\right|}_{=\left| \frac{\widehat f'(\nu)}{2\pi i}\right|}\ ^{2}\ d \nu&= \frac{1}{2\pi}\int_{-\infty}^{\infty}\left|\widehat{f'}(\nu)\right|^{2}\ d \nu= \frac{1}{2\pi}\|f'\|_{\mathcal{L}^{2}}^{2}
+\end{align*}
+
+where the second equality is Plancherel's identity for $f'$. We have shown$$
+|f(t)|^{2}\le 8\max\left\{\|f\|^{2}_{\mathcal{L}^{2}}, \frac{1}{2\pi}\|f'\|_{\mathcal{L}^{2}}^{2}\right\}
+$$Since $\sqrt{}$ is monotonic, taking $C=\sqrt{8}$ gives the desired relation (\ref{eq_sob}).  
+
+\end{proof}
+
+% Prove that there exists a constant $C > 0$ such that for every function $f \in \mathcal{S}(\mathbb{R}; \mathbb{C})$, one has the following bound:
+
+% {\bf{Your proof should use each of the following}}: the Fourier Inversion Theorem, Cauchy Schwarz for the $\mathcal{L}^2$-inner product, the Plancherel Theorem for the Fourier transform, and the Fourier Differentiation Mantra [CM] Theorem 9.15 (``Fourier transform and derivatives''); {\bf{use the hint below}}.
+
+% Intuitively, this estimate shows the if a Schwartz function and its first derivative are small in the $\mathcal{L}^2$-sense (i.e., ``in an {\em{average sense}}''), then the function is forced to be small in a point-wise sense. Here, recall that in general, a function could be small in the $\mathcal{L}^2$-sense without being small in a point-wise sense. The estimate in (\ref{eq_sob}) is a special case of a set of inequalities known as {\bf{Sobolev inequalities}}. The bound in (\ref{eq_sob}) is practically extremely useful as it is often much easier to control integrals (right-hand side of (\ref{eq_sob})), than to control functions point-wise (left-hand side of (\ref{eq_sob})); the only ``prize'' you pay is that you need information about the $\mathcal{L}^2$-norm of the function AND its first derivative.
+
+% \vspace{0.1 cm}
+% {\underline{Hint:}} Start with the Fourier Inversion Theorem to represent $f$,
+% \begin{equation}
+% f(t) = \int_{-\infty}^{+\infty} \widehat{f}(\nu) ~\mathrm{e}^{2 \pi i \nu t} ~\ud \nu ~\mbox{, for each $t \in \mathbb{R}$ .}
+% \end{equation}
+% Then, use the following trick
+% \begin{equation} \label{eq_sob_trick}
+% \int_{-\infty}^{+\infty} \widehat{f}(\nu) ~\mathrm{e}^{2 \pi i \nu t} ~\ud \nu = \int_{-\infty}^{+\infty} \dfrac{1}{1 + \vert \nu \vert} \cdot (1 + \vert \nu \vert) \widehat{f}(\nu) ~\mathrm{e}^{2 \pi i \nu t} ~\ud \nu ~\mbox{,}
+% \end{equation}
+% and apply Cauchy-Schwarz. You are allowed to use, without proof (the proof is the same as for Schwartz functions), that the $\mathcal{L}^2$-inner product extends to an inner product on all functions $g \in \mathcal{C}(\mathbb{R}; \mathbb{C})$ which satisfy
+% \begin{equation} \label{eq_defn_L2-ip-requ}
+% \int_{-\infty}^{+\infty} \vert g(x) \vert^2 ~\ud x < + \infty ~\mbox{;}
+% \end{equation}
+% in this case, we define, as for Schwartz-functions, the $\mathcal{L}^2$-inner product by
+% \begin{equation}
+% \left\langle g_1 ~,~ g_2 \right\rangle_{\mathcal{L}^2} = \left\{ \int_{-\infty}^{+\infty} \overline{g_1(x)} ~\cdot g_2(x) ~\ud x \right\}^{1/2} ~\mbox{.}
+% \end{equation}
+
+% With Cauchy-Schwarz in mind, the idea behind the trick in (\ref{eq_sob_trick}) is based on the observation that
+% \begin{equation}
+% \left\Vert \dfrac{1}{1 + \vert \nu \vert} \right\Vert_{\mathcal{L}^2(\ud \nu)}^2 = \int_{-\infty}^{+\infty} \dfrac{1}{(1 + \vert \nu \vert)^2} ~\ud \nu < +\infty \mbox{,}
+% \end{equation}
+% so that (\ref{eq_defn_L2-ip-requ}) is met for $g(\nu) = (1 + \vert \nu \vert)^{-1}$, $\nu \in \mathbb{R}$ .
+
+% Along the way, the following bound for real number $a,b \geq 0$ will come handy (see [CM] (6.33) for a one-line proof):
+% \begin{equation} \label{eq_useful-bound}
+% (a + b )^2 \leq 4 \max\{ a , b \}^2 = 4 \max\{a^2,b^2\} \leq 4(a^2 + b^2) ~\mbox{.}
+% \end{equation}
+
+
+
+
+\end{document}
+
+%------------------------------------------------------------------------------
+% End of journal.tex
+%------------------------------------------------------------------------------

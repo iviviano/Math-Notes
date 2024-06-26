@@ -1,0 +1,319 @@
+\documentclass[12pt, reqno]{amsart}
+
+%\usepackage{upgreek}
+\usepackage[margin=3.5 cm]{geometry}
+\usepackage{graphicx, mathabx}
+\usepackage{color}
+%\usepackage{subfigure}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}          %theorem without number
+\newtheorem{prop}{Proposition}[section]
+\newtheorem*{prop*}{Proposition}  % proposition without number
+\newtheorem{coro}{Corollary}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conj}{Conjecture}[section]
+\newtheorem{obs}{Observation}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{xca}[theorem]{Exercise}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+%\numberwithin{equation}
+
+%    Absolute value notation
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\newcommand{\ud}{\mathrm{d}}
+
+\begin{document}
+
+\title[Math 357 - Harmonic Analysis]{Problem set no. 6 - Isaac Viviano}
+
+\begin{titlepage}
+    
+\maketitle
+
+I affirm that I have adhered to the Honor Code on this assignment. 
+Isaac Viviano
+
+\end{titlepage}
+
+
+% \section*{}
+
+% Please {\bf{turn in a paper copy}} of your work {\bf{with Madison Stamco in the math main office (King 205)}}. Your set has to start with a {\bf{cover sheet}}, as outlined in the syllabus, see the section ``Problem Sets.'' Your cover sheet must only contain your full name, the set number, and the signed honor code. {\bf{Do not start writing your work on the coversheet.}} 
+
+% \vspace{0.3 cm}
+
+% {\bf{Only the problems marked as ``{\em{mandatory problems}}'' are to be turned in as part of this week's problem set.}} Any remaining problems are {\em{recommended}}, but you do not need to turn them in. 
+
+% For the recommended problems, I suggest to just think about a strategy, possibly jotting down some rough ideas, but only work out the details if you have extra time at your disposal. {\bf{As stated in the syllabus, you are allowed to use the results of recommended problems (even if you do not prove them) as well as any of the problems from previous sets.}} Just make sure to clearly reference them in your work. 
+
+% \vspace{0.2 cm}
+% {\underline{\bf{Mandatory problems:}}} all
+
+% \vspace{0.1 cm}
+% {\bf{From the above mandatory problems, you have to turn in all mandatory problems written up using TeX.}} 
+% \vspace{0.1 cm}
+
+% \vspace{0.2 cm}
+% {\underline{\bf{Recommended problems:}}} $\emptyset$
+
+% \vspace{0.2 cm}
+% {\underline{NOTE:}} Even though you do not have to do the recommended problems, you are explicitly allowed ({\tiny{and should consider to}}) use their results in your work; as with all other results you are using, just make it clear by referencing appropriately what you use; see also the section ``homework'' in the syllabus.
+
+% \vspace{0.2 cm}
+% In the following, I will use [CM] for my book manuscript and [DJB] for David J. Benson's text.
+
+\section{Problems:} 
+
+\begin{itemize}
+
+\item {\bf{Problem 1 - Uniform Convergence of Fourier Series:}} %When discussing the results on point-wise convergence of Fourier series for piece-wise $\mathcal{C}^1$-functions, I mentioned in class that one can extend the argument that we gave to conclude uniform convergence on all closed subintervals which do not contain a point of discontinuity of the function; see the remark after Theorem 5.1 on the class handout ``Point-wise convergence of Fourier series'' posted in the folder for week 4 (also Theorem 5.7 in [CM]). In the following you will prove this result on uniform convergence of Fourier series. In particular, your work will improve our earlier result on uniform convergence of the Fourier series from $\mathcal{C}^2$-functions (Weierstrass $M$-test) to $\mathcal{C}^1$-functions or even functions which satisfy a uniform Lipschitz condition, like the triangular wave.
+
+\vspace{0.1 cm}
+\begin{itemize}
+%\item[(a)] Read Section 5.4.1 in [CM] which discusses how to extend our earlier proof of point-wise convergence of Fourier series for functions with a Lipschitz condition to imply uniform convergence as stated Theorem 5.9 of [CM]. Pay special attention to the usage of compactness in the argument; see page 100 following Lemma 5.13. {\em{There is nothing to turn in here}}.
+
+%\vspace{0.1 cm}
+\item[(b)] %As pointed out in [CM] Section 5.4.1, extending Theorem 5.7 to Theorem 5.9 reduces to the uniform version of the Riemann-Lebesgue lemma given in [CM] Lemma 5.13. Provide a proof of Lemma 5.13.
+
+\begin{lemma}
+    Let $\epsilon>0$ be given. Then, for each $t\in A$, there exists $N_{t}\in \mathbb{N}$ and $\delta_{t}>0$ so that for all $s\in \mathbb{R}$ with $|s-t|<\delta_{t}$, one has 
+    \[
+        \left|\widehat{[g_{\epsilon;s}^{(\pm)}]}_{m}\right|<\epsilon,\text{ for all }|m|\ge N_{t}
+    \]
+    for the function defined by 
+    \[
+        g^{(\pm)}_{\epsilon;t_{0}}(s):=\begin{cases} \frac{f(t_{0}-s)-f(t_{0})}{\sin(\pi s)}e^{\pm \pi is} & ,\text{ if }\epsilon\le|s|\le \frac{1}{2} \\
+            0 & ,\text{ if }s\in(-\epsilon,\epsilon)\end{cases}
+    \]
+\end{lemma}
+
+\begin{proof}
+    Let $\epsilon\le |s|\le \frac{1}{2}$ and let $\eta>0$ be given. By the uniform continuity of $f$, pick $\delta$ such that if $|s_{0}-s_{1}|<\delta$, $|f(s_{0})-f(s_{1})| <\frac{\epsilon}{4}$. For such $s_{0},s_{2}$ and an arbitrary $\epsilon\le |s|\le\frac{1}{2}$,
+\begin{align*}
+\left|g_{\epsilon;s_{0}}^{(\pm)}(s)-g^{(\pm)}_{\epsilon;s_{1}}(s)\right|&= \left|\frac{f(s_{0}-s)-f(s_{0})}{\sin(\pi s)}e^{\pm \pi is}-\frac{f(s_{1}-s)-f(s_{1})}{\sin(\pi s)}e^{\pm \pi is}\right|\\
+&= \left|\frac{(f(s_{0}-s)-f(s_{1}-s))+(f(s_{1})-f(s_{0}))}{\sin(\pi s)}e^{\pm \pi is}\right|\\
+&\le (\underbrace{|f(s_{0}-s)-f(s_{1}-s)|}_{< \frac{\epsilon}{4}}+\underbrace{|f(s_{1})-f(s_{0})|}_{< \frac{\epsilon}{4}})\cdot \underbrace{\frac{\|e^{\pm \pi is}\|_{\infty}}{\|\sin(\pi s)\|_{\infty}}}_{=1}\\
+&< \frac{\epsilon}{2}
+\end{align*}
+Since this bound is independent of $s$, and 
+\[
+    g_{\epsilon;s_{0}}^{(\pm)}(s)-g^{(\pm)}_{\epsilon;s_{1}}(s)
+\]
+for all $|s|\le \epsilon$, we get
+\begin{equation}\label{sup_bound}
+\left\|g_{\epsilon;s_{0}}^{(\pm)}(s)-g^{(\pm)}_{\epsilon;s_{1}}(s)\right\|_{\infty}\le \frac{\epsilon}{2}
+\end{equation}
+
+Let $t_{0}\in A$. By the Riemann-Lebesgue Lemma, there exists $N_{t_{0}}\in \mathbb{N}$ such that for all $n\ge N_{t_{0}}$,  
+\begin{align*}
+\left|\widehat{[g_{\epsilon;t_{0}}^{(\pm)}]}_{n}\right|< \frac{\epsilon}{2}
+\end{align*}
+
+Let $\delta_{t_0}=\delta$ from above. If $|s_{0}-t_{0}|< \delta_{t_{0}}$, then (\ref{sup_bound}) implies
+\begin{align}
+\left|\widehat{[g^{(\pm)}_{\epsilon;s_{0}}]}_{n}\right|&= \left|\widehat{[g^{(\pm)}_{\epsilon;s_{0}}]}_{n}-\widehat{[g^{(\pm)}_{\epsilon;t_{0}}]}_{n}+\widehat{[g^{(\pm)}_{\epsilon;t_{0}}]}_{n}\right|\\
+&\le \left|\widehat{[g^{(\pm)}_{\epsilon;s_{0}}]}_{n}-\widehat{[g^{(\pm)}_{\epsilon;t_{0}}]}_{n}\right|+\left|\widehat{[g^{(\pm)}_{\epsilon;t_{0}}]}_{n}\right|\\
+&= \left|\widehat{[g^{(\pm)}_{\epsilon;s_{0}}-g^{(\pm)}_{\epsilon;t_{0}}]}_{n}\right|+\left|\widehat{[g^{(\pm)}_{\epsilon;t_{0}}]}_{n}\right|\\
+&< \left\|g_{\epsilon;s_{0}}^{(\pm)}(s)-g^{(\pm)}_{\epsilon;s_{1}}(s)\right\|_{\infty}+ \frac{\epsilon}{2}\label{apply_apriori}\\
+&< \frac{\epsilon}{2}+\frac{\epsilon}{2}\\
+&= \epsilon
+\end{align}
+where for (\ref{apply_apriori}), we use the infinity-norm bound for Fourier coefficients from Set 2, Problem 5, part (a). 
+\end{proof}
+
+
+% \vspace{0.1 cm}
+% {\underline{Hint:}} For $\epsilon > 0$ and $t \in \mathbb{R}$, define the auxiliary function $g_{\epsilon; t}^{(\pm)}$ as in (5.69) of [CM]. Use uniform continuity of $f$ to show that, for every $\eta > 0$, there exists $\delta > 0$ such that if $\vert t_1 - t_0 \vert < \delta$, then
+% \begin{equation}
+% \Vert g_{\epsilon; t_0}^{(\pm)} - g_{\epsilon; t_1}^{(\pm)} \Vert_\infty < \eta \mbox{.}
+% \end{equation}
+% Now use the Riemann-Lebesgue Lemma and the a-priori bound for Fourier coefficients from Problem 5(a) in set 2 ([CM] Theorem 4.10(i)) to prove Lemma 5.13.
+
+\end{itemize}
+
+
+% \vspace{0.2 cm}
+% {\bf{The following problems will provide some important context for our discussion of the Pythagorean tuning problem.}} As we saw in class (see also ; see [CM] 7.3 -- 7.4), our mathematical framework for the Pythagorean tuning problem are {\bf{irrational rotations on the unit circle}}. 
+
+% {\bf{Before starting to work on problems 2 -- 4 below, read Sections 7.3 -- 7.4 in [CM]}} to remind yourself of the context and the mathematical formulation of the Pythagorean tuning problem. Your combined work on problems 2 \& 3 will prove all parts of Theorem 7.3 in [CM] which characterize the basic features of rational and irrational rotation maps.
+
+\vspace{0.2 cm}
+
+\item {\bf{Problem 2 - rational \& irrational rotations:}} For $\alpha \in (0,1)$, we consider the map 
+\begin{equation}
+R_\alpha: [0,1] \to [0,1] ~\mbox{, } R_\alpha(x) = (x + \alpha) \mod 1 ~\mbox{.}
+\end{equation}
+
+% One useful and very intuitive way to think about the map $R_\alpha$ is to interpret the numbers $x \in [0,1]$ as angles $(2 \pi x)$ on the unit circle $S^1$ by identifying $x$ with $\mathrm{e}^{2 \pi i x} \in S^1$. This naturally identifies all numbers up to integers (in particular $0$ is identified with $1$), so that addition becomes addition modulo 1; see also Remark 7.2 in [CM]. Attaining this point of view, $R_\alpha(x)$ is the result of rotating $x$ by the fixed angle $\alpha$. For $n \in \mathbb{N}_0$, we define the $n$th iterate of the map $R_\alpha$ by 
+% \begin{equation*}
+% R_\alpha^n := \underbrace{( T_\alpha \circ \dots \circ T_\alpha )}_{\mbox{$n$-times}} ~\mbox{, for $n \in \mathbb{N}$ ,} 
+% \end{equation*}
+% where we take $R_\alpha^0 = \mathrm{id}$ to mean the identity map on $[0,1]$. 
+
+% In the following, you will analyze the sequence $(R_\alpha^n(x))_{n \in \mathbb{N}}$ generated by repeatedly applying $R_\alpha$ to a fixed angle $x \in [0,1]$. This sequence is also called the {\bf{$\alpha$-rotational orbit}} emerging from $x$. As you will show, the properties of the orbit will be very different depending on whether $\alpha$ is rational or {\em{irr}}ational.
+
+\vspace{0.1 cm}
+\begin{itemize}
+\item[(a)] %$R_\alpha$ is called {\bf{periodic}} if there exists $n \in \mathbb{N}$ such that $T_\alpha^n = \mathrm{id}$. In this case, the {\em{smallest}} such $n$ is called the period of $R_\alpha$. 
+
+% \vspace{0.1 cm}
+
+\begin{prop}
+$R_\alpha$ is periodic if and only if $\alpha \in \mathbb{Q}$.
+\end{prop}
+
+\begin{proof}
+    
+($\impliedby$) Suppose $\alpha\in \mathbb{Q}$. Let $\alpha= \frac{p}{q}$ with $p,q\in \mathbb{N}$ and $\gcd(p,q)=1$. For each $x\in[0,1)$,  \begin{align*}
+    R^{q}_{\alpha}(x)&= x+ q\cdot \alpha\mod1\\
+    &= x+p\mod1\\
+    &= x
+    \end{align*}So, $R_{\alpha}^{q}=\text{id}$. Thus, $R_{\alpha}$ is periodic.
+    
+    ($\implies$) Suppose $R_{\alpha}^{q}=\text{id}$ for some $q\in \mathbb{N}$.  Then for all $x\in[0,1)$, \begin{align*}
+    x&= R_{\alpha}^{q}(x)= x+ q\cdot \alpha\mod1
+    \end{align*}
+    
+    Therefore, $q\cdot \alpha\equiv 0\mod1$, which implies $q \alpha=p\in\mathbb{Z}$. Since $q$ is nonzero, we may divide to get $$\alpha= \frac{p}{q}\in\mathbb{Q}$$
+\end{proof}
+
+\item[(b)] 
+
+\begin{prop}
+For {\em{irrational}} $\alpha$, $R_\alpha$ never returns to any point twice, i.e., for all $x \in [0,1]$, we have
+\begin{equation*}
+R_\alpha^n(x) \neq R_\alpha^m(x) ~\mbox{, whenever $n \neq m$ .}
+\end{equation*}
+\end{prop}
+
+\begin{proof}
+    We argue by contrapositive. Suppose $R^{n}_{\alpha}(x)=R^{m}_{\alpha}(x)$ for some $x\in [0,1)$ and $n<m\in \mathbb{N}$. We have $$x+ n \alpha\equiv x+m \alpha\mod1$$So, $$(m-n)\alpha\equiv0\mod1$$Since $0\ne m-n\in \mathbb{N}$, we have $\alpha\in\mathbb{Q}$ as before. 
+
+
+\end{proof}
+
+\end{itemize}
+
+\vspace{0.2 cm}
+\item {\bf{Problem 3 - ``Irrational Rotations are Dense''}}
+
+% An important result on irrational rotations is {\bf{Kronecker's theorem}} (Theorem 7.3(iii) in [CM]). It states that irrational rotations not only never visit any point more than once ({\tiny{which you proved in problem 2(b)}}) but, for each starting point $x \in [0,1]$, the $\alpha$-rotational orbit is in fact a {\em{dense set}} in $[0,1]$:
+% \begin{theorem*}[Kronecker's theorem]
+% Given $\alpha$ {\em{irrational}} and an open interval $I \subseteq [0,1]$. Then, for every $x \in [0,1]$, there exists $n \in \mathbb{N}$ such that 
+% \begin{equation}
+% R_\alpha^n(x) \in I ~\mbox{.}
+% \end{equation}
+% \end{theorem*}
+
+% The following problem will guide you through the proof of Kronecker's theorem. You will use the {\bf{Dirichlet's pidgeonhole (or box) principle}} which, simply put, states:
+
+% {\em{If $n$ objects are distributed over $m$ boxes with $n > m$ (``more objects than boxes''), then some box receives at least two objects.}}
+
+% To talk about convergence of sequences of real numbers modulo 1, recall the notion of distance $\ud_c(a,b)$ between real numbers $a,b$ modulo 1 defined in (7.40) of [CM]. Thinking of $a$ and $b$ as angles associated with two points on the circle, this distance is equivalent to the usual notion of distance on a circle which is determined by the {\em{shortest}} arc-length connecting two points on the circle. {\bf{In the following, it will be useful to use this geometric perspective and think of the distance as a distance between points on the circle.}}
+
+\vspace{0.1 cm}
+Fix an open interval $I \subseteq [0,1]$. Denote the length of $I$ by $0< \epsilon \leq 1$. 
+\begin{itemize}
+\item[(a)] 
+
+Let $N\in \mathbb{N}$ such that $\frac{1}{N}<\epsilon$ by the Archimedean property of $\mathbb{R}$. Divide the half open unit interval into $N$ half open intervals: $$I_{i}=\left[\frac{i}{N},\frac{i+1}{N}\right),0\le i< N$$Note that $$\bigcup_{i=0}^{N-1}I_{i}=[0,1)$$so any collection of $N+1$ points in $[0,1)$ must have at least two elements in $I_{i}$ for some $0\le i<N$ by the Pigeonhole Principle. One such collection is the finite orbit: $$\mathcal{O}_{\alpha}(0,N)=\{R_{\alpha}^{k}(0):0\le k\le N\}$$So, we may pick $n_{1}< n_{2}\le N$ and $i< N$ with $$R_{\alpha}^{n_{1}}(0),R_{\alpha}^{n_{2}}(0)\in I_{i}$$Note that $$0\le|R_{\alpha}^{n_{1}}(0)-R_{\alpha}^{n_{2}}(0)|< \frac{i+1}{N}- \frac{i}{N}= \frac{1}{N}< \epsilon$$We may also write \begin{align*}
+    R_{\alpha}^{n_{1}}(0)-R_{\alpha}^{n_{2}}(0)&= n_{1}\alpha-n_{2}\alpha\mod1
+    \end{align*}
+    Pick $k_{0}\in\mathbb{Z}$ such that $$n_{1}\alpha-n_{2}\alpha-k_{0}=n_{1}\alpha-n_{2}\alpha\mod1$$Then,
+    \begin{align*}
+        d_{c}(n_{1}\alpha,n_{2}\alpha)&= \min\{|\alpha(n_{1}-n_{2})-k|,k\in \mathbb{Z}\}\\
+        &\le |\alpha n_{1}-\alpha n_{2}-k_{0}|\\
+        &= |R_{\alpha}^{n_{1}}(0)-R_{\alpha}^{n_{2}}(0)|\\
+        &< \frac{1}{N}\\
+        &< \epsilon
+    \end{align*}
+    
+
+% Take $N \in \mathbb{N}$ such that $\frac{1}{N} < \epsilon$ (Why does such $N$ exist?). Use the pidgeonhole principle to argue that there exist $n_1 , n_2 \in \{1, \dots, N+1 \}$ with $n_1 < n_2$ such that
+% \begin{align}
+% \ud_c( n_2 \alpha ~,~ n_1 \alpha ) < \frac{1}{N} ~\mbox{.}
+% \end{align}
+
+\begin{figure}[htbp]
+%\includegraphics[width= 0.4 \textwidth]{./fig_1.pdf}
+\end{figure}
+\vspace{0.1 cm}
+\item[(b)] 
+
+\begin{prop}
+    Let $M:= n_2-n_2$. Then, for all $x\in[0,1]$, there exists $k\in \mathbb{N}$ such that 
+    \begin{equation}\label{two_b}
+        R_\alpha^{kM}(x) \in I ~\mbox{.}
+    \end{equation}
+\end{prop}
+
+\begin{proof}
+    Suppose not: Let $I=(a,b)$ and let $k_{0}\in \mathbb{N}$ be the first $k$ such that $$R^{k_{0}M}_{\alpha}(x)\le a$$and $$R^{(k_{0}-1)M}_{\alpha}(x)\ge b$$
+Note that $$R_{\alpha}^{m}(x)=x+n \alpha\mod1=x+R^{m}_{\alpha}(0)\mod1$$
+    So, 
+    \begin{equation} \label{upper}
+        k_{0}(n_{2}-n_{1})\alpha+x\mod1\le a 
+    \end{equation}
+    and 
+    \begin{equation}\label{lower}
+        (k_{0}-1)(n_{2}-n_{1})\alpha+x\mod1\ge b
+    \end{equation}
+    Subtracting (\ref{lower}) from (\ref{upper}) gives $$(n_{1}-n_{2})\alpha\mod1\ge b-a=\epsilon$$
+which contradicts (\ref{two_b}).
+\end{proof}
+
+%Consider iterates in blocks of length $M:= n_2 - n_1$, i.e., look at the sequence $(R_\alpha^{kM}(x))_{k \in \mathbb{N}}$. Argue that by the choice of $M$, there must exist $k \in \mathbb{N}$ such that
+% \begin{equation}
+% R_\alpha^{kM}(x) \in I ~\mbox{.}
+% \end{equation}
+% {\underline{Hint:}} {\em{Try a proof by contradiction:}} Let $I=(a,b)$. If no such $k$ exists, then let $k_0$ be the {\em{first}} $k \in \mathbb{N}$ such that $R_\alpha^{k_0 M}(x)$ is to the {\em{left}} of $I$ while $R_\alpha^{(k_0 - 1) M}(x)$ is to the right of $I$. Here, I am thinking of $I$ as an interval on the unit circle and rotation occurs in the positive direction, see the picture above.
+
+\vspace{0.1 cm}
+\item[(c)] 
+
+\begin{prop}
+    For every $x\in[0,1]$, $R_\alpha^n(x)\in I$ for infinitely many $n\in\mathbb N$.
+\end{prop}
+
+\begin{proof}
+    Let $M\in \mathbb{N}$ and $x\in[0,1]$ be given. Divide $I$ into $M$ subintervals: $$I_{i}=\left(a+\frac{i \epsilon}{M},a+ \frac{(i+1)\epsilon}{M}\right),\text{ for }0\le i< M$$and $$I_{M}=\left(b- \frac{\epsilon}{M},b\right)$$By Kronecker's Theorem, for each $0\le i< M$, there exists $n_{i}\in \mathbb{N}$ such that $$R^{n_{i}}_{\alpha}(x)\in I_{i}\subseteq I$$Note that $n_{i}\ne n_{j}$ for all $i\ne j$, since $I_{i}\cap I_{j}=\emptyset$. We have shown that $$\#(\mathcal{O}_{\alpha}(x)\cap I)\ge M$$Since $M$ was arbitrary, $R^{n}_{\alpha}(x)\in I$ for infinitely many $n$.  
+\end{proof}
+
+%Explain (i.e. prove) why Kronecker's theorem already implies that for every $x \in [0,1]$, $R_\alpha^n(x) \in I$ for {\em{infinitely many}} $n \in \mathbb{N}$.
+
+\end{itemize}
+
+\vspace{0.2 cm}
+\item {\bf{Problem 4:}} %Recall from class on 03/20 that for the original Pythagorean tuning experiment (see also [CM], Sec. 7.4), a sequence of pitches is generated by repeatedly ``stacking the musical interval of a perfect fifth,'' which, mathematically is equivalent to iteratively applying a rotation by the {\em{irrational}} number $\alpha = \log_2(3/2)$. As we will see, the irrationality of $\alpha$ is the key to explain the features of the tuning problem. 
+
+% Prove Proposition 7.4.1 part (ii) in [CM] which generalizes the proof of irrationality of $\log_2(3/2)$ from class (see also Claim 7.4.1 in [CM]). Here, it will be useful to recall that the prime factorization of integers is unique (up to order of the prime factors).
+
+\begin{prop}
+    Let $a,b,c\in \mathbb{N}$ with $b,c\ne1$. Suppose there exists a prime $p$ which only contributes to the prime factorization of precisely one of $a$ or $b$ or $c$. Then, $\log_{a}(b)$ and $\log_{a}(c)$ are independent over $\mathbb{Q}$: there are no $n_{1},n_{2},n_{3}\in\mathbb{Z}$ such that 
+    \[
+        n_{1}\log_{a}(b)+n_{2}\log_{a}(c)=n_{3}
+    \]besides $n_{1}=n_{2}=n_{3}=0$
+\end{prop}
+
+\begin{proof}
+    Suppose there exist $n_{1},n_{2},n_{3}$ nonzero satisfying $$n_{1}\log_{a}b+n_{2}\log_{a}c=n_{3}$$Using $\log$ properties, we write $$a^{n_{3}}=b^{n_{1}}c^{n_{2}}$$We see that $$\{q:q\text{ is a prime factor of }a\}=\{q:q\text{ is a prime factor of }c\}\cup\{q:q\text{ is a prime factor of }b\}\}$$so there is no prime $p$ contributing to the prime factorization of precisely one of $a$, $b$, or $c$.    
+\end{proof}
+
+
+
+\end{itemize}
+
+\end{document}
+
+%------------------------------------------------------------------------------
+% End of journal.tex
+%------------------------------------------------------------------------------

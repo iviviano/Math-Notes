@@ -18,3 +18,11 @@ $$\sup \{\frac{\bar{d}(x_{i},z_{i})}{i}\}\le D(\mathbf{x},\mathbf{y})+D(\mathbf{
 [[therefore]] $D$ is a [[Metric]].
 
 $D$ induces the [[Product Topology]] on $\mathbb{R}^n$
+
+
+$$A\cup B=\{a:a\in A\text{ or }a\in B\}=\text{smallest set }C \text{ such that }A\subseteq C \text{ and }B\subseteq C$$
+
+suppose $\texttt{true}$ is larger $\texttt{false}$ -> $\texttt{false}$ is smaller than $\texttt{true}$
+
+
+$$A\lor B=\text{smallest value }C \text{ such that }A \text{ is smaller than }C \text{ and }B \text{ is smaller than }C$$

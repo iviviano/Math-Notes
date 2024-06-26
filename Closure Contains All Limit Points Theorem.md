@@ -3,7 +3,7 @@ tag: topology
 mathLink: closure contains all limit points
 ---
 > [!thm]
-> Let $A$ be a [[Subset]] of the [[Topological Space]] $X$; let $A'$ be the [[Set]] of all [[Limit Point]]s of $A$ Then
+> Let $A$ be a [[Subset]] of the [[Topological Space]] $X$; let $A'$ be the [[Set]] of all [[Limit Point]]s of $A$. Then
 > $$\bar{A} = A\cup A'$$
 
 > [!proof]

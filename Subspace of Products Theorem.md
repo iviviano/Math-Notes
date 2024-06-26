@@ -7,7 +7,7 @@ mathLink: subspace of products theorem
 
 > [!proof]
 > Product Topology:
-> Let $\mathcal{B}_\alpha$ be a [[Basis]] for $X_\alpha$. Then, let $\mathcal{B}$ be the [[Basis]] obtained from $\mathcal{B}_\alpha$ using the [[Basis for the Product Topology Theorem]]. Let $\mathcal{C}$ be the [[Basis]] for the [[Subspace Topology]] on $\prod X_\alpha$ obtained from the [[Subspace Basis Lemma]]. Let $\mathcal{C}'_\alpha$ be the [[Basis]] obtained for $A_\alpha$ via the [[Subspace Basis Lemma]]. Let $\mathcal{C}'$ be the [[Basis]] obtained via the [[Basis for the Product Topology Theorem]] on $\prod A_\alpha$.
+> Let $\mathcal{B}_\alpha$ be a [[Basis of a Topology]] for $X_\alpha$. Then, let $\mathcal{B}$ be the [[Basis of a Topology]] obtained from $\mathcal{B}_\alpha$ using the [[Basis for the Product Topology Theorem]]. Let $\mathcal{C}$ be the [[Basis of a Topology]] for the [[Subspace Topology]] on $\prod X_\alpha$ obtained from the [[Subspace Basis Lemma]]. Let $\mathcal{C}'_\alpha$ be the [[Basis of a Topology]] obtained for $A_\alpha$ via the [[Subspace Basis Lemma]]. Let $\mathcal{C}'$ be the [[Basis of a Topology]] obtained via the [[Basis for the Product Topology Theorem]] on $\prod A_\alpha$.
 > 
 > Let $\mathbf{x}\in \prod A_\alpha$ be given. Let $C\in\mathcal{C}$ with $\mathbf{x}\in C$. Then, pick $B\in B$ such that $C = \prod A_\alpha$ [[intersection]] $B = \prod(A_\alpha\cap B_\alpha)$. But, $A_\alpha\cap B_\alpha\in C'_\alpha$, so $C' = C\in\mathcal{C}'_\alpha$. Therefore,
 > $\mathbf{x}\in C'\subseteq C$
