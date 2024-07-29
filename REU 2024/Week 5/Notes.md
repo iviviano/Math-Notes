@@ -38,3 +38,49 @@ TODO:
 - work out the gradient of the energy functional for [[Cahn-Hilliard Equation]]
 
 Meet Tuesday at 3
+
+
+
+
+Dirichlet problem: 
+$$\left\{
+\begin{split}
+&-\Delta u=f&\text{in }\Omega\\
+&u=0&\text{ in }\partial \Omega
+\end{split}
+\right.$$
+We say $u\in H_{0}^{1}(\Omega)$  is a solution if $$\langle f,v\rangle_{H^{-1},H^{1}_{0}}=(u,v)_{H^{1}_{0}}$$
+Then, we have $$\langle f,v\rangle=(u,v)_{H^{1}_{0}}=(\nabla u,\nabla v)_{L^{2}}=(-\Delta u,v)_{L^{2}}$$
+if we have the boundary condition?
+which would imply $$f=-\Delta u$$by the $L^{2}$ pairing. Also note that the existence and uniqueness of $u$ is guaranteed by [[Riesz Representation Theorem]]
+
+
+
+
+
+$$(u,v)_{H^{1}_{0}}:=(\nabla u,\nabla v)_{L^{2}}$$
+
+
+Neumann problem:
+$$\left\{
+\begin{split}
+&-\Delta u=f&\text{in }\Omega\\
+&\partial _{v}u=g&\text{in }\partial \Omega
+\end{split}
+\right.$$
+We say $u\in H^{1}$ is a weak solution if $$(u,v)_{H^{1}_{0}}=\int_{\Omega}fv+\int_{\partial \Omega}gv$$
+Note that $v=1$ gives $$0=(u,1)_{H^{1}_{0}}=\int_{\Omega}f+\int_{\partial \Omega}g$$
+
+$F:\dot H^{1}(\Omega)\to \mathbb{R}$ defined by $$\langle F,v\rangle:=\int_{\Omega}fv+\int_{\partial \Omega}gv$$
+Use the $H^{1}_{0}$ [[Inner Product]] on $\dot H^{1}$. The [[Riesz Representation Theorem]] gives a unique $u\in\dot H^{1}$ such that $$(u,v)_{H^{1}_{0}}=\langle F,v\rangle$$
+equivalently: $$\int_{\Omega}\nabla u\cdot \nabla v=\int_{\Omega}fv+\int_{\partial \Omega}gv$$
+for all $v\in \dot H^{1}$
+
+We can show that this extends to all $v\in H^{1}$, so the [[Associate]] of $F$ is the unique (0-average) solution to the Neumann problem.
+
+
+
+
+
+
+Meet at 2:00 on Friday

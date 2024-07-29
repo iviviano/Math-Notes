@@ -1,42 +1,224 @@
 \relax 
-\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{}\protected@file@percent }
-\newlabel{sec_intro}{{1}{1}}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Diffusion}{2}{}\protected@file@percent }
-\newlabel{sec_intro}{{2}{2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Heat Equation}{2}{}\protected@file@percent }
-\newlabel{ssec_heat}{{2.1}{2}}
-\newlabel{eq_heat_de_1D}{{1}{2}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}Analytical Solutions}{2}{}\protected@file@percent }
-\newlabel{sssec_analytical}{{2.1.1}{2}}
-\newlabel{eq_heat_solution}{{2}{2}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}Finite Difference Approaches}{2}{}\protected@file@percent }
-\newlabel{sssec_heat_fd}{{2.1.2}{2}}
-\newlabel{ds_heat_FD}{{{S1}}{3}}
-\newlabel{ds_heat_CN}{{{S2}}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Molecular Dynamics}{3}{}\protected@file@percent }
-\newlabel{ssec_diff_MD}{{2.2}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Parameter Estimation}{3}{}\protected@file@percent }
-\newlabel{ssec_diff_estim}{{2.3}{3}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Phase Separation}{3}{}\protected@file@percent }
-\newlabel{sec_phase}{{3}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Allen-Cahn Equation}{3}{}\protected@file@percent }
-\newlabel{ssec_AC}{{3.1}{3}}
-\newlabel{eq_AC}{{6}{3}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}Linear Stability Analysis}{3}{}\protected@file@percent }
-\newlabel{sssec_linear_AC}{{3.1.1}{3}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2}Finite Difference Approaches}{3}{}\protected@file@percent }
-\newlabel{sssec_AC_FD}{{3.1.2}{3}}
-\newlabel{eq_AC_stability}{{7}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Cahn-Hilliard Equation}{4}{}\protected@file@percent }
-\newlabel{ssec_CH}{{3.2}{4}}
-\newlabel{eq_CH}{{8}{4}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Finite Difference}{4}{}\protected@file@percent }
-\newlabel{sssec_CH_FD}{{3.2.1}{4}}
-\newlabel{ds_CH_FD}{{{S5}}{4}}
-\bibdata{bibliography}
-\bibstyle{plain}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Molecular Dynamics}{5}{}\protected@file@percent }
-\newlabel{ssec_phase_MD}{{3.3}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Parameter Estimation}{5}{}\protected@file@percent }
-\newlabel{ssec_phase_estim}{{3.4}{5}}
-\gdef \@abspage@last{5}
+\bibstyle{biblatex}
+\bibdata{main-blx,bibliography}
+\citation{biblatex-control}
+\abx@aux@refcontext{nty/global//global/global}
+\citation{LAMMPS}
+\abx@aux@cite{0}{LAMMPS}
+\abx@aux@segm{0}{0}{LAMMPS}
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{2}{}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{sec_intro}{{1}{2}{}{}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Diffusion}{3}{}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{chap_intro}{{2}{3}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Heat Equation}{3}{}\protected@file@percent }
+\newlabel{sec_heat}{{2.1}{3}{Heat Equation}{}{}}
+\newlabel{eq_HE}{{2.1}{3}{Heat Equation}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Analytical Solution}{3}{}\protected@file@percent }
+\newlabel{sssec_analytical}{{2.1.1}{3}{Analytical Solution}{}{}}
+\newlabel{eq_heat_solution}{{2.3}{3}{Analytical Solution}{}{}}
+\newlabel{eq_mass_con}{{2.5}{3}{Analytical Solution}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Finite Difference Approaches}{4}{}\protected@file@percent }
+\newlabel{sssec_heat_fd}{{2.1.2}{4}{Finite Difference Approaches}{}{}}
+\newlabel{eq_seq_approx}{{2.6}{4}{Finite Difference Approaches}{}{}}
+\newlabel{ds_HE_FD}{{{S1}}{4}{Finite Difference Approaches}{}{}}
+\newlabel{ds_HE_CN}{{{S2}}{4}{Finite Difference Approaches}{}{}}
+\newlabel{eq_as_DFT}{{2.9}{4}{Finite Difference Approaches}{}{}}
+\newlabel{eq_stab_cond}{{2.12}{5}{Finite Difference Approaches}{}{}}
+\newlabel{ds_HE_FD_FT}{{2.13}{5}{Finite Difference Approaches}{}{}}
+\citation{copetti_1990_kinetics}
+\abx@aux@cite{0}{copetti_1990_kinetics}
+\abx@aux@segm{0}{0}{copetti_1990_kinetics}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces The amplification factor for the one-dimensional heat equation forward difference scheme (\ref {ds_HE_FD}) is plotted for different values of $\frac  {k}{h^2}$ near $\frac  {k_\text  {crit}}{h^2}$. When $k$ is above the critical value, the amplification factor dips below -1, showing a high frequency instability for the difference scheme. For simplicity, $D=1$.}}{6}{}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fg_HE_amp}{{2.1}{6}{Finite Difference Approaches}{}{}}
+\newlabel{ds_HE_CN_FT}{{2.19}{6}{Finite Difference Approaches}{}{}}
+\newlabel{eq_discrete_con}{{2.21}{6}{Finite Difference Approaches}{}{}}
+\citation{argon}
+\abx@aux@cite{0}{argon}
+\abx@aux@segm{0}{0}{argon}
+\citation{helium}
+\abx@aux@cite{0}{helium}
+\abx@aux@segm{0}{0}{helium}
+\citation{argon}
+\abx@aux@cite{0}{argon}
+\abx@aux@segm{0}{0}{argon}
+\citation{helium}
+\abx@aux@cite{0}{helium}
+\abx@aux@segm{0}{0}{helium}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Diffusion Molecular Dynamics}{7}{}\protected@file@percent }
+\newlabel{ssec_diff_MD}{{2.2}{7}{Diffusion Molecular Dynamics}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces The dimensionless 6-12 Leonard-Jones potential energy function $\frac  {V}{\epsilon }$ is plotted against dimensionless interparticle radius $\frac  {r}{\sigma }$. The parameter $\sigma $ sets the $x$-intercept and $\epsilon $ is the maximum depth of the potential well.}}{7}{}\protected@file@percent }
+\newlabel{fg_lj_pot}{{2.2}{7}{Diffusion Molecular Dynamics}{}{}}
+\newlabel{eq_6-12_pot}{{2.22}{7}{Diffusion Molecular Dynamics}{}{}}
+\newlabel{eq_MD_force}{{2.23}{7}{Diffusion Molecular Dynamics}{}{}}
+\citation{larson_1997_hydrodynamics}
+\abx@aux@cite{0}{larson_1997_hydrodynamics}
+\abx@aux@segm{0}{0}{larson_1997_hydrodynamics}
+\citation{scipy}
+\abx@aux@cite{0}{scipy}
+\abx@aux@segm{0}{0}{scipy}
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces The Leonard-Jones parameters for Argon and Helium were determined in experiments by \blx@tocontentsinit {0}\cite {argon} and \blx@tocontentsinit {0}\cite {helium}, respectively. For the mixed parameters, LAMMPS defaults to the geometric mean of each particles' parameters.}}{8}{}\protected@file@percent }
+\newlabel{tb_lj_diff}{{2.1}{8}{Diffusion Molecular Dynamics}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces The interparticle potentials for He-He, Ar-Ar, and mixed Ar-He interactions are plotted against particle radius. The potentials use the Leonard-Jones model (\ref {eq_6-12_pot}) for the parameter values given in Table \ref {tb_lj_diff}. }}{8}{}\protected@file@percent }
+\newlabel{fg_lj_all}{{2.3}{8}{Diffusion Molecular Dynamics}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Parameter Estimation}{8}{}\protected@file@percent }
+\newlabel{ssec_diff_estim}{{2.2.1}{8}{Parameter Estimation}{}{}}
+\newlabel{eq_residuals}{{2.25}{8}{Parameter Estimation}{}{}}
+\citation{larson_1997_hydrodynamics}
+\abx@aux@cite{0}{larson_1997_hydrodynamics}
+\abx@aux@segm{0}{0}{larson_1997_hydrodynamics}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Results}{9}{}\protected@file@percent }
+\newlabel{sec_diff_res}{{2.3}{9}{Results}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces The least squares error is plotted for values of $D$ near $\hat  D$ when $N=20$. The unimodal shape of the plot suggests that a standard optimization procedure will estimate $\hat  D$ accurately.}}{10}{}\protected@file@percent }
+\newlabel{fg_cost}{{2.4}{10}{Results}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces We estimated diffusion coefficients for each MD run and binning precision. For each binning precision and estimated diffusion coefficient, we solved the heat equation with the finite difference method and calculated the difference from the order parameter estimated from MD. The error is averaged over the sampled time and space points.}}{10}{}\protected@file@percent }
+\newlabel{tb_diff_data}{{2.2}{10}{Results}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces  The initial condition for MD simulations was a uniform random concentration of Argon in $[1/4,3/4]^2$ and 0 outside. The initial distribution of Helium was uniform in $[0,1]^2$. The initial condition for the heat equation was 1 in $[1/4,3/4]^2$ and 0 outside. The order parameters were both scaled to mean $1/4$ for presenting the data. In the figure, the fitting results are shown for a binning parameter of $N=50$. Columns 1-5 display timesteps $n=0,50,200,500,1000$, respectively. On the top row, MD snapshots are shown. In the second and fourth row, the order parameter estimated from the MD trajectory is shown. In the third and fifth row, the solution to the heat equation for the parameter $\hat  D_{50}$ with spatial resolution $N=50$ and appropriate initial condition is shown. }}{11}{}\protected@file@percent }
+\newlabel{fg_diff_results}{{2.5}{11}{Results}{}{}}
+\citation{copetti_1990_kinetics}
+\abx@aux@cite{0}{copetti_1990_kinetics}
+\abx@aux@segm{0}{0}{copetti_1990_kinetics}
+\citation{novickcohen_1984_nonlinear}
+\abx@aux@cite{0}{novickcohen_1984_nonlinear}
+\abx@aux@segm{0}{0}{novickcohen_1984_nonlinear}
+\citation{novickcohen_1984_nonlinear}
+\abx@aux@cite{0}{novickcohen_1984_nonlinear}
+\abx@aux@segm{0}{0}{novickcohen_1984_nonlinear}
+\citation{copetti_1990_kinetics}
+\abx@aux@cite{0}{copetti_1990_kinetics}
+\abx@aux@segm{0}{0}{copetti_1990_kinetics}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Phase Separation}{12}{}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{sec_phase}{{3}{12}{Results}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces The phase energy is represented by a double well potential. Here we show a general double well potential. The points $v_a$ and $v_b$ are the local minima of $\psi $. $v_a^s$ and $v_b^s$ share the orange supporting tangent.}}{12}{}\protected@file@percent }
+\newlabel{fg_gen_well}{{3.1}{12}{Results}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Our chosen phase energy function (\ref {eq_double_well}). Here, $v_a=-1$, $v_a^s=-\frac  {1}{\sqrt  {3}}$, $v_b^s=\frac  {1}{\sqrt  {3}}$, and $v_b=1$.}}{12}{}\protected@file@percent }
+\newlabel{fg_double_well}{{3.2}{12}{Results}{}{}}
+\newlabel{eq_gen_psi}{{3.1}{12}{Results}{}{}}
+\newlabel{eq_double_well}{{3.2}{12}{Results}{}{}}
+\citation{cahn_1958_free}
+\abx@aux@cite{0}{cahn_1958_free}
+\abx@aux@segm{0}{0}{cahn_1958_free}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Gradient Flow Equations}{13}{}\protected@file@percent }
+\newlabel{sec_func}{{3.1}{13}{Gradient Flow Equations}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Phase Energy Functional}{13}{}\protected@file@percent }
+\newlabel{eq_func}{{3.3}{13}{Phase Energy Functional}{}{}}
+\newlabel{eq_def_f}{{3.4}{13}{Phase Energy Functional}{}{}}
+\newlabel{eq_EL1}{{3.5}{13}{Phase Energy Functional}{}{}}
+\newlabel{eq_EL}{{3.10}{13}{Phase Energy Functional}{}{}}
+\newlabel{eq_grad_flow}{{3.13}{14}{Phase Energy Functional}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Function Spaces}{14}{}\protected@file@percent }
+\newlabel{eq_l2space}{{3.14}{14}{Function Spaces}{}{}}
+\newlabel{eq_l2ip}{{3.15}{14}{Function Spaces}{}{}}
+\newlabel{eq_l2norm}{{3.16}{14}{Function Spaces}{}{}}
+\newlabel{eq_l2normsum}{{3.17}{14}{Function Spaces}{}{}}
+\newlabel{eq_IP}{{3.20}{15}{Function Spaces}{}{}}
+\newlabel{eq_IP_RRT}{{3.26}{15}{Function Spaces}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Allen-Cahn Derivation}{15}{}\protected@file@percent }
+\newlabel{eq_lin_approx}{{3.27}{15}{Allen-Cahn Derivation}{}{}}
+\newlabel{eq_above}{{3.29}{15}{Allen-Cahn Derivation}{}{}}
+\newlabel{eq_genIBP}{{3.34}{16}{Allen-Cahn Derivation}{}{}}
+\newlabel{eq_below}{{3.35}{16}{Allen-Cahn Derivation}{}{}}
+\newlabel{eq_AC1}{{3.42}{17}{Allen-Cahn Derivation}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.4}Cahn-Hilliard Derivation}{17}{}\protected@file@percent }
+\newlabel{eq_periodic_problem}{{3.45}{17}{Cahn-Hilliard Derivation}{}{}}
+\newlabel{eq_association}{{3.48}{17}{Cahn-Hilliard Derivation}{}{}}
+\newlabel{eq_CH1}{{3.51}{18}{Cahn-Hilliard Derivation}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Allen-Cahn Equation}{18}{}\protected@file@percent }
+\newlabel{sec_AC}{{3.2}{18}{Allen-Cahn Equation}{}{}}
+\newlabel{eq_AC}{{3.53}{18}{Allen-Cahn Equation}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Linear Stability Analysis}{18}{}\protected@file@percent }
+\newlabel{sssec_linear_AC}{{3.2.1}{18}{Linear Stability Analysis}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces The RHS of (\ref {eq_AC}) is plotted against $v$ when $v$ is $v$ is spatially constant. The phase plane shows that 1 and -1 are stable equilibria while 0 is unstable.}}{19}{}\protected@file@percent }
+\newlabel{fg_AC_phase}{{3.3}{19}{Linear Stability Analysis}{}{}}
+\newlabel{eq_AC_ODE}{{3.54}{19}{Linear Stability Analysis}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces The amplification factor of the solution to the Allen-Cahn equation linearized about 0 is plotted against $|k|/\sqrt  {\gamma }$.}}{19}{}\protected@file@percent }
+\newlabel{fg_AC_amp_DE}{{3.4}{19}{Linear Stability Analysis}{}{}}
+\newlabel{eq_unstable_lin_AC}{{3.55}{19}{Linear Stability Analysis}{}{}}
+\newlabel{eq_FC}{{3.57}{19}{Linear Stability Analysis}{}{}}
+\newlabel{eq_lin_AC}{{3.58}{19}{Linear Stability Analysis}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Finite Difference Approaches}{20}{}\protected@file@percent }
+\newlabel{ssec_AC_FD}{{3.2.2}{20}{Finite Difference Approaches}{}{}}
+\newlabel{ds_AC_FD}{{{S3}}{20}{Finite Difference Approaches}{}{}}
+\newlabel{ds_AC_CN}{{{S4}}{20}{Finite Difference Approaches}{}{}}
+\newlabel{ds_lin_AC_FD}{{{lin-\ref {ds_AC_FD}}}{20}{Finite Difference Approaches}{}{}}
+\newlabel{eq_lin_AC_amps}{{3.62}{20}{Finite Difference Approaches}{}{}}
+\newlabel{eq_k_crit_AC}{{3.65}{21}{Finite Difference Approaches}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces The amplification factor for the linear difference scheme (\ref {ds_lin_AC_FD}) is plotted for different values of $\frac  {k}{h^2}$ near $\frac  {k_\text  {crit}}{h^2}$. The left, middle and right plots have parameter values $\gamma =.01h^2$, $h^2$, and $100h^2$. When $k$ is above the critical value, the amplification factor dips below -1, showing a frequency instability for the difference scheme.}}{21}{}\protected@file@percent }
+\newlabel{fg_AC_amp}{{3.5}{21}{Finite Difference Approaches}{}{}}
+\newlabel{ds_lin_AC_CN}{{{lin-\ref {ds_AC_CN}}}{21}{Finite Difference Approaches}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces The nonlinear difference scheme (\ref {ds_AC_FD}) was solved in 1D for $h=.01,\gamma =.01$ from an initial state of a sine wave. On the left, $k=.0050=k_\text  {crit}$ and on the right, $k=.0051>k_\text  {crit}$, where $k_\text  {crit}$ refers to the stability of the linear scheme (\ref {ds_lin_AC_FD}). When $k$ is greater than to the critical value of the linear scheme, the simulation displays numerical instability. However, $k=k_\text  {crit}$ seems to be stable, suggesting that the stability condition for the linear scheme reflects the stability of the nonlinear scheme.}}{22}{}\protected@file@percent }
+\newlabel{fg_nonlinear_stability_AC}{{3.6}{22}{Finite Difference Approaches}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces The nonlinear semi-implicit scheme was solved in 1D with different spatial resolutions $h=.01$ and $h=.005$ on the left and right. Using the same initial condition and $\gamma $ as in Figure \ref {fg_nonlinear_stability_AC}, we see that the implicit scheme (\ref {ds_AC_CN}) has better stability properties than (\ref {ds_AC_FD}). Additionally, its stability does not share the dependence on $h$.}}{23}{}\protected@file@percent }
+\newlabel{fg_nonlinear_stability_implicit_AC}{{3.7}{23}{Finite Difference Approaches}{}{}}
+\citation{copetti_1990_kinetics}
+\abx@aux@cite{0}{copetti_1990_kinetics}
+\abx@aux@segm{0}{0}{copetti_1990_kinetics}
+\citation{novickcohen_1984_nonlinear}
+\abx@aux@cite{0}{novickcohen_1984_nonlinear}
+\abx@aux@segm{0}{0}{novickcohen_1984_nonlinear}
+\citation{copetti_1990_kinetics}
+\abx@aux@cite{0}{copetti_1990_kinetics}
+\abx@aux@segm{0}{0}{copetti_1990_kinetics}
+\citation{copetti_1990_kinetics}
+\abx@aux@cite{0}{copetti_1990_kinetics}
+\abx@aux@segm{0}{0}{copetti_1990_kinetics}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Cahn-Hilliard Equation}{24}{}\protected@file@percent }
+\newlabel{sec_CH}{{3.3}{24}{Cahn-Hilliard Equation}{}{}}
+\newlabel{eq_CH}{{3.69}{24}{Cahn-Hilliard Equation}{}{}}
+\newlabel{eq_der_inside}{{3.70}{24}{Cahn-Hilliard Equation}{}{}}
+\newlabel{eq_end}{{3.73}{24}{Cahn-Hilliard Equation}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Linear Stability Analysis}{24}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces The amplification factor $-A_{|m|}$ for solutions to the Cahn-Hilliard equation linearized about $c_0$ is plotted against wavenumber. When $c_0$ is in the spinodal region, the linear solutions display a low-frequency instability for all wavenumbers $m$ with $|m|<m_c$. The fastest growing wavenumbers have $|m|=m_m\in (0,m_c)$. \blx@tocontentsinit {0}\cite {copetti_1990_kinetics}}}{25}{}\protected@file@percent }
+\newlabel{fg_unstable_lin_CH}{{3.8}{25}{Linear Stability Analysis}{}{}}
+\newlabel{eq_lin_CH}{{3.77}{25}{Linear Stability Analysis}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Finite Difference Approaches}{25}{}\protected@file@percent }
+\newlabel{sssec_CH_FD}{{3.3.2}{25}{Finite Difference Approaches}{}{}}
+\newlabel{ds_CH_FD}{{{S5}}{25}{Finite Difference Approaches}{}{}}
+\newlabel{ds_CH_CN}{{{S6}}{25}{Finite Difference Approaches}{}{}}
+\newlabel{ds_lin_CH_FD}{{{lin-S5}}{26}{Finite Difference Approaches}{}{}}
+\newlabel{eq_CH_FD_stab}{{3.83}{26}{Finite Difference Approaches}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces The amplification factor for the linear difference scheme (\ref {ds_lin_CH_FD}) is plotted for different values of $\frac  {kM}{h^2}$ near $\frac  {k_\text  {crit}M}{h^2}$. The left, middle and right plots have parameter values $\gamma =.01h^2$, $h^2$, and $100h^2$. When $k$ is above the critical value, the amplification factor dips below -1, showing a frequency instability for the difference scheme. For simplicity, $M=1$.}}{27}{}\protected@file@percent }
+\newlabel{fg_CH_amp_FD}{{3.9}{27}{Finite Difference Approaches}{}{}}
+\newlabel{ds_lin_CH_CN}{{{lin-S6}}{27}{Finite Difference Approaches}{}{}}
+\newlabel{eq_small_ga}{{3.85}{27}{Finite Difference Approaches}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces The amplification factor for the linear difference scheme (\ref {ds_lin_CH_CN}) is plotted for different values of $\frac  {kM}{h^2}$ near $\frac  {k_\text  {crit}M}{h^2}$. The left, middle and right plots have parameter values $\gamma =.01h^2$, $h^2$, and $100h^2$. When $k$ is above the critical value and the small $\gamma $ approximation holds, the amplification factor dips below -1, showing a high frequency instability for the difference scheme. For simplicity, $M=1$.}}{28}{}\protected@file@percent }
+\newlabel{fg_CH_amp_CN}{{3.10}{28}{Finite Difference Approaches}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces The nonlinear difference scheme (\ref {ds_CH_FD}) was solved for $h=.01,\gamma =.001,M=1$ from an initial state of a sine wave. On the left, $k=.00000120=k_\text  {crit}$ and on the right, $k=.00000122>k_\text  {crit}$, where $k_\text  {crit}$ refers to the stability of the linear scheme (\ref {ds_lin_CH_FD}). When $k$ is greater than the critical value of the linear scheme, the simulation displays numerical instability. However, $k=k_\text  {crit}$ seems to be stable up to $n=10000$, suggesting that the stability condition for the linear scheme reflects the stability of the nonlinear scheme.}}{29}{}\protected@file@percent }
+\newlabel{fg_nonlinear_stability_CH}{{3.11}{29}{Finite Difference Approaches}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces  The nonlinear difference scheme (\ref {ds_CH_CN}) was solved for $h=.01,\gamma =1e-6,M=1$ from an initial state of a sine wave. On the left, $k=.0000025=.1k_\text  {crit}$, in the middle, $k=.000025=k_\text  {crit}$, and on the right, $k=.000026>k_\text  {crit}$, where $k_\text  {crit}$ refers to the stability of the linear scheme (\ref {ds_lin_CH_CN}). When $k$ is greater than to the critical value of the linear scheme, the simulation displays numerical instability. However, $k=k_\text  {crit}$ seems to be stable up to $n=10000$, suggesting that the stability condition for the linear scheme reflects the stability of the nonlinear scheme. While it may look like each scheme is unstable in interface region from $n=100$ on, this is actually a phase separation effect. That the schemes for $k=k_\text  {crit}$ and $k=.1k_\text  {crit}$ are the same supports this conclusion. The reason for separation on the grid precision is the small value of $\gamma $, which was chosen to make the stability estimate hold. }}{30}{}\protected@file@percent }
+\newlabel{fg_nonlinear_stability_implicit_CH}{{3.12}{30}{Finite Difference Approaches}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Phase Separation Molecular Dynamics}{31}{}\protected@file@percent }
+\newlabel{ssec_phase_MD}{{3.4}{31}{Phase Separation Molecular Dynamics}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Leonard-Jones parameter values for phase separation MD simulation.}}{31}{}\protected@file@percent }
+\newlabel{tb_lj_phase}{{3.1}{31}{Phase Separation Molecular Dynamics}{}{}}
+\newlabel{eq_phase_req}{{3.89}{31}{Phase Separation Molecular Dynamics}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Parameter Estimation}{31}{}\protected@file@percent }
+\newlabel{ssec_phase_estim}{{3.4.1}{31}{Parameter Estimation}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Results}{31}{}\protected@file@percent }
+\citation{LAMMPS}
+\abx@aux@cite{0}{LAMMPS}
+\abx@aux@segm{0}{0}{LAMMPS}
+\citation{copetti_1990_kinetics}
+\abx@aux@cite{0}{copetti_1990_kinetics}
+\abx@aux@segm{0}{0}{copetti_1990_kinetics}
+\newlabel{eq_phase_IC}{{3.92}{32}{Results}{}{}}
+\citation{cahn_1958_free}
+\abx@aux@cite{0}{cahn_1958_free}
+\abx@aux@segm{0}{0}{cahn_1958_free}
+\citation{larson_1997_hydrodynamics}
+\abx@aux@cite{0}{larson_1997_hydrodynamics}
+\abx@aux@segm{0}{0}{larson_1997_hydrodynamics}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces We estimated the mobility coefficient and interfacial distance parameters for the MD order parameter at each binning precision. For each binning precision and pair of estimated parameters, we solved the differential equation with the finite difference scheme and calculated the difference from the estimated MD order parameter. The $L^2$ error is averaged over the sampled space and time points.}}{33}{}\protected@file@percent }
+\newlabel{tb_phase_data}{{3.2}{33}{Results}{}{}}
+\abx@aux@nociteall
+\citation{*}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces  The fitting results are displayed for a course-graining parameter of $N=50$. The columns 1-5 represent timesteps $n=0,50,200,500,$ and 1000, respectively. The first row shows raw MD snapshots, and the second and fifth row display the estimated order parameter. In the raw MD snapshot, $A$ atoms are colored red, and $B$ atoms are colored blue. The Allen-Cahn solution for its best fit parameters is displayed in rows three and six. The Cahn-Hilliard solution for its best fit parameters is displayed in rows four and seven. The differential equations used the estimated order parameter at the initial timestep $n=0$ as initial conditions. This initial condition was randomly sampled from the distribution described in (\ref {eq_phase_IC}). }}{34}{}\protected@file@percent }
+\newlabel{fg_phase_results}{{3.13}{34}{Results}{}{}}
+\abx@aux@read@bbl@mdfivesum{D41D8CD98F00B204E9800998ECF8427E}
+\gdef \@abspage@last{36}

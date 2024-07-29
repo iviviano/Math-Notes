@@ -1,6 +1,7 @@
-\beamer@sectionintoc {1}{Chemical}{3}{0}{1}
-\beamer@sectionintoc {2}{Models}{5}{0}{2}
-\beamer@subsectionintoc {2}{1}{Differential Equations}{7}{0}{2}
-\beamer@subsectionintoc {2}{2}{Molecular Dynamics}{12}{0}{2}
-\beamer@sectionintoc {3}{Numerical Methods}{15}{0}{3}
-\beamer@subsectionintoc {3}{1}{Finite Difference}{15}{0}{3}
+\beamer@sectionintoc {1}{Motivation}{3}{0}{1}
+\beamer@sectionintoc {2}{Chemical Processes}{5}{0}{2}
+\beamer@sectionintoc {3}{Model Differences}{8}{0}{3}
+\beamer@sectionintoc {4}{Atomistic Model: Molecular Dynamics}{11}{0}{4}
+\beamer@sectionintoc {5}{Continuum Model: Differential Equations}{15}{0}{5}
+\beamer@sectionintoc {6}{Numerical Methods}{23}{0}{6}
+\beamer@sectionintoc {7}{Results}{30}{0}{7}

@@ -1,15 +1,23 @@
-\contentsline {section}{\numberline {1}Introduction}{1}{}%
-\contentsline {section}{\numberline {2}Diffusion}{2}{}%
-\contentsline {subsection}{\numberline {2.1}Heat Equation}{2}{}%
-\contentsline {subsubsection}{\numberline {2.1.1}Analytical Solutions}{2}{}%
-\contentsline {subsubsection}{\numberline {2.1.2}Finite Difference Approaches}{2}{}%
-\contentsline {subsection}{\numberline {2.2}Molecular Dynamics}{3}{}%
-\contentsline {subsection}{\numberline {2.3}Parameter Estimation}{3}{}%
-\contentsline {section}{\numberline {3}Phase Separation}{3}{}%
-\contentsline {subsection}{\numberline {3.1}Allen-Cahn Equation}{3}{}%
-\contentsline {subsubsection}{\numberline {3.1.1}Linear Stability Analysis}{3}{}%
-\contentsline {subsubsection}{\numberline {3.1.2}Finite Difference Approaches}{3}{}%
-\contentsline {subsection}{\numberline {3.2}Cahn-Hilliard Equation}{4}{}%
-\contentsline {subsubsection}{\numberline {3.2.1}Finite Difference}{4}{}%
-\contentsline {subsection}{\numberline {3.3}Molecular Dynamics}{5}{}%
-\contentsline {subsection}{\numberline {3.4}Parameter Estimation}{5}{}%
+\contentsline {chapter}{\numberline {1}Introduction}{2}{}%
+\contentsline {chapter}{\numberline {2}Diffusion}{3}{}%
+\contentsline {section}{\numberline {2.1}Heat Equation}{3}{}%
+\contentsline {subsection}{\numberline {2.1.1}Analytical Solution}{3}{}%
+\contentsline {subsection}{\numberline {2.1.2}Finite Difference Approaches}{4}{}%
+\contentsline {section}{\numberline {2.2}Diffusion Molecular Dynamics}{7}{}%
+\contentsline {subsection}{\numberline {2.2.1}Parameter Estimation}{8}{}%
+\contentsline {section}{\numberline {2.3}Results}{9}{}%
+\contentsline {chapter}{\numberline {3}Phase Separation}{12}{}%
+\contentsline {section}{\numberline {3.1}Gradient Flow Equations}{13}{}%
+\contentsline {subsection}{\numberline {3.1.1}Phase Energy Functional}{13}{}%
+\contentsline {subsection}{\numberline {3.1.2}Function Spaces}{14}{}%
+\contentsline {subsection}{\numberline {3.1.3}Allen-Cahn Derivation}{15}{}%
+\contentsline {subsection}{\numberline {3.1.4}Cahn-Hilliard Derivation}{17}{}%
+\contentsline {section}{\numberline {3.2}Allen-Cahn Equation}{18}{}%
+\contentsline {subsection}{\numberline {3.2.1}Linear Stability Analysis}{18}{}%
+\contentsline {subsection}{\numberline {3.2.2}Finite Difference Approaches}{20}{}%
+\contentsline {section}{\numberline {3.3}Cahn-Hilliard Equation}{24}{}%
+\contentsline {subsection}{\numberline {3.3.1}Linear Stability Analysis}{24}{}%
+\contentsline {subsection}{\numberline {3.3.2}Finite Difference Approaches}{25}{}%
+\contentsline {section}{\numberline {3.4}Phase Separation Molecular Dynamics}{31}{}%
+\contentsline {subsection}{\numberline {3.4.1}Parameter Estimation}{31}{}%
+\contentsline {section}{\numberline {3.5}Results}{31}{}%
